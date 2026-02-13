@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mis Libros | Ana Albiol" description="Libros de Ana Albiol: 'Vida de un culo inquieto' y 'A muerte con la vida'. Lecturas para soltar, saltar y confiar.">
+    <!-- Intro -->
+    <section class="books-hero fade-up">
+        <div class="container">
+            <h1>Mis Libros</h1>
+            <div class="intro-text">
+                <p>Escribí mis dos primeros libros porque son lo que me hubiera gustado leer cuando más sola y loca me sentía por no conformarme con una vida a medias.</p>
+                <p>En ellos, cuento sin filtro mi proceso de búsqueda y cambio hasta poder sentir que podría morir a gusto.</p>
+                <p><strong>No te digo qué hacer. Te recuerdo que tu VIDA es tuya.</strong></p>
+                <p class="small-text mt-2">El tercero, está en el horno y sale en enero de 2027.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book 1 -->
+    <section class="book-detail fade-up">
+        <div class="container">
+            <div class="book-item">
+                <div class="book-info">
+                    <span class="small-text">Libro 1</span>
+                    <h3>V.I.D.A. de un culo inquieto</h3>
+                    <p class="book-tagline">Un libro para empezar a vivir desde lo que eres, no desde lo que esperan de ti.</p>
+                    <p>Si no te conformas con lo que te ha tocado o te han impuesto, si sabes que la VIDA es otra cosa y no quieres quedarte con las ganas de vivirla, puede que te sirva.</p>
+                    <a href="https://www.amazon.es/V-I-D-culo-inquieto-Ana-Albiol/dp/8409247542" target="_blank" rel="noopener noreferrer" class="btn mt-2">Comprar en Amazon</a>
+                </div>
+                <div class="book-image">
+                    <img src="/assets/images/VIDA_de_un_culo_inquieto_Portada.jpg" alt="Portada V.I.D.A. de un culo inquieto" class="book-cover" />
+                </div>
+            </div>
+
+            <div class="review-grid">
+                <div class="review-card">
+                    "Este libro es un mazazo de realidad escrito desde el humor y el respeto. No es un libro para evadirse, es un libro para mirar hacia dentro."
+                </div>
+                <div class="review-card">
+                    "Me recordó algo muy importante: la vida nunca me pidió que fuera perfecta. Soltar, saltar y confiar no es solo para otros. Yo también puedo."
+                </div>
+                <div class="review-card">
+                    "Es como si estuvieras hablando con una amiga. Ríes con ella a carcajada limpia y otras veces no puedes dejar de llorar."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book 2 -->
+    <section class="book-detail fade-up">
+        <div class="container">
+            <div class="book-item">
+                <div class="book-image">
+                    <img src="/assets/images/A_muerte_con_la_VIDA_portada.jpg" alt="Portada A muerte con la V.I.D.A." class="book-cover" />
+                </div>
+                <div class="book-info">
+                    <span class="small-text">Libro 2</span>
+                    <h3>A muerte con la V.I.D.A.</h3>
+                    <p class="book-tagline">Un libro para atravesar procesos de cambio a través de tres palabras clave: <em>suelta, salta y confía.</em></p>
+                    <p>Si estás en crisis, proceso de cambio profundo o replanteamiento vital, puede que te sirva.</p>
+                    <a href="https://www.amazon.es/muerte-V-I-D-F-COLECCION/dp/8467065869" target="_blank" rel="noopener noreferrer" class="btn mt-2">Comprar en Amazon</a>
+                </div>
+            </div>
+
+            <div class="review-grid">
+                <div class="review-card">
+                    "No es un libro, es un espejo. Te permite mirar desde tus brillos hasta tus miserias de una forma activa y constructiva."
+                </div>
+                <div class="review-card">
+                    "Es un libro para tener cerca de la cama y leer poco a poco. Cada frase, cada palabra en negrita tiene un porqué."
+                </div>
+                <div class="review-card">
+                    "Al final, todo se resume en una cosa: tú decides si te quedas donde estás o te acercas a la vida que quieres vivir."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Book Teaser -->
+    <section class="coming-soon fade-up">
+        <div class="container">
+            <h2>Nuevo Libro</h2>
+            <p class="subtitle">Enero 2027</p>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Después de vivir el cambio en mi cuerpo serrano y trabajar con más de 3000 personas para que logren el suyo, este libro propone el método que he desarrollado.</p>
+            <a href="/en-privado" class="btn" style="border-color: white; color: white;">Sigue el proceso desde dentro</a>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    /* Specific styles for libros page */
+    .books-hero {
+        padding: 8rem 0 4rem;
+        background-color: var(--color-secondary);
+        text-align: center;
+    }
+    
+    .intro-text {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.25rem;
+    }
+    
+    .book-detail {
+        padding: 6rem 0;
+    }
+    
+    .book-detail:nth-child(even) {
+        background-color: white;
+    }
+    
+    .book-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+    
+    @media (min-width: 900px) {
+        .book-item {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    .book-image {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .placeholder-book {
+        width: 300px;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+
+    .book-cover {
+        width: 300px;
+        height: auto;
+        box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+    }
+
+    .book-cover:hover {
+        transform: translateY(-5px);
+    }
+    
+    .book-info h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .book-tagline {
+        font-size: 1.25rem;
+        font-style: italic;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+    }
+    
+    .review-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+        .review-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    .review-card {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 8px;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+    }
+    
+    .coming-soon {
+        padding: 6rem 0;
+        background-color: var(--color-primary);
+        color: white;
+        text-align: center;
+    }
+    
+    .coming-soon h2, .coming-soon .subtitle, .coming-soon p {
+        color: white;
+    }
+</style>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Formaciones | Ana Albiol" description="Formaciones y talleres de Ana Albiol. Herramientas para identificar lo que importa, elegirlo y saltar a la acción.">
+    <!-- Hero -->
+    <section class="formations-hero fade-up">
+        <div class="container">
+            <h1>Formaciones y Talleres</h1>
+            <p style="max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">En los últimos cinco años he creado espacios para identificar lo que importa, elegirlo, recuperar la ilusión y saltar a la acción.</p>
+            <span class="obsesion">Una única obsesión: VIVIR antes de morir.</span>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section-padding">
+        <div class="container fade-up">
+            <div class="formations-grid" id="formations-grid">
+                <div class="formation-card">
+                    <h3>Al Loro con tu VIDA</h3>
+                    <p>Un sistema con herramientas que enseña a ordenar valores, definir metas, tomar decisiones, salir de las jaulas de pensamiento y entender nuestros miedos para vivir con más coherencia.</p>
+                </div>
+                <div class="formation-card">
+                    <h3>Efecto VIDA</h3>
+                    <p>Una membresía de doce meses en la que trabajamos los doce melones más importantes del desarrollo personal para ordenar y alinear nuestra VIDA de la forma más amplia posible.</p>
+                </div>
+                <div class="formation-card">
+                    <h3>Reparte Noes como panes</h3>
+                    <p>Un taller intensivo para aprender a decir NO y poder poner los límites que protegerán tu tiempo, tu energía y tu salud mental.</p>
+                </div>
+                <div class="formation-card">
+                    <h3>Hábitos Sólidos</h3>
+                    <p>Un programa de cuatro meses para construir los hábitos que te permitirán vivir antes de morir. Con base, sentido, diseño, estructura y plan de contingencia.</p>
+                </div>
+                <div class="formation-card">
+                    <h3>Vivir la Muerte</h3>
+                    <p>Un intensivo en el que hablamos del tema más tabú de nuestra sociedad, afrontando la certeza de que nos vamos a morir, aprendiendo a acompañar en la muerte y a transitar el duelo.</p>
+                </div>
+                <div class="formation-card">
+                    <h3>Principio</h3>
+                    <p>Una sesión práctica para terminar el año con atención y mucha intención. Nuestro clásico ritual de cierre, comunidad y Principio.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 fade-up">
+                <p style="font-size: 1.2rem;">Aquí ves parte del recorrido.<br>Ahora mismo no hay fechas abiertas, pero en cuanto las tenga, te aviso En Privado.</p>
+                <a href="/en-privado" class="btn btn-primary mt-2">Apúntate a En Privado</a>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+    
+    // Formations Grid Animation
+    const grid = document.getElementById('formations-grid');
+    if (grid) {
+        inView(grid, () => {
+             animate(
+                grid.querySelectorAll(".formation-card"),
+                { opacity: [0, 1], y: [40, 0] },
+                { duration: 0.6, delay: stagger(0.15) }
+            );
+        });
+    }
+</script>
+
+<style>
+    .formation-card {
+        opacity: 0;
+    }
+</style>

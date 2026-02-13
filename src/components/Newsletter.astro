@@ -1,0 +1,27 @@
+<section id="newsletter" class="newsletter section-padding text-center">
+    <div class="container fade-up" id="newsletter-container">
+        <h2>En Privado</h2>
+        <h3 class="subtitle">Lo que no sale en Instagram. Lo importante. Lo íntimo.</h3>
+        <a href="/en-privado" class="btn" style="background: white; color: var(--color-primary); border: none;">Entrar En Privado</a>
+    </div>
+</section>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+    
+    const container = document.getElementById('newsletter-container');
+    if (container) {
+        inView(container, () => {
+            animate(
+                container.children,
+                { opacity: [0, 1], scale: [0.9, 1] },
+                { duration: 0.6, delay: stagger(0.1) }
+            );
+        });
+    }
+</script>
+<style>
+    #newsletter-container > * {
+        opacity: 0;
+    }
+</style>

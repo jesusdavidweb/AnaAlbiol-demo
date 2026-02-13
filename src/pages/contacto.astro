@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contacto | Ana Albiol" description="Contacta con Ana Albiol y su equipo. Propuestas de colaboración, charlas o mensajes bonitos.">
+    <!-- Hero -->
+    <section class="contact-hero fade-up">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>Si quieres hacer una propuesta de colaboración, contratar una charla o dejar un mensaje bonito, puedes escribirme por aquí.</p>
+            <p>Mi equipo y yo te responderemos lo antes posible.</p>
+            <p>Gracias.</p>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="section-padding bg-light">
+        <div class="container fade-up">
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Mensaje enviado (simulado)');
+            (e.target as HTMLFormElement).reset();
+        });
+    }
+</script>

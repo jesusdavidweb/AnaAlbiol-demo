@@ -1,0 +1,29 @@
+<section class="about section-padding">
+    <div class="container fade-up">
+        <div class="about-content" id="about-content">
+            <h2>Cosecha del 87</h2>
+            <p>Nací con ocho meses y a los 19 años tuve mi primera crisis vital. Trabajaba en una perfumería y daba por sentado que sería mi único futuro.</p>
+            <a href="/quien-soy" class="btn mt-2">Leer mi historia completa</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+    
+    const content = document.getElementById('about-content');
+    if (content) {
+        inView(content, () => {
+            animate(
+                content.children,
+                { opacity: [0, 1], x: [-20, 0] },
+                { duration: 0.8, delay: stagger(0.2) }
+            );
+        });
+    }
+</script>
+<style>
+    #about-content > * {
+        opacity: 0;
+    }
+</style>

@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Charlas | Ana Albiol" description="Charlas y conferencias de Ana Albiol para empresas y eventos. Valores, coherencia, hábitos y autenticidad." headerTheme="dark">
+    <!-- Hero -->
+    <section class="talks-hero fade-up">
+        <div class="container">
+            <p class="quote-large">"Vargas Llosa quería que la muerte lo encontrara escribiendo.<br>A mí me gustaría que la muerte me encuentre en un escenario."</p>
+            <h1>Charlas</h1>
+            <p class="subtitle" style="font-size: 1.2rem; opacity: 0.9;">Soy feliz como una perdiz cuando comunico.</p>
+        </div>
+    </section>
+
+    <!-- Topics -->
+    <section class="topics-section">
+        <div class="container text-center fade-up">
+            <h2>Temas Habituales</h2>
+            <p>Me suelen contratar en eventos y empresas para hablar de:</p>
+
+            <div class="topics-grid" id="topics-grid">
+                <div class="topic-pill">Valores, coherencia y decisiones</div>
+                <div class="topic-pill">Hábitos, renuncia y FOMO</div>
+                <div class="topic-pill">Autenticidad y cambios de VIDA</div>
+                <div class="topic-pill">Emprendimiento</div>
+            </div>
+
+            <p class="mt-4">Además de estos temas, también diseño charlas y formaciones a medida.</p>
+            <a href="/contacto" class="btn btn-primary mt-4">Contactar para Charlas</a>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+    
+    // Topics Grid Animation
+    const grid = document.getElementById('topics-grid');
+    if (grid) {
+        inView(grid, () => {
+             animate(
+                grid.querySelectorAll(".topic-pill"),
+                { opacity: [0, 1], scale: [0.8, 1] },
+                { duration: 0.5, delay: stagger(0.1), easing: [0.34, 1.56, 0.64, 1] }
+            );
+        });
+    }
+</script>
+
+<style>
+    .topic-pill {
+        opacity: 0;
+    }
+</style>

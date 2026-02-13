@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="En Privado | Ana Albiol" description="En Privado. La newsletter de Ana Albiol. Lo que no sale en Instagram. Reflexiones, audios y contenido exclusivo." headerTheme="dark">
+    <!-- Header is in Layout -->
+    
+    <!-- Hero -->
+    <section class="newsletter-page-hero fade-up">
+        <div class="container">
+            <h1>En Privado</h1>
+            <p class="subtitle" style="font-size: 1.5rem; opacity: 0.9;">Lo que no sale en Instagram. Lo importante. Lo íntimo.</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section-padding">
+        <div class="container text-center fade-up">
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Para personas que aún valoran el largo y tendido.<br>Reflexiones, audios, detalles de cortesía, acceso anticipado a las formaciones y directos.</p>
+
+            <p class="mt-4" style="font-weight: bold; font-size: 1.2rem;">Los sábados, cada 15 días a las 9:00 am en tu bandeja de entrada.</p>
+
+            <div class="values-grid-large" id="values-grid">
+                <div class="value-item"><span class="value-letter">V</span><span class="value-word">Valores</span></div>
+                <div class="value-item"><span class="value-letter">I</span><span class="value-word">Ilusión</span></div>
+                <div class="value-item"><span class="value-letter">D</span><span class="value-word">Decisión</span></div>
+                <div class="value-item"><span class="value-letter">A</span><span class="value-word">Acción</span></div>
+            </div>
+
+            <div class="form-container fade-up">
+                <h3>Lo que SÍ</h3>
+                <p>Contenido cuidado y personal.</p>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+                <h3>Lo que NO</h3>
+                <p>Te doy mi palabra de que no voy a bombardear tu correo diariamente para que me tengas presente y poder venderte. <strong>Me horroriza. Y me niego.</strong></p>
+
+                <form class="newsletter-form mt-4" id="newsletter-form">
+                    <input type="email" id="newsletter-email" name="email" autocomplete="email" placeholder="Tu mejor email" aria-label="Tu mejor email" required style="border: 1px solid #ddd;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Quiero entrar En Privado</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer is in Layout -->
+</Layout>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+
+    // Values Grid Animation
+    const grid = document.getElementById('values-grid');
+    if (grid) {
+        inView(grid, () => {
+            animate(
+                grid.querySelectorAll(".value-item"),
+                { opacity: [0, 1], y: [30, 0], rotate: [-10, 0] },
+                { duration: 0.8, delay: stagger(0.2), easing: [0.175, 0.885, 0.32, 1.275] }
+            );
+        });
+    }
+
+    // Form Handling
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por suscribirte!');
+        });
+    }
+</script>
+
+<style>
+    .value-item {
+        opacity: 0;
+    }
+    
+    /* Newsletter Page Specific Styles from style.css equivalent not fully covered */
+    .newsletter-page-hero {
+        background-color: var(--color-primary);
+        color: white;
+        padding: 8rem 0 4rem;
+        text-align: center;
+    }
+    
+    .newsletter-page-hero h1 {
+        color: white;
+    }
+
+    .newsletter-page-hero .subtitle {
+        color: rgba(255,255,255,0.9);
+    }
+    
+    .values-grid-large {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 4rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .value-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .value-letter {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+    
+    .value-word {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    
+    .form-container {
+        background: white;
+        padding: 3rem;
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        padding: 1rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid #ddd;
+        font-family: var(--font-body);
+    }
+</style>

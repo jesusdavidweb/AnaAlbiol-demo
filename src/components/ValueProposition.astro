@@ -1,0 +1,29 @@
+<section class="value-prop section-padding">
+    <div class="container text-center fade-up" id="value-prop-container">
+        <h2>Lo que está en mi mano</h2>
+        <p>Te muevo para que elijas lo que te importa y dejes de posponer tu VIDA.</p>
+        <p class="highlight">Comparto mi experiencia y mis preguntas para que conectes con tu historia y encuentres tus propias respuestas.</p>
+        <h3 class="giant-text">El resto, es tuyo.</h3>
+    </div>
+</section>
+
+<script>
+    import { inView, animate, stagger } from "motion";
+    
+    const container = document.getElementById('value-prop-container');
+    if (container) {
+        inView(container, () => {
+            animate(
+                container.children,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.8, delay: stagger(0.2) }
+            );
+        });
+    }
+</script>
+
+<style>
+    #value-prop-container > * {
+        opacity: 0;
+    }
+</style>
