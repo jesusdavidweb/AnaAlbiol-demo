@@ -14,7 +14,10 @@
 - **Rendimiento**: Migración completa de HTML estático a Astro + Svelte para carga ultra-rápida.
 - **Navegación**: Menú responsive con animaciones fluidas utilizando Motion.
 
+
 ### Corregido
+- Conflicto de puertos en Dokploy al eliminar el mapeo directo del puerto 80 en el host.
+- Soporte para `bun.lock` en el `Dockerfile` para asegurar builds deterministas.
 - Errores de tipado en animaciones de Motion.
 - Fallos de visualización en el header de páginas internas.
 - Problemas de espaciado entre el logo y el menú de navegación.
