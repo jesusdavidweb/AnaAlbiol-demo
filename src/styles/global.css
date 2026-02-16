@@ -472,13 +472,7 @@ ul {
         align-items: center;
     }
 
-    .hero-watermark {
-        width: 120%;
-        /* Larger watermark relative to card */
-        top: -5%;
-        left: -10%;
-        opacity: 0.05;
-    }
+
 
     .hero-content h1 {
         font-size: 2.5rem;
@@ -516,19 +510,7 @@ ul {
     }
 }
 
-/* Watermark Logo Styling */
-.hero-watermark {
-    position: absolute;
-    top: -10%;
-    left: -5%;
-    width: 400px;
-    height: auto;
-    opacity: 0.08;
-    /* Very subtle */
-    z-index: -1;
-    pointer-events: none;
-    transform: rotate(-10deg);
-}
+
 
 .hero-content h1 {
     font-size: 3.5rem;

@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import { timeline, stagger } from "motion";
 
-    let heroTitle, heroSubtitle, heroButtons, heroImage, watermark;
+    let heroTitle, heroSubtitle, heroButtons, heroImage;
 
     onMount(() => {
         // Elements are initially hidden by CSS or need to be hidden here to avoid FOUC?
@@ -24,11 +24,6 @@
                 heroImage,
                 { opacity: [0, 1], scale: [0.95, 1], rotate: [-2, 0] },
                 { duration: 1, easing: [0.34, 1.56, 0.64, 1], at: "-0.8" },
-            ],
-            [
-                watermark,
-                { opacity: [0, 0.08], rotate: [-15, -10], scale: [0.8, 1] },
-                { duration: 1.2, at: "-0.8" },
             ],
         ];
 
@@ -58,12 +53,6 @@
 <section class="hero-new-design">
     <div class="hero-wrapper">
         <div class="hero-content fade-up">
-            <img
-                bind:this={watermark}
-                src="/assets/images/LOGO_AnaAlbiol_Color.svg"
-                class="hero-watermark"
-                alt=""
-            />
             <h1 bind:this={heroTitle}>
                 Soy Ana Albiol <em>y el plan es vivir antes de morir.</em>
             </h1>
@@ -89,7 +78,7 @@
 
 <style>
     /* Ensure opacity 0 logic from global css works, or enforce it here to be safe */
-    .hero-watermark,
+
     h1,
     .hero-subtitle,
     .hero-buttons :global(.btn),

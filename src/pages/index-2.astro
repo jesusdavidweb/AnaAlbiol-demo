@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroAlternative from '../components/HeroAlternative.svelte';
+import ValueProposition from '../components/ValueProposition.astro';
+import NavigationCards from '../components/NavigationCards.astro';
+import AboutIntro from '../components/AboutIntro.astro';
+import Newsletter from '../components/Newsletter.astro';
+---
+
+<Layout title="Ana Albiol | Vivir antes de morir - Versión Alternativa">
+    <HeroAlternative client:load />
+    <ValueProposition />
+    <NavigationCards />
+    <AboutIntro />
+    <Newsletter />
+</Layout>

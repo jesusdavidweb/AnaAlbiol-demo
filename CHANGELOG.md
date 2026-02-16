@@ -1,5 +1,20 @@
 # Historial de Cambios
 
+## [1.1.0] - 2026-02-16
+### Añadido
+- **Páginas Legales Independientes**: Separación del contenido legal en rutas individuales (`/aviso-legal`, `/politica-de-privacidad`, `/cookies`) para mejorar el SEO y la accesibilidad.
+- **Landing Alternativa**: Nueva página de inicio (`/index-2`) con diseño de Hero a pantalla completa y tipografía optimizada.
+
+### Mejorado
+- **Optimización de Activos**: Actualización de todas las portadas de libros a formato WebP, reduciendo el peso de la página sin perder calidad.
+- **Limpieza Visual**: Eliminación de la superposición del logo sobre el Hero para una estética más minimalista y profesional.
+
+### Eliminado
+- **Redes Sociales**: Eliminación completa de iconos y enlaces a YouTube a petición del cliente.
+
+### Corregido
+- **Contraste en Hero**: Implementación de gradientes dinámicos en la base del Hero para asegurar la legibilidad del texto sobre cualquier imagen.
+
 ## [1.0.0] - 2026-02-13
 ### Añadido
 - **Animación de Logo**: Preloader dinámico y sorprendente para la carga inicial.

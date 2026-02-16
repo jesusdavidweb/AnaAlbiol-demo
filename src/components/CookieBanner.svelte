@@ -62,7 +62,7 @@
                     Utilizamos cookies propias y de terceros para mejorar tu
                     experiencia y analizar el tráfico. Puedes aceptar todas las
                     cookies o configurar tus preferencias. Consulta nuestra <a
-                        href="/legal#cookies">Política de Cookies</a
+                        href="/cookies">Política de Cookies</a
                     >.
                 </p>
             </div>
