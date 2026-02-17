@@ -1,16 +1,47 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.svelte';
-import ValueProposition from '../components/ValueProposition.astro';
-import NavigationCards from '../components/NavigationCards.astro';
-import AboutIntro from '../components/AboutIntro.astro';
-import Newsletter from '../components/Newsletter.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.svelte";
+import ValueProposition from "../components/ValueProposition.astro";
+import NavigationCards from "../components/NavigationCards.astro";
+import AboutIntro from "../components/AboutIntro.astro";
+import Newsletter from "../components/Newsletter.astro";
 ---
 
-<Layout title="Ana Albiol | Vivir antes de morir">
+<Layout
+    title="Ana Albiol | Vivir antes de morir"
+    preloadImage="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
+>
     <Hero client:load />
     <ValueProposition />
     <NavigationCards />
     <AboutIntro />
     <Newsletter />
+
+    <!-- Structured Data: Person + WebSite -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    name: "Ana Albiol",
+                    url: "https://anaalbiol.com",
+                    image: "https://anaalbiol.com/assets/images/WEB_AnaAlbiolJUN25-26.webp",
+                    jobTitle: "Coach y Comunicadora",
+                    description:
+                        "Desarrollo personal, coherencia y vida. Herramientas para dejar de posponer tu vida.",
+                    sameAs: ["https://www.instagram.com/bloganaalbiol/"],
+                },
+                {
+                    "@type": "WebSite",
+                    name: "Ana Albiol",
+                    url: "https://anaalbiol.com",
+                    description:
+                        "Web oficial de Ana Albiol. Desarrollo personal, coherencia y vida.",
+                    inLanguage: "es",
+                },
+            ],
+        })}
+    />
 </Layout>

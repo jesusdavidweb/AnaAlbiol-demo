@@ -1,0 +1,1326 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Design System — Ana Albiol"
+    description="Documentación interna del sistema de diseño de anaalbiol.com"
+    headerTheme="dark"
+>
+    <!-- ===================== HERO ===================== -->
+    <section class="ds-hero">
+        <div class="container text-center">
+            <h1>Sistema de Diseño</h1>
+            <p class="ds-lead">
+                Documentación visual completa de la identidad de marca de Ana
+                Albiol.<br />Cada decisión de diseño se justifica frente a los
+                valores de marca definidos en el briefing original.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== FILOSOFÍA ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>1. Filosofía Visual</h2>
+            <div class="ds-philosophy-grid">
+                <div class="ds-philosophy-card ds-yes">
+                    <h3>Lo que SÍ</h3>
+                    <ul>
+                        <li>Minimalismo con alma</li>
+                        <li>Mucho aire y espacio en blanco</li>
+                        <li>Tipografía protagonista</li>
+                        <li>Sensación de calma y profundidad</li>
+                        <li>Marca personal, no corporativa</li>
+                        <li>Fotos reales, en primera persona</li>
+                    </ul>
+                </div>
+                <div class="ds-philosophy-card ds-no">
+                    <h3>Lo que NO</h3>
+                    <ul>
+                        <li>Exceso de claims publicitarios</li>
+                        <li>Fotos stock sonrientes</li>
+                        <li>Scroll infinito sin dirección</li>
+                        <li>Estética de "curso de mentoría"</li>
+                        <li>Demasiados colorines</li>
+                        <li>Promesas vacías</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="ds-brand-quote">
+                "Esto no es una web de curso de mentoría. Debe respirarse marca
+                personal, calma, profundidad y verdad."
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== COLORES ===================== -->
+    <section class="ds-section ds-section-alt">
+        <div class="container">
+            <h2>2. Paleta de Colores</h2>
+            <p>
+                Los colores se basan en la indicación de marca: <strong
+                    >Marsala/Granate</strong
+                > como color principal y <strong>Beige/Vainilla</strong> como fondo.
+                Una paleta sobria, cálida y profunda que evita la agresividad visual
+                y transmite autenticidad.
+            </p>
+
+            <h3>Colores principales</h3>
+            <div class="ds-color-grid">
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #633536;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Granate / Marsala</strong>
+                        <code>--color-primary: #633536</code>
+                        <span
+                            >Color principal, titulares, acentos, CTAs.
+                            Transmite profundidad, pasión contenida y
+                            autenticidad. Se aleja del rojo agresivo y del negro
+                            frío.</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #F6F1EB;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Beige / Vainilla</strong>
+                        <code>--color-secondary: #F6F1EB</code>
+                        <span
+                            >Fondo principal del sitio. Cálido, acogedor, evoca
+                            papel natural. Refuerza la sensación de calma y
+                            espacio sin la frialdad del blanco puro.</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #633536;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>CTA Unificado</strong>
+                        <code>--color-cta: #633536</code>
+                        <span
+                            >Mismo granate para todos los CTAs. Decisión
+                            deliberada: el CTA principal no compite con
+                            elementos decorativos. Coherencia visual total.</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <h3>Colores de texto</h3>
+            <div class="ds-color-grid">
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #1a1a1a;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Texto Principal</strong>
+                        <code>--color-text: #1a1a1a</code>
+                        <span
+                            >Negro suave para cuerpo de texto. Legibilidad
+                            máxima sin la dureza del negro puro (#000).</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #555555;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Texto Secundario</strong>
+                        <code>--color-text-light: #555555</code>
+                        <span
+                            >Para párrafos y descripciones. Crea jerarquía
+                            visual sin agresividad.</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div
+                        class="ds-swatch"
+                        style="background-color: #ffffff; border: 1px solid #ddd;"
+                    >
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Blanco</strong>
+                        <code>--color-white: #ffffff</code>
+                        <span
+                            >Texto sobre fondos oscuros (secciones granate,
+                            footer). Contraste máximo.</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <h3>Colores contextuales</h3>
+            <div class="ds-color-grid">
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #FDFBF7;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Fondo Hero</strong>
+                        <code>#FDFBF7</code>
+                        <span
+                            >Variante del beige para la sección hero. Casi
+                            blanco pero cálido.</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #fcf9f6;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Fondo Alterno</strong>
+                        <code>#fcf9f6 (.bg-light)</code>
+                        <span
+                            >Para secciones alternas. Separa bloques sin romper
+                            la continuidad cálida.</span
+                        >
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-swatch" style="background-color: #1a1a1a;">
+                    </div>
+                    <div class="ds-color-info">
+                        <strong>Footer</strong>
+                        <code>#1a1a1a</code>
+                        <span
+                            >Negro cálido para el footer. Cierra la página con
+                            contundencia. Contraste intencionado con el beige.</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TIPOGRAFÍA ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>3. Tipografía</h2>
+            <p>
+                La tipografía es el elemento protagonista del diseño, siguiendo
+                la directriz de marca. Tres familias tipográficas con roles
+                definidos crean jerarquía y personalidad.
+            </p>
+
+            <div class="ds-type-specimen">
+                <div class="ds-type-card">
+                    <span class="ds-type-label"
+                        >Heading — Lora (Serif, Itálica)</span
+                    >
+                    <p
+                        class="ds-type-sample"
+                        style="font-family: 'Lora', serif; font-style: italic; font-weight: 500; font-size: 2.5rem; color: var(--color-primary); line-height: 1.2;"
+                    >
+                        Vivir antes de morir
+                    </p>
+                    <p class="ds-type-desc">
+                        Elegancia editorial, calidez humana. La itálica aporta
+                        movimiento y emoción sin gritar. Inspiración directa del
+                        briefing: "tipografía protagonista" y referencia a
+                        Instrument Serif / Europa Bold.
+                    </p>
+                </div>
+                <div class="ds-type-card">
+                    <span class="ds-type-label"
+                        >Body — Helvetica / Arial (Sans-serif)</span
+                    >
+                    <p
+                        class="ds-type-sample"
+                        style="font-family: 'Helvetica', 'Arial', sans-serif; font-size: 1.25rem; color: var(--color-text-light); line-height: 1.6;"
+                    >
+                        Comparto experiencia, conocimiento y herramientas para
+                        que recuperes la responsabilidad sobre tu vida.
+                    </p>
+                    <p class="ds-type-desc">
+                        Limpia, neutra, invisible. Deja que el contenido hable
+                        sin interferencias estéticas. Legibilidad máxima en
+                        bloques largos de texto.
+                    </p>
+                </div>
+                <div class="ds-type-card">
+                    <span class="ds-type-label"
+                        >Subtítulo — Inter Tight (Sans-serif, Bold)</span
+                    >
+                    <p
+                        class="ds-type-sample subtitle"
+                        style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px;"
+                    >
+                        EN PRIVADO · FORMACIONES · CHARLAS
+                    </p>
+                    <p class="ds-type-desc">
+                        Funcional, geométrica, moderna. Para labels, subtítulos
+                        y elementos de navegación. Crea contraste con la Lora
+                        sin romper la armonía.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Escala tipográfica</h3>
+            <div class="ds-type-scale">
+                <div class="ds-scale-item">
+                    <span class="ds-scale-label">h1</span><span
+                        style="font-family: 'Lora', serif; font-style: italic; font-size: 3.5rem; color: var(--color-primary);"
+                        >3.5rem</span
+                    >
+                </div>
+                <div class="ds-scale-item">
+                    <span class="ds-scale-label">h2</span><span
+                        style="font-family: 'Lora', serif; font-style: italic; font-size: 2.5rem; color: var(--color-primary);"
+                        >2.5rem</span
+                    >
+                </div>
+                <div class="ds-scale-item">
+                    <span class="ds-scale-label">h3</span><span
+                        style="font-family: 'Lora', serif; font-style: italic; font-size: 1.75rem; color: var(--color-primary);"
+                        >1.75rem</span
+                    >
+                </div>
+                <div class="ds-scale-item">
+                    <span class="ds-scale-label">body</span><span
+                        style="font-family: 'Helvetica', sans-serif; font-size: 1rem; color: var(--color-text-light);"
+                        >1rem (16px)</span
+                    >
+                </div>
+                <div class="ds-scale-item">
+                    <span class="ds-scale-label">small</span><span
+                        style="font-family: 'Helvetica', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;"
+                        >0.9rem UPPERCASE</span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== LOGO ===================== -->
+    <section class="ds-section ds-section-alt">
+        <div class="container">
+            <h2>4. Logotipo</h2>
+            <p>
+                El logo de Ana Albiol existe en dos variantes para garantizar
+                legibilidad en cualquier contexto. Tipográfico, limpio, sin
+                símbolo decorativo — coherente con la filosofía minimalista de
+                la marca.
+            </p>
+
+            <div class="ds-logo-grid">
+                <div class="ds-logo-card ds-logo-light">
+                    <img
+                        src="/assets/images/LOGO_AnaAlbiol_Color.svg"
+                        alt="Logo Ana Albiol — Versión Color"
+                        style="height: 50px;"
+                    />
+                    <span
+                        >Versión Color — Uso sobre fondo claro (beige/blanco)</span
+                    >
+                    <code>LOGO_AnaAlbiol_Color.svg</code>
+                </div>
+                <div class="ds-logo-card ds-logo-dark">
+                    <img
+                        src="/assets/images/LOGO_AnaAlbiol_Blanco.svg"
+                        alt="Logo Ana Albiol — Versión Blanco"
+                        style="height: 50px;"
+                    />
+                    <span
+                        >Versión Blanco — Uso sobre fondo oscuro (granate/negro)</span
+                    >
+                    <code>LOGO_AnaAlbiol_Blanco.svg</code>
+                </div>
+            </div>
+            <div class="ds-logo-rules">
+                <h3>Reglas de uso</h3>
+                <ul>
+                    <li>
+                        <strong>Tamaño mínimo:</strong> 40px de altura (header)
+                    </li>
+                    <li>
+                        <strong>Espacio de protección:</strong> mínimo la mitad de
+                        su altura alrededor
+                    </li>
+                    <li>
+                        <strong>Header con hero oscuro:</strong> se aplica filtro
+                        CSS <code>brightness(0) invert(1)</code> para versión blanca
+                        automática
+                    </li>
+                    <li>
+                        <strong
+                            >No distorsionar, no añadir efectos, no cambiar
+                            colores</strong
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ESPACIADO ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>5. Espaciado y Ritmo Visual</h2>
+            <p>
+                El sistema de espaciado sigue una escala progresiva que genera
+                "mucho aire" — directriz clave del briefing. El espacio en
+                blanco no es vacío: es calma, es respiro, es profundidad.
+            </p>
+            <div class="ds-spacing-grid">
+                <div class="ds-spacing-item">
+                    <div
+                        class="ds-spacing-box"
+                        style="width: 0.5rem; height: 0.5rem;"
+                    >
+                    </div><code>--spacing-xs: 0.5rem</code><span
+                        >Micro separaciones internas</span
+                    >
+                </div>
+                <div class="ds-spacing-item">
+                    <div
+                        class="ds-spacing-box"
+                        style="width: 1rem; height: 1rem;"
+                    >
+                    </div><code>--spacing-sm: 1rem</code><span
+                        >Márgenes entre párrafos</span
+                    >
+                </div>
+                <div class="ds-spacing-item">
+                    <div
+                        class="ds-spacing-box"
+                        style="width: 2rem; height: 2rem;"
+                    >
+                    </div><code>--spacing-md: 2rem</code><span
+                        >Separación entre bloques</span
+                    >
+                </div>
+                <div class="ds-spacing-item">
+                    <div
+                        class="ds-spacing-box"
+                        style="width: 4rem; height: 4rem;"
+                    >
+                    </div><code>--spacing-lg: 4rem</code><span
+                        >Separación entre secciones menores</span
+                    >
+                </div>
+                <div class="ds-spacing-item">
+                    <div
+                        class="ds-spacing-box"
+                        style="width: 6rem; height: 6rem;"
+                    >
+                    </div><code>--spacing-xl: 8rem</code><span
+                        >Padding de secciones principales</span
+                    >
+                </div>
+            </div>
+            <div class="ds-spacing-extras">
+                <h3>Border Radius</h3>
+                <div class="ds-radius-grid">
+                    <div class="ds-radius-item">
+                        <div class="ds-radius-box" style="border-radius: 4px;">
+                        </div><code>--radius-sm: 4px</code><span
+                            >Inputs, cards sutiles</span
+                        >
+                    </div>
+                    <div class="ds-radius-item">
+                        <div class="ds-radius-box" style="border-radius: 8px;">
+                        </div><code>--radius-md: 8px</code><span
+                            >Contenedores de formularios</span
+                        >
+                    </div>
+                    <div class="ds-radius-item">
+                        <div class="ds-radius-box" style="border-radius: 50px;">
+                        </div><code>--radius-pill: 50px</code><span
+                            >Botones (forma pill)</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BOTONES ===================== -->
+    <section class="ds-section ds-section-alt">
+        <div class="container">
+            <h2>6. Botones y CTAs</h2>
+            <p>
+                Los CTAs siguen una jerarquía estricta: el CTA principal ("El
+                mambo: En Privado") domina sin competencia visual. Forma pill
+                suave, transiciones elegantes, sin agresividad. El diseño del
+                briefing pide explícitamente que los CTAs secundarios no
+                compitan con el principal.
+            </p>
+
+            <div class="ds-button-grid">
+                <div class="ds-button-item">
+                    <span class="ds-button-label">Botón Outline (.btn)</span>
+                    <a href="#" class="btn" onclick="return false"
+                        >Ver formaciones</a
+                    >
+                    <p>
+                        CTA secundario. Borde granate, fondo transparente. En
+                        hover: se rellena con granate.
+                    </p>
+                </div>
+                <div class="ds-button-item">
+                    <span class="ds-button-label"
+                        >Botón Primary (.btn-primary)</span
+                    >
+                    <a href="#" class="btn btn-primary" onclick="return false"
+                        >El mambo: En Privado</a
+                    >
+                    <p>
+                        CTA principal. Fondo granate sólido. En hover: se
+                        invierte a outline. Jerarquía visual clara.
+                    </p>
+                </div>
+            </div>
+
+            <div class="ds-button-specs">
+                <h3>Especificaciones</h3>
+                <ul>
+                    <li>
+                        <strong>Padding:</strong> 1rem 2.5rem (generoso, cómodo al
+                        clic)
+                    </li>
+                    <li>
+                        <strong>Border-radius:</strong> 50px (pill shape — suavidad,
+                        no agresividad)
+                    </li>
+                    <li>
+                        <strong>Texto:</strong> uppercase, letter-spacing 0.5px, font-weight
+                        600
+                    </li>
+                    <li>
+                        <strong>Hover:</strong> translateY(-2px) + sombra sutil —
+                        micro-animación de elevación
+                    </li>
+                    <li>
+                        <strong>Transición:</strong> 0.3s ease (rápida, perceptible
+                        pero no molesta)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TARJETAS ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>7. Tarjetas y Contenedores</h2>
+            <p>
+                Las tarjetas son contenedores con bordes sutiles y sombras
+                mínimas. Interactivas al hover con elevación controlada.
+                Coherentes con la filosofía de "menos es más".
+            </p>
+
+            <div class="ds-cards-grid">
+                <div class="step-item">
+                    <span class="step-number">1</span>
+                    <h3>Paso / Step Card</h3>
+                    <p>
+                        Fondo blanco, borde ultra-sutil, hover con elevación de
+                        5px. Usada en "Empieza por el Principio".
+                    </p>
+                </div>
+                <div class="formation-card">
+                    <h3>Formation Card</h3>
+                    <p>
+                        Fondo blanco, borde visible. En hover: borde granate +
+                        elevación. Usada en la sección de Formaciones.
+                    </p>
+                </div>
+                <div class="review-card">
+                    <p style="font-size: 1.1rem;">
+                        <em
+                            >"Este libro no es solo una historia. Es un trozo de
+                            vida contado desde el alma."</em
+                        >
+                    </p>
+                    <p
+                        style="margin-top: 1rem; font-style: normal; color: var(--color-primary); font-weight: 600;"
+                    >
+                        — Reseña, Review Card
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <h3>Difference Card</h3>
+                    <p>
+                        Fondo beige (--color-secondary), borde mínimo. Usada en
+                        "Lo que me diferencia" de Quién Soy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECCIONES CROMÁTICAS ===================== -->
+    <section class="ds-section ds-section-alt">
+        <div class="container">
+            <h2>8. Secciones Cromáticas</h2>
+            <p>
+                La web alterna entre tres registros cromáticos que crean ritmo
+                visual sin monotonía. Cada registro tiene una función emocional
+                específica.
+            </p>
+
+            <div class="ds-chromatic-grid">
+                <div
+                    class="ds-chromatic-card"
+                    style="background: var(--color-secondary); color: var(--color-text);"
+                >
+                    <h3 style="color: var(--color-primary);">
+                        Sección Clara (Beige)
+                    </h3>
+                    <p>
+                        Tono principal. Calma, acogida, espacio para leer. Usada
+                        en: Home, Formaciones, Contacto, Libros.
+                    </p>
+                </div>
+                <div
+                    class="ds-chromatic-card"
+                    style="background: var(--color-primary); color: white;"
+                >
+                    <h3 style="color: white;">Sección Oscura (Granate)</h3>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Intensidad, emoción, foco. Usada en: Newsletter, Charlas
+                        hero, Coming Soon, En Privado hero. Texto blanco.
+                    </p>
+                </div>
+                <div
+                    class="ds-chromatic-card"
+                    style="background: #1a1a1a; color: #888;"
+                >
+                    <h3 style="color: white;">Footer (Negro)</h3>
+                    <p style="color: #888;">
+                        Cierre contundente. Contraste total con el beige. "Lo de
+                        vivir antes de morir no es una metáfora. Es una
+                        decisión." — Frase de cierre en blanco.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ICONOGRAFÍA ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>9. Iconografía y Redes Sociales</h2>
+            <p>
+                Sistema iconográfico mínimo basado en Feather Icons (stroke, no
+                fill). Solo un icono social activo: Instagram. Sin YouTube ni
+                otras redes — decisión deliberada de marca para no saturar.
+            </p>
+
+            <div class="ds-icon-demo">
+                <div class="ds-icon-card">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+                        ></rect><path
+                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                        ></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"
+                        ></line></svg
+                    >
+                    <span>Instagram — Feather Icon</span>
+                    <code>stroke: currentColor, stroke-width: 2</code>
+                </div>
+            </div>
+            <ul class="ds-icon-rules">
+                <li>
+                    <strong>Estilo:</strong> Outline / stroke, nunca fill sólido
+                </li>
+                <li>
+                    <strong>Tamaños:</strong> 20px (header desktop), 24px (footer),
+                    32px (menú mobile)
+                </li>
+                <li>
+                    <strong>Hover:</strong> color granate + translateY(-2px)
+                </li>
+                <li>
+                    <strong>Coherencia:</strong> estilo limpio, sutil, no decorativo
+                    — alineado con el minimalismo general
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== ANIMACIONES ===================== -->
+    <section class="ds-section ds-section-alt">
+        <div class="container">
+            <h2>10. Animaciones y Transiciones</h2>
+            <p>
+                Movimiento sutil y controlado. Sin scroll infinito sin dirección
+                (directriz explícita del briefing). Cada animación tiene
+                propósito: guiar la atención, dar feedback, crear sensación de
+                vida sin mareo.
+            </p>
+
+            <div class="ds-anim-grid">
+                <div class="ds-anim-card">
+                    <h3>Transiciones CSS</h3>
+                    <ul>
+                        <li>
+                            <code>--transition-fast: 0.3s ease</code> — Hovers, cambios
+                            de estado
+                        </li>
+                        <li>
+                            <code>--transition-slow: 0.6s ease</code> — Apariciones,
+                            transiciones de página
+                        </li>
+                    </ul>
+                </div>
+                <div class="ds-anim-card">
+                    <h3>Fade Up (Motion JS)</h3>
+                    <ul>
+                        <li>Clase <code>.fade-up</code> en elementos</li>
+                        <li>IntersectionObserver via <code>inView()</code></li>
+                        <li>Opacity 0→1, translateY 40px→0</li>
+                        <li>Duración: 0.8s, easing: ease-out</li>
+                    </ul>
+                </div>
+                <div class="ds-anim-card">
+                    <h3>Micro-interacciones Hover</h3>
+                    <ul>
+                        <li>Botones: <code>translateY(-2px)</code> + sombra</li>
+                        <li>
+                            Tarjetas: <code>translateY(-5px)</code> + sombra
+                        </li>
+                        <li>Topic pills: cambio de borde y color</li>
+                        <li>Links: subrayado inferior animado</li>
+                    </ul>
+                </div>
+                <div class="ds-anim-card">
+                    <h3>Preloader</h3>
+                    <ul>
+                        <li>Animación SVG del logo al cargar</li>
+                        <li>Solo en primera visita (sessionStorage)</li>
+                        <li>Transición elegante a contenido</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ESTRUCTURA ===================== -->
+    <section class="ds-section">
+        <div class="container">
+            <h2>11. Estructura de la Web</h2>
+            <p>
+                Arquitectura de contenido alineada con el briefing. Máximo 6
+                ítems en menú. El CTA principal siempre visible. Cada página
+                tiene un propósito claro.
+            </p>
+
+            <div class="ds-structure-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Página</th>
+                            <th>Propósito</th>
+                            <th>Tono cromático</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            ><td><strong>Home</strong></td><td
+                                >Primer impacto. Frase principal + CTAs. Foto
+                                protagonista.</td
+                            ><td>Beige + Hero claro</td></tr
+                        >
+                        <tr
+                            ><td><strong>En Privado</strong></td><td
+                                >Newsletter — CTA principal de toda la web.
+                                V.I.D.A.</td
+                            ><td>Granate hero → Beige</td></tr
+                        >
+                        <tr
+                            ><td><strong>Libros</strong></td><td
+                                >Los 2 libros + próximo. Reseñas reales. Sin
+                                filtro.</td
+                            ><td>Blanco + Beige alterno</td></tr
+                        >
+                        <tr
+                            ><td><strong>Formaciones</strong></td><td
+                                >Archivo de formaciones pasadas. Sin fechas
+                                abiertas.</td
+                            ><td>Beige</td></tr
+                        >
+                        <tr
+                            ><td><strong>Charlas</strong></td><td
+                                >Para empresas. Comunicación, valores, hábitos.</td
+                            ><td>Granate hero → Blanco</td></tr
+                        >
+                        <tr
+                            ><td><strong>Quién soy</strong></td><td
+                                >Historia personal sin filtro. Lo que
+                                diferencia.</td
+                            ><td>Hero imagen → Beige</td></tr
+                        >
+                        <tr
+                            ><td><strong>Contacto</strong></td><td
+                                >Formulario cálido y sencillo. Redirige a
+                                /gracias.</td
+                            ><td>Beige</td></tr
+                        >
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ds-structure-nav">
+                <h3>Navegación</h3>
+                <ul>
+                    <li>
+                        <strong>Header:</strong> Logo + 6 links + icono Instagram
+                        + CTA pill "El mambo: En Privado"
+                    </li>
+                    <li>
+                        <strong>Mobile:</strong> Logo + hamburguesa → menú fullscreen
+                        con tipografía Lora a 2rem
+                    </li>
+                    <li>
+                        <strong>Footer:</strong> Frase de cierre + Instagram + enlaces
+                        legales + copyright
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    /* Design System Page — Self-contained styles */
+    .ds-hero {
+        padding: 10rem 2rem 4rem;
+        text-align: center;
+        background-color: var(--color-primary);
+        color: white;
+    }
+    .ds-hero h1 {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    .ds-lead {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 1rem;
+        line-height: 1.7;
+    }
+    .ds-note {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .ds-section {
+        padding: 5rem 0;
+    }
+    .ds-section-alt {
+        background-color: #fff;
+    }
+    .ds-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid rgba(99, 53, 54, 0.15);
+        padding-bottom: 0.75rem;
+    }
+    .ds-section h3 {
+        font-size: 1.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .ds-section > .container > p {
+        font-size: 1.05rem;
+        max-width: 800px;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+    }
+
+    /* Philosophy */
+    .ds-philosophy-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+        .ds-philosophy-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .ds-philosophy-card {
+        padding: 2.5rem;
+        border-radius: 12px;
+    }
+    .ds-philosophy-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .ds-philosophy-card ul {
+        list-style: none;
+        padding: 0;
+    }
+    .ds-philosophy-card li {
+        padding: 0.4rem 0;
+        font-size: 1.05rem;
+        color: var(--color-text-light);
+    }
+    .ds-philosophy-card li::before {
+        margin-right: 0.5rem;
+    }
+    .ds-yes {
+        background: rgba(99, 53, 54, 0.06);
+        border: 1px solid rgba(99, 53, 54, 0.15);
+    }
+    .ds-yes li::before {
+        content: "✓";
+        color: var(--color-primary);
+        font-weight: bold;
+    }
+    .ds-no {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .ds-no li::before {
+        content: "✗";
+        color: #999;
+        font-weight: bold;
+    }
+    .ds-brand-quote {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--color-primary);
+        text-align: center;
+        margin-top: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Colors */
+    .ds-color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .ds-color-card {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+        background: white;
+        padding: 1.25rem;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .ds-swatch {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+    .ds-color-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    .ds-color-info strong {
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+    .ds-color-info code {
+        font-size: 0.8rem;
+        color: var(--color-primary);
+        background: rgba(99, 53, 54, 0.06);
+        padding: 2px 6px;
+        border-radius: 3px;
+        width: fit-content;
+    }
+    .ds-color-info span {
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        line-height: 1.5;
+    }
+
+    /* Typography */
+    .ds-type-specimen {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    .ds-type-card {
+        padding: 2rem;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+    }
+    .ds-type-label {
+        font-family: var(--font-subtitle);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+    .ds-type-sample {
+        margin: 1rem 0;
+    }
+    .ds-type-desc {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        line-height: 1.6;
+        margin: 0;
+    }
+    .ds-type-scale {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .ds-scale-item {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .ds-scale-label {
+        font-family: var(--font-subtitle);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-text-light);
+        width: 60px;
+        flex-shrink: 0;
+        font-weight: 600;
+    }
+
+    /* Logo */
+    .ds-logo-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+        .ds-logo-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .ds-logo-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+    }
+    .ds-logo-card span {
+        font-size: 0.9rem;
+    }
+    .ds-logo-card code {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+    }
+    .ds-logo-light {
+        background: var(--color-secondary);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .ds-logo-light span {
+        color: var(--color-text-light);
+    }
+    .ds-logo-dark {
+        background: var(--color-primary);
+    }
+    .ds-logo-dark span {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .ds-logo-dark code {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .ds-logo-rules {
+        margin-top: 2rem;
+    }
+    .ds-logo-rules ul {
+        padding-left: 1.5rem;
+    }
+    .ds-logo-rules li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        list-style: disc;
+    }
+    .ds-logo-rules li code {
+        font-size: 0.8rem;
+        background: rgba(99, 53, 54, 0.06);
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
+
+    /* Spacing */
+    .ds-spacing-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 2rem 0;
+        align-items: flex-end;
+    }
+    .ds-spacing-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .ds-spacing-box {
+        background: var(--color-primary);
+        border-radius: 4px;
+        opacity: 0.7;
+    }
+    .ds-spacing-item code {
+        font-size: 0.75rem;
+    }
+    .ds-spacing-item span {
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+        text-align: center;
+        max-width: 120px;
+    }
+    .ds-radius-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin: 1rem 0;
+        align-items: flex-end;
+    }
+    .ds-radius-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .ds-radius-box {
+        width: 80px;
+        height: 80px;
+        border: 2px solid var(--color-primary);
+    }
+    .ds-radius-item code {
+        font-size: 0.75rem;
+    }
+    .ds-radius-item span {
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+    }
+
+    /* Buttons */
+    .ds-button-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+        .ds-button-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .ds-button-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2.5rem;
+        background: var(--color-secondary);
+        border-radius: 12px;
+        text-align: center;
+    }
+    .ds-button-label {
+        font-family: var(--font-subtitle);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+    .ds-button-item p {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+    .ds-button-specs ul {
+        padding-left: 1.5rem;
+    }
+    .ds-button-specs li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        list-style: disc;
+    }
+    .ds-button-specs li code {
+        font-size: 0.8rem;
+        background: rgba(99, 53, 54, 0.06);
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
+
+    /* Cards */
+    .ds-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    /* Chromatic sections */
+    .ds-chromatic-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+        .ds-chromatic-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .ds-chromatic-card {
+        padding: 2.5rem;
+        border-radius: 12px;
+    }
+    .ds-chromatic-card h3 {
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+    .ds-chromatic-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Icons */
+    .ds-icon-demo {
+        display: flex;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    .ds-icon-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 2rem 3rem;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        color: var(--color-primary);
+    }
+    .ds-icon-card span {
+        font-size: 0.9rem;
+        color: var(--color-text);
+    }
+    .ds-icon-card code {
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+    }
+    .ds-icon-rules {
+        padding-left: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .ds-icon-rules li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        list-style: disc;
+    }
+
+    /* Animations */
+    .ds-anim-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    .ds-anim-card {
+        padding: 2rem;
+        background: var(--color-secondary);
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    .ds-anim-card h3 {
+        font-size: 1.1rem;
+        margin-top: 0;
+    }
+    .ds-anim-card ul {
+        padding-left: 1.2rem;
+    }
+    .ds-anim-card li {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.4rem;
+        list-style: disc;
+    }
+    .ds-anim-card code {
+        font-size: 0.8rem;
+        background: rgba(99, 53, 54, 0.06);
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
+
+    /* Structure */
+    .ds-structure-table {
+        margin: 2rem 0;
+        overflow-x: auto;
+    }
+    .ds-structure-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .ds-structure-table th,
+    .ds-structure-table td {
+        padding: 1rem 1.25rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        font-size: 0.95rem;
+    }
+    .ds-structure-table th {
+        background: var(--color-primary);
+        color: white;
+        font-family: var(--font-subtitle);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-style: normal;
+    }
+    .ds-structure-table td {
+        color: var(--color-text-light);
+    }
+    .ds-structure-table td strong {
+        color: var(--color-text);
+    }
+    .ds-structure-table tr:hover td {
+        background: rgba(99, 53, 54, 0.03);
+    }
+    .ds-structure-nav {
+        margin-top: 2rem;
+    }
+    .ds-structure-nav ul {
+        padding-left: 1.5rem;
+    }
+    .ds-structure-nav li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        list-style: disc;
+    }
+</style>

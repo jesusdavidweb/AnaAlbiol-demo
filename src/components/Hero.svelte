@@ -71,6 +71,10 @@
                 bind:this={heroImage}
                 src="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
                 alt="Ana Albiol"
+                width="700"
+                height="933"
+                fetchpriority="high"
+                decoding="async"
             />
         </div>
     </div>

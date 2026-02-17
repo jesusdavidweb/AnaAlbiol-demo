@@ -1,5 +1,15 @@
 # Historial de Cambios
 
+## [1.2.0] - 2026-02-17
+### Añadido
+- **Créditos en Footer**: Inclusión de enlaces de autoría para Amorchi House y @jesusdavidweb.
+- **Página de Sistema de Diseño**: Nueva ruta `/design-system` detallando la identidad visual, colores y tipografía de la marca.
+- **Página de Gracias**: Creación de `/gracias` como destino tras el envío exitoso del formulario de contacto.
+
+### Mejorado
+- **Optimización de Imágenes**: Migración masiva de etiquetas `<img>` al componente nativo de Astro para mejor rendimiento y SEO.
+- **Formulario de Contacto**: Añadida casilla de verificación GDPR obligatoria para cumplimiento legal y redirección a página de éxito.
+
 ## [1.1.0] - 2026-02-16
 ### Añadido
 - **Páginas Legales Independientes**: Separación del contenido legal en rutas individuales (`/aviso-legal`, `/politica-de-privacidad`, `/cookies`) para mejorar el SEO y la accesibilidad.

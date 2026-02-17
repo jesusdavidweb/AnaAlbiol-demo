@@ -1,51 +1,712 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contacto | Ana Albiol" description="Contacta con Ana Albiol y su equipo. Propuestas de colaboración, charlas o mensajes bonitos.">
-    <!-- Hero -->
-    <section class="contact-hero fade-up">
-        <div class="container">
-            <h1>Contacto</h1>
-            <p>Si quieres hacer una propuesta de colaboración, contratar una charla o dejar un mensaje bonito, puedes escribirme por aquí.</p>
-            <p>Mi equipo y yo te responderemos lo antes posible.</p>
-            <p>Gracias.</p>
+<Layout
+    title="Contacto | Ana Albiol"
+    description="Contacta con Ana Albiol y su equipo. Propuestas de colaboración, charlas o mensajes bonitos."
+>
+    <!-- Hero: Personal & Warm -->
+    <section class="contact-hero-new">
+        <div class="contact-hero-inner">
+            <div class="contact-hero-text fade-up">
+                <span class="contact-eyebrow">Escríbeme</span>
+                <h1>Me encanta<br />leerte</h1>
+                <p class="contact-intro">
+                    Si quieres contarme algo, proponerme una colaboración,
+                    contratar una charla o simplemente dejar un mensaje
+                    bonito... <strong>este es tu sitio.</strong>
+                </p>
+                <p class="contact-promise">
+                    Leo todo lo que llega. Mi equipo y yo te responderemos lo
+                    antes posible.
+                </p>
+                <div class="contact-signature">
+                    <span class="signature-line"></span>
+                    <span class="signature-name">Ana</span>
+                </div>
+            </div>
+            <div class="contact-hero-image fade-up">
+                <div class="contact-image-frame">
+                    <img
+                        src="/assets/images/PRINT_AnaAlbiol_EA-37.webp"
+                        alt="Ana Albiol cercana y accesible"
+                        width="640"
+                        height="960"
+                        loading="eager"
+                    />
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Form -->
-    <section class="section-padding bg-light">
-        <div class="container fade-up">
-            <form class="contact-form" id="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" autocomplete="name" required>
+    <!-- Form Section -->
+    <section class="contact-form-section">
+        <div class="contact-form-wrapper fade-up">
+            <div class="form-header">
+                <h2>Tu mensaje</h2>
+                <p>Cuéntame, ¿qué necesitas?</p>
+            </div>
+
+            <form class="contact-form-new" id="contact-form" novalidate>
+                <div class="form-field">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                        placeholder=" "
+                    />
+                    <label for="name">¿Cómo te llamas?</label>
+                    <span class="field-line"></span>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required>
+                <div class="form-field">
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                        placeholder=" "
+                    />
+                    <label for="email">Tu email</label>
+                    <span class="field-line"></span>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject" required>
+                <div class="form-field">
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        required
+                        placeholder=" "
+                    />
+                    <label for="subject">¿De qué quieres hablarme?</label>
+                    <span class="field-line"></span>
                 </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" required></textarea>
+                <div class="form-field form-field-textarea">
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        placeholder=" "
+                        rows="5"></textarea>
+                    <label for="message">Tu mensaje</label>
+                    <span class="field-line"></span>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar mensaje</button>
+
+                <!-- GDPR Privacy Policy Consent -->
+                <div class="form-field-checkbox">
+                    <label class="checkbox-label" for="privacy">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            required
+                        />
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">
+                            He leído y acepto la
+                            <a
+                                href="/politica-de-privacidad"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Política de Privacidad
+                            </a>
+                        </span>
+                    </label>
+                </div>
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                    id="contact-submit"
+                >
+                    <span class="submit-text">Enviar mensaje</span>
+                    <span class="submit-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"
+                            ></polygon>
+                        </svg>
+                    </span>
+                </button>
             </form>
+        </div>
+
+        <!-- Decorative quote -->
+        <div class="contact-closing fade-up">
+            <p class="contact-quote">
+                «Los mensajes bonitos cambian días enteros.»
+            </p>
         </div>
     </section>
 </Layout>
 
+<style>
+    /* ===================== HERO SECTION ===================== */
+    .contact-hero-new {
+        padding: 140px 0 0;
+        background-color: var(--color-secondary);
+        overflow: hidden;
+    }
+
+    .contact-hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 4rem;
+        gap: 4rem;
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .contact-eyebrow {
+        display: inline-block;
+        font-family: var(--font-subtitle);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+        opacity: 0.7;
+        position: relative;
+        padding-left: 2.5rem;
+    }
+
+    .contact-eyebrow::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 2rem;
+        height: 1px;
+        background: var(--color-primary);
+        opacity: 0.5;
+    }
+
+    .contact-hero-text h1 {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.1;
+        color: var(--color-primary);
+        margin-bottom: 2rem;
+    }
+
+    .contact-intro {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        max-width: 440px;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-intro strong {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
+    .contact-promise {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--color-text-light);
+        opacity: 0.8;
+        margin-bottom: 2.5rem;
+    }
+
+    .contact-signature {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .signature-line {
+        width: 3rem;
+        height: 1px;
+        background: var(--color-primary);
+        opacity: 0.3;
+    }
+
+    .signature-name {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 2rem;
+        color: var(--color-primary);
+        opacity: 0.6;
+    }
+
+    /* Image styling */
+    .contact-hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .contact-image-frame {
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .contact-image-frame::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(246, 241, 235, 0.3) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .contact-image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .contact-image-frame:hover img {
+        transform: scale(1.03);
+    }
+
+    /* ===================== FORM SECTION ===================== */
+    .contact-form-section {
+        padding: 5rem 0 6rem;
+        background: #fcf9f6;
+        position: relative;
+    }
+
+    .contact-form-wrapper {
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    .form-header h2 {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+        font-size: 1.05rem;
+        color: var(--color-text-light);
+        opacity: 0.7;
+    }
+
+    /* Floating label form fields */
+    .form-field {
+        position: relative;
+        margin-bottom: 2.5rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+        width: 100%;
+        padding: 1.2rem 0 0.8rem;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        background: transparent;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-text);
+        transition: border-color 0.4s ease;
+        outline: none;
+        resize: vertical;
+    }
+
+    .form-field textarea {
+        min-height: 120px;
+        padding-top: 1.8rem;
+    }
+
+    .form-field label {
+        position: absolute;
+        left: 0;
+        top: 1.2rem;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-text-light);
+        opacity: 0.6;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        transform-origin: left top;
+    }
+
+    .form-field-textarea label {
+        top: 1.8rem;
+    }
+
+    /* Floating effect on focus or filled */
+    .form-field input:focus + label,
+    .form-field input:not(:placeholder-shown) + label,
+    .form-field textarea:focus + label,
+    .form-field textarea:not(:placeholder-shown) + label {
+        top: -0.2rem;
+        font-size: 0.75rem;
+        color: var(--color-primary);
+        opacity: 1;
+        letter-spacing: 0.5px;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+        border-bottom-color: var(--color-primary);
+    }
+
+    /* Animated underline */
+    .field-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-primary);
+        transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .form-field input:focus ~ .field-line,
+    .form-field textarea:focus ~ .field-line {
+        width: 100%;
+    }
+
+    /* Privacy checkbox */
+    .form-field-checkbox {
+        margin-bottom: 2rem;
+        margin-top: -0.5rem;
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--color-text-light);
+        user-select: none;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .checkbox-custom {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        margin-top: 1px;
+        transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        position: relative;
+    }
+
+    .checkbox-custom::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--color-white);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) scale(0);
+        transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+        transform: rotate(45deg) scale(1);
+    }
+
+    .checkbox-label input[type="checkbox"]:focus-visible + .checkbox-custom {
+        box-shadow: 0 0 0 3px rgba(99, 53, 54, 0.2);
+    }
+
+    .checkbox-text a {
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: opacity 0.3s ease;
+    }
+
+    .checkbox-text a:hover {
+        opacity: 0.7;
+    }
+
+    /* Submit button */
+    .contact-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        width: 100%;
+        padding: 1.2rem 2.5rem;
+        margin-top: 1rem;
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: 2px solid var(--color-primary);
+        border-radius: 50px;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-submit::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .contact-submit:hover {
+        background: transparent;
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(99, 53, 54, 0.15);
+    }
+
+    .contact-submit:hover::before {
+        opacity: 1;
+    }
+
+    .submit-icon {
+        display: flex;
+        align-items: center;
+        transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .contact-submit:hover .submit-icon {
+        transform: translate(4px, -4px);
+    }
+
+    /* Success state */
+    .form-success {
+        display: none;
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .form-success.visible {
+        display: block;
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .success-icon {
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+        animation: scaleIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s both;
+    }
+
+    .form-success h3 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        font-style: italic;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .form-success p {
+        font-size: 1.05rem;
+        color: var(--color-text-light);
+    }
+
+    /* Closing quote */
+    .contact-closing {
+        max-width: 620px;
+        margin: 4rem auto 0;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .contact-quote {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--color-primary);
+        opacity: 0.5;
+        position: relative;
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 991px) {
+        .contact-hero-inner {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 0 2rem;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .contact-hero-text {
+            order: 2;
+        }
+
+        .contact-hero-image {
+            order: 1;
+        }
+
+        .contact-hero-text h1 {
+            font-size: 3rem;
+        }
+
+        .contact-intro {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-eyebrow {
+            padding-left: 0;
+        }
+
+        .contact-eyebrow::before {
+            display: none;
+        }
+
+        .contact-signature {
+            justify-content: center;
+        }
+
+        .contact-image-frame {
+            max-width: 400px;
+            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .contact-hero-new {
+            padding-top: 110px;
+        }
+
+        .contact-hero-inner {
+            padding: 0 1.5rem;
+            gap: 2rem;
+        }
+
+        .contact-hero-text h1 {
+            font-size: 2.5rem;
+        }
+
+        .contact-intro {
+            font-size: 1.05rem;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+        }
+
+        .contact-form-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .contact-form-wrapper {
+            padding: 0 1.5rem;
+        }
+
+        .contact-image-frame {
+            max-width: 320px;
+            border-radius: 16px;
+        }
+    }
+</style>
+
 <script>
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const submitBtn = document.getElementById("contact-submit");
+
+    if (form && submitBtn) {
+        form.addEventListener("submit", (e) => {
             e.preventDefault();
-            alert('Mensaje enviado (simulado)');
-            (e.target as HTMLFormElement).reset();
+
+            // Validate privacy checkbox
+            const privacy = document.getElementById(
+                "privacy",
+            ) as HTMLInputElement;
+            if (!privacy?.checked) {
+                privacy?.focus();
+                return;
+            }
+
+            // Disable submit to prevent double-click
+            submitBtn.setAttribute("disabled", "true");
+            submitBtn.style.opacity = "0.6";
+
+            // Simulate sending, then redirect to thank you page
+            setTimeout(() => {
+                window.location.href = "/gracias";
+            }, 600);
         });
     }
 </script>

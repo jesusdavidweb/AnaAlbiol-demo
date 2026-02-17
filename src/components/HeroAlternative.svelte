@@ -32,6 +32,10 @@
         src="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
         alt="Ana Albiol"
         class="alt-hero__bg"
+        width="700"
+        height="933"
+        fetchpriority="high"
+        decoding="async"
     />
     <div class="alt-hero__gradient"></div>
 

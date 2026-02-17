@@ -1,109 +1,1004 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Quién Soy | Ana Albiol" description="Conoce a Ana Albiol. La historia de una maquilladora que colgó las brochas para dedicarse a la comunicación y el desarrollo personal." headerTheme="dark">
-    <!-- Hero -->
-    <section class="bio-hero">
-        <div class="container fade-up">
-            <p class="subtitle" style="color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;">Mi Historia</p>
-            <h1>Cosecha del 87</h1>
+<Layout
+    title="Quién Soy | Ana Albiol"
+    description="Conoce a Ana Albiol. La historia de una maquilladora que colgó las brochas para dedicarse a la comunicación y el desarrollo personal."
+>
+    <!-- Hero: Full-screen portrait -->
+    <section class="story-hero" id="story-hero">
+        <div class="story-hero__overlay"></div>
+        <div class="story-hero__content">
+            <p class="story-hero__label">Mi Historia</p>
+            <h1 class="story-hero__title">Cosecha<br />del 87</h1>
+        </div>
+        <div class="story-hero__scroll">
+            <span></span>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="section-padding">
-        <div class="container fade-up">
-            <div class="about-content bio-content" id="bio-content">
-                <p>Nací con ocho meses y a los 19 años tuve mi primera crisis vital.</p>
-                <p>Trabajaba en una perfumería y daba por sentado que sería mi único futuro. Lo que me había tocado. A la vez, sentía que había algo más, era consciente de que el tiempo pasaba y sufría ataques de ansiedad porque no tenía ni idea de cómo construir una VIDA distinta para mí. Y no pensaba conformarme.</p>
-                <p><strong>Así empezó mi camino para Vivir antes de morir. Ese que no ha concluido.</strong></p>
-
-                <div class="bio-image" style="margin: 4rem 0;">
-                    <img src="/assets/images/WEB_AnaAlbiol_EA-16.webp" alt="Ana Albiol" style="width: 100%; max-width: 800px; margin: 0 auto; border-radius: var(--radius-md);">
-                </div>
-
-                <p>Durante 17 años me dediqué al maquillaje profesional, mientras exploraba mi propio desarrollo personal. Entré en Youtube al principio de los tiempos y enseñé a miles de mujeres a vivir con más eyeliner y menos drama. Llegué a tocar grandes metas que se supone que debía tocar. Londres, equipo internacional y pasarelas.</p>
-
-                <p>En el mejor momento de mi carrera pude comprobar que, aquella idea que tanto me obsesionaba desde muy joven, era verdad. <strong>Esto se acaba.</strong> Además, tras perder a una de las personas más importantes de mi vida, comprobé en carne propia que lo más importante no es el dinero o el amor, sino la salud. A partir de ese momento, se convirtió en prioridad.</p>
-
-                <div class="bio-timeline">
-                    <span class="bio-year">El punto de inflexión</span>
-                    <p>Una depresión me dejó tumbada tres meses en un sofá. Con chándal y sin peinar. Obligándome a parar, mirarme de frente, hablarme alto y escucharme en silencio. En las preguntas, llegaron respuestas.</p>
-                </div>
-
-                <p>Tras una década vestida de negro y escondida en el armario, me certifiqué en Coaching y Programación Neurolingüística. No hubo vuelta atrás.</p>
-                <p>Con los hombros encogidos por el miedo, y la voz temblorosa, decidí <em>soltar, saltar y confiar</em>. Comuniqué delante de 70.000 personas que colgaba las brochas para dedicarme a mi gran pasión: la comunicación en el desarrollo personal.</p>
-
-                <p>Para facilitar el cambio, reduje mi vida a una maleta y me retiré para vivir a(isla)da durante cuatro años. Este solitario proceso me dio la oportunidad de silenciar el ruido y frenar la inercia para construir una VIDA más coherente, más libre y más bonita.</p>
-
-                <p>Publiqué mis dos primeros libros junto a Espasa. El tercero está en el horno.</p>
-                <p>Desde entonces, he diseñado talleres y programas para vivir antes de morir que han acompañado a más de tres mil personas que forman parte de mi mayor logro profesional: mi comunidad.</p>
-
-                <p>Como creo firmemente que no tengo nada que enseñar, comparto lo que he necesitado aprender y todo lo que me ha llevado al punto en el que estoy hoy.</p>
-                <p>Un punto en el que un martes cualquiera me emociona levantarme.</p>
-                <p>En el que, cada noche, sé y siento que podría morir a gusto.</p>
-
-                <p class="signature">Ana.</p>
+    <!-- Chapter 1: Origen -->
+    <section class="story-chapter" id="chapter-origin">
+        <div class="story-grid">
+            <div class="story-grid__image story-reveal">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiol_EA-14.webp"
+                    alt="Ana Albiol en un campo dorado al atardecer"
+                    loading="lazy"
+                    width="800"
+                    height="1200"
+                />
+            </div>
+            <div class="story-grid__text story-reveal">
+                <span class="story-chapter__number">01</span>
+                <h2>Todo empieza aquí</h2>
+                <p>
+                    Nací con ocho meses y a los 19 años tuve mi primera crisis
+                    vital.
+                </p>
+                <p>
+                    Trabajaba en una perfumería y daba por sentado que sería mi
+                    único futuro. Lo que me había tocado. A la vez, sentía que
+                    había algo más, era consciente de que el tiempo pasaba y
+                    sufría ataques de ansiedad porque no tenía ni idea de cómo
+                    construir una VIDA distinta para mí.
+                </p>
+                <p class="story-emphasis">Y no pensaba conformarme.</p>
             </div>
         </div>
     </section>
 
-    <!-- Differentiator -->
-    <section class="difference-section">
-        <div class="container fade-up">
-            <h2 class="text-center mb-5">Lo que me diferencia</h2>
-            <div class="difference-grid mt-4">
-                <div class="diff-card">
+    <!-- Interlude Quote -->
+    <section class="story-quote" id="quote-1">
+        <div class="story-quote__inner story-reveal">
+            <blockquote>
+                Así empezó mi camino para <em>Vivir antes de morir.</em>
+                <span class="story-quote__sub">Ese que no ha concluido.</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Chapter 2: La Búsqueda -->
+    <section class="story-chapter story-chapter--alt" id="chapter-search">
+        <div class="story-grid story-grid--reverse">
+            <div class="story-grid__text story-reveal">
+                <span class="story-chapter__number">02</span>
+                <h2>La búsqueda</h2>
+                <p>
+                    Durante 17 años me dediqué al maquillaje profesional,
+                    mientras exploraba mi propio desarrollo personal. Entré en
+                    Youtube al principio de los tiempos y enseñé a miles de
+                    mujeres a vivir con más eyeliner y menos drama.
+                </p>
+                <p>
+                    Llegué a tocar grandes metas que se supone que debía tocar.
+                    Londres, equipo internacional y pasarelas.
+                </p>
+                <p>
+                    En el mejor momento de mi carrera pude comprobar que,
+                    aquella idea que tanto me obsesionaba desde muy joven, era
+                    verdad. <strong>Esto se acaba.</strong>
+                </p>
+            </div>
+            <div class="story-grid__image story-reveal">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiol_EA-47.webp"
+                    alt="Ana Albiol sosteniendo un reloj de arena, símbolo del tiempo"
+                    loading="lazy"
+                    width="800"
+                    height="1200"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 3: Punto de Inflexión (Parallax) -->
+    <section class="story-parallax" id="chapter-turning">
+        <div
+            class="story-parallax__bg"
+            style="background-image: url('/assets/images/PRINT_AnaAlbiol_EA-26.webp')"
+        >
+        </div>
+        <div class="story-parallax__overlay"></div>
+        <div class="story-parallax__content story-reveal">
+            <span class="story-chapter__number story-chapter__number--light"
+                >03</span
+            >
+            <h2>El punto de inflexión</h2>
+            <p>
+                Tras perder a una de las personas más importantes de mi vida,
+                comprobé en carne propia que lo más importante no es el dinero o
+                el amor, sino la salud.
+            </p>
+            <p>
+                Una depresión me dejó tumbada tres meses en un sofá. Con chándal
+                y sin peinar. Obligándome a parar, mirarme de frente, hablarme
+                alto y escucharme en silencio.
+            </p>
+            <p class="story-emphasis story-emphasis--light">
+                En las preguntas, llegaron respuestas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Chapter 4: Reinvención (Full-width jumping) -->
+    <section class="story-fullwidth" id="chapter-leap">
+        <div class="story-fullwidth__image">
+            <img
+                src="/assets/images/PRINT_AnaAlbiol_EA-16.webp"
+                alt="Ana Albiol saltando libre al atardecer en un campo"
+                loading="lazy"
+                width="1400"
+                height="933"
+            />
+        </div>
+        <div class="story-fullwidth__text story-reveal">
+            <span class="story-chapter__number">04</span>
+            <h2>Soltar, saltar y confiar</h2>
+            <p>
+                Tras una década vestida de negro y escondida en el armario, me
+                certifiqué en Coaching y Programación Neurolingüística. No hubo
+                vuelta atrás.
+            </p>
+            <p>
+                Con los hombros encogidos por el miedo, y la voz temblorosa,
+                decidí <em>soltar, saltar y confiar</em>. Comuniqué delante de
+                70.000 personas que colgaba las brochas para dedicarme a mi gran
+                pasión: la comunicación en el desarrollo personal.
+            </p>
+        </div>
+    </section>
+
+    <!-- Chapter 5: La Isla -->
+    <section class="story-chapter" id="chapter-island">
+        <div class="story-grid">
+            <div class="story-grid__image story-reveal">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiolJUN25-21.webp"
+                    alt="Ana Albiol trabajando en su laptop junto a una ventana con vista al mar"
+                    loading="lazy"
+                    width="800"
+                    height="1200"
+                />
+            </div>
+            <div class="story-grid__text story-reveal">
+                <span class="story-chapter__number">05</span>
+                <h2>Vida a(isla)da</h2>
+                <p>
+                    Para facilitar el cambio, reduje mi vida a una maleta y me
+                    retiré para vivir a(isla)da durante cuatro años.
+                </p>
+                <p>
+                    Este solitario proceso me dio la oportunidad de silenciar el
+                    ruido y frenar la inercia para construir una VIDA más
+                    coherente, más libre y más bonita.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 6: El Presente — Photo Gallery -->
+    <section class="story-present" id="chapter-present">
+        <div class="story-present__header story-reveal">
+            <span class="story-chapter__number">06</span>
+            <h2>Hoy</h2>
+        </div>
+
+        <div class="story-gallery story-reveal">
+            <div class="story-gallery__item story-gallery__item--tall">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiol_EA-33.webp"
+                    alt="Ana Albiol con traje blanco profesional"
+                    loading="lazy"
+                    width="600"
+                    height="900"
+                />
+            </div>
+            <div class="story-gallery__item">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiol_EA-31.webp"
+                    alt="Ana Albiol sonriendo con cortina blanca"
+                    loading="lazy"
+                    width="600"
+                    height="900"
+                />
+            </div>
+            <div class="story-gallery__item">
+                <img
+                    src="/assets/images/PRINT_AnaAlbiol_EA-37.webp"
+                    alt="Ana Albiol sentada en una silla, reflexiva y cercana"
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                />
+            </div>
+        </div>
+
+        <div class="story-present__text story-reveal">
+            <p>
+                Publiqué mis dos primeros libros junto a Espasa. El tercero está
+                en el horno.
+            </p>
+            <p>
+                Desde entonces, he diseñado talleres y programas para vivir
+                antes de morir que han acompañado a más de <strong
+                    >tres mil personas</strong
+                >
+                que forman parte de mi mayor logro profesional: mi comunidad.
+            </p>
+            <p>
+                Como creo firmemente que no tengo nada que enseñar, comparto lo
+                que he necesitado aprender y todo lo que me ha llevado al punto
+                en el que estoy hoy.
+            </p>
+            <p>
+                Un punto en el que un martes cualquiera me emociona levantarme.
+            </p>
+            <p>En el que, cada noche, sé y siento que podría morir a gusto.</p>
+            <p class="story-signature">Ana.</p>
+        </div>
+    </section>
+
+    <!-- Differentiator Cards -->
+    <section class="story-diff" id="differentiators">
+        <div class="story-diff__container story-reveal">
+            <h2>Lo que me diferencia</h2>
+            <div class="story-diff__grid">
+                <div class="story-diff__card">
                     <h3>No te digo cómo vivir</h3>
-                    <p>No tengo la fórmula mágica ni la quiero. Comparto experiencia, conocimiento y herramientas para que recuperes la responsabilidad sobre tu vida.<br>Si no la quieres, no soy tu persona.</p>
+                    <p>
+                        No tengo la fórmula mágica ni la quiero. Comparto
+                        experiencia, conocimiento y herramientas para que
+                        recuperes la responsabilidad sobre tu vida.<br />Si no
+                        la quieres, no soy tu persona.
+                    </p>
                 </div>
-                <div class="diff-card">
+                <div class="story-diff__card">
                     <h3>Trabajo con profundidad, sin prisa</h3>
-                    <p>Utilizo el coaching y la PNL con realismo y coherencia. Antes me corto la melena que hago una promesa vacía.</p>
+                    <p>
+                        Utilizo el coaching y la PNL con realismo y coherencia.
+                        Antes me corto la melena que hago una promesa vacía.
+                    </p>
                 </div>
-                <div class="diff-card">
+                <div class="story-diff__card">
                     <h3>No busco motivación, quiero coherencia</h3>
-                    <p>Soy de las románticas que aún apuestan por el trabajo y el compromiso. Prefiero una decisión incómoda a mil frases bonitas que no cambian nada.</p>
+                    <p>
+                        Soy de las románticas que aún apuestan por el trabajo y
+                        el compromiso. Prefiero una decisión incómoda a mil
+                        frases bonitas que no cambian nada.
+                    </p>
                 </div>
-                <div class="diff-card" style="background-color: var(--color-primary); color: white;">
-                    <h3 style="color: white;">No pretendo gustarte. Quiero moverte.</h3>
-                    <p style="color: rgba(255,255,255,0.9)">Y utilizo todo lo que está en mi mano para conseguirlo.</p>
+                <div class="story-diff__card story-diff__card--accent">
+                    <h3>No pretendo gustarte. Quiero moverte.</h3>
+                    <p>
+                        Y utilizo todo lo que está en mi mano para conseguirlo.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Closing Quote -->
-    <section class="section-padding text-center">
-        <div class="container fade-up">
-            <h2 class="giant-text">Vivir antes de morir no es fácil.<br>Pero quedarte a medias tampoco.</h2>
-            <p class="mt-4" style="font-size: 1.5rem;">Decidas o no decidas, tú decides.</p>
+    <!-- Closing Quote with Background -->
+    <section class="story-closing" id="closing">
+        <div
+            class="story-closing__bg"
+            style="background-image: url('/assets/images/PRINT_AnaAlbiol_EA-16.webp')"
+        >
+        </div>
+        <div class="story-closing__overlay"></div>
+        <div class="story-closing__content story-reveal">
+            <h2>
+                Vivir antes de morir no es fácil.<br />Pero quedarte a medias
+                tampoco.
+            </h2>
+            <p>Decidas o no decidas, tú decides.</p>
         </div>
     </section>
 </Layout>
 
 <script>
     import { inView, animate, stagger } from "motion";
-    
-    const content = document.getElementById('bio-content');
-    if (content) {
-        inView(content, () => {
-            // Using a simple stagger for children paragraphs
-             animate(
-                content.children,
-                { opacity: [0, 1], y: [20, 0] },
-                { duration: 0.8, delay: stagger(0.1) }
-            );
-        });
+
+    // Hero parallax on scroll
+    const heroSection = document.getElementById("story-hero");
+    if (heroSection) {
+        const heroContent = heroSection.querySelector(".story-hero__content");
+        window.addEventListener(
+            "scroll",
+            () => {
+                const scrollY = window.scrollY;
+                const heroHeight = heroSection.offsetHeight;
+                if (scrollY < heroHeight) {
+                    const progress = scrollY / heroHeight;
+                    if (heroContent) {
+                        (heroContent as HTMLElement).style.transform =
+                            `translateY(${scrollY * 0.3}px)`;
+                        (heroContent as HTMLElement).style.opacity =
+                            `${1 - progress * 1.2}`;
+                    }
+                }
+            },
+            { passive: true },
+        );
+    }
+
+    // Reveal animations for all sections
+    const revealElements = document.querySelectorAll(".story-reveal");
+    revealElements.forEach((el) => {
+        // Set initial state
+        (el as HTMLElement).style.opacity = "0";
+        (el as HTMLElement).style.transform = "translateY(40px)";
+
+        inView(
+            el,
+            () => {
+                animate(
+                    el,
+                    { opacity: [0, 1], y: [40, 0] },
+                    { duration: 0.9, easing: [0.25, 0.1, 0.25, 1] },
+                );
+            },
+            { margin: "0px 0px -100px 0px" },
+        );
+    });
+
+    // Stagger gallery items
+    const gallery = document.querySelector(".story-gallery");
+    if (gallery) {
+        inView(
+            gallery,
+            () => {
+                animate(
+                    gallery.querySelectorAll(".story-gallery__item"),
+                    { opacity: [0, 1], y: [60, 0], scale: [0.95, 1] },
+                    {
+                        duration: 0.8,
+                        delay: stagger(0.15),
+                        easing: [0.25, 0.1, 0.25, 1],
+                    },
+                );
+            },
+            { margin: "0px 0px -80px 0px" },
+        );
+    }
+
+    // Stagger differentiator cards
+    const diffGrid = document.querySelector(".story-diff__grid");
+    if (diffGrid) {
+        inView(
+            diffGrid,
+            () => {
+                animate(
+                    diffGrid.querySelectorAll(".story-diff__card"),
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.7, delay: stagger(0.12), easing: "ease-out" },
+                );
+            },
+            { margin: "0px 0px -60px 0px" },
+        );
+    }
+
+    // Hero entrance animation
+    const heroLabel = document.querySelector(".story-hero__label");
+    const heroTitle = document.querySelector(".story-hero__title");
+    const heroScroll = document.querySelector(".story-hero__scroll");
+
+    if (heroLabel && heroTitle && heroScroll) {
+        animate(
+            heroLabel,
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.8, delay: 0.3, easing: "ease-out" },
+        );
+        animate(
+            heroTitle,
+            { opacity: [0, 1], y: [30, 0] },
+            { duration: 1, delay: 0.6, easing: "ease-out" },
+        );
+        animate(
+            heroScroll,
+            { opacity: [0, 1] },
+            { duration: 0.6, delay: 1.4, easing: "ease-out" },
+        );
     }
 </script>
 
 <style>
-    /* Ensure content is hidden initially for animation */
-    /* Only apply to immediate children of div.bio-content, but NOT nested divs like .bio-timeline if possible, 
-       or just target p, div, etc explicitly */
-    #bio-content > p, #bio-content > div {
+    /* Header transparent on mobile for this page */
+    @media (max-width: 899px) {
+        :global(.header:not(.scrolled)) {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    }
+
+    /* =============================================
+       STORY HERO
+       ============================================= */
+    .story-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: url("/assets/images/PRINT_AnaAlbiol_EA-32.webp");
+        background-size: cover;
+        background-position: center 25%;
+        overflow: hidden;
+    }
+
+    .story-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(246, 241, 235, 0.95) 0%,
+            rgba(246, 241, 235, 0.4) 35%,
+            rgba(246, 241, 235, 0.05) 70%
+        );
+        z-index: 1;
+    }
+
+    .story-hero__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding-bottom: 8vh;
+        will-change: transform, opacity;
+    }
+
+    .story-hero__label {
+        font-family: var(--font-subtitle);
+        font-weight: 600;
+        color: rgba(99, 53, 54, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
         opacity: 0;
+    }
+
+    .story-hero__title {
+        font-family: var(--font-heading);
+        font-size: clamp(3.5rem, 8vw, 7rem);
+        color: var(--color-primary);
+        font-weight: 500;
+        font-style: italic;
+        line-height: 1;
+        margin-bottom: 0;
+        opacity: 0;
+    }
+
+    .story-hero__scroll {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        opacity: 0;
+    }
+
+    .story-hero__scroll span {
+        display: block;
+        width: 2px;
+        height: 40px;
+        background: rgba(99, 53, 54, 0.4);
+        animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scaleY(0.6);
+        }
+        50% {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+
+    /* =============================================
+       STORY CHAPTERS (Grid sections)
+       ============================================= */
+    .story-chapter {
+        padding: 6rem 0;
+        background-color: var(--color-secondary);
+    }
+
+    .story-chapter--alt {
+        background-color: #fff;
+    }
+
+    .story-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        align-items: center;
+    }
+
+    @media (min-width: 900px) {
+        .story-chapter {
+            padding: 8rem 0;
+        }
+
+        .story-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .story-grid--reverse {
+            direction: rtl;
+        }
+
+        .story-grid--reverse > * {
+            direction: ltr;
+        }
+    }
+
+    .story-grid__image img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(99, 53, 54, 0.12);
+    }
+
+    .story-grid__text {
+        max-width: 520px;
+    }
+
+    @media (max-width: 899px) {
+        .story-grid__text {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    .story-chapter__number {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 5rem;
+        font-style: italic;
+        color: rgba(99, 53, 54, 0.08);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .story-chapter__number--light {
+        color: rgba(255, 255, 255, 0.15);
+    }
+
+    .story-grid__text h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .story-grid__text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+    }
+
+    .story-emphasis {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 1.4rem !important;
+        color: var(--color-primary) !important;
+        margin-top: 1rem;
+    }
+
+    .story-emphasis--light {
+        color: white !important;
+    }
+
+    /* =============================================
+       INTERLUDE QUOTE
+       ============================================= */
+    .story-quote {
+        padding: 6rem 2rem;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #8b5556 100%
+        );
+        text-align: center;
+    }
+
+    .story-quote__inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .story-quote blockquote {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-style: italic;
+        color: white;
+        line-height: 1.3;
+        font-weight: 400;
+    }
+
+    .story-quote blockquote em {
+        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.3);
+        text-underline-offset: 6px;
+    }
+
+    .story-quote__sub {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.5em;
+        opacity: 0.7;
+        font-style: normal;
+        font-family: var(--font-body);
+        letter-spacing: 1px;
+    }
+
+    /* =============================================
+       PARALLAX SECTION
+       ============================================= */
+    .story-parallax {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .story-parallax__bg {
+        position: absolute;
+        inset: -20% 0;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 0;
+    }
+
+    /* Disable fixed attachment on mobile (performance) */
+    @media (max-width: 768px) {
+        .story-parallax__bg {
+            background-attachment: scroll;
+            inset: 0;
+        }
+    }
+
+    .story-parallax__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(99, 53, 54, 0.85) 0%,
+            rgba(99, 53, 54, 0.6) 100%
+        );
+        z-index: 1;
+    }
+
+    .story-parallax__content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    .story-parallax__content h2 {
+        color: white;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .story-parallax__content p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.15rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    /* =============================================
+       FULL-WIDTH IMAGE + TEXT
+       ============================================= */
+    .story-fullwidth {
+        background-color: var(--color-secondary);
+        padding: 0 0 6rem;
+    }
+
+    .story-fullwidth__image {
+        width: 100%;
+        max-height: 70vh;
+        overflow: hidden;
+    }
+
+    .story-fullwidth__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+    }
+
+    .story-fullwidth__text {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 4rem 2rem 0;
+        text-align: center;
+    }
+
+    .story-fullwidth__text h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .story-fullwidth__text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+    }
+
+    .story-fullwidth__text em {
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+    }
+
+    /* =============================================
+       PRESENT SECTION + GALLERY
+       ============================================= */
+    .story-present {
+        padding: 6rem 2rem;
+        background-color: #fff;
+    }
+
+    @media (min-width: 900px) {
+        .story-present {
+            padding: 8rem 2rem;
+        }
+    }
+
+    .story-present__header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .story-present__header h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .story-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 1000px;
+        margin: 0 auto 4rem;
+    }
+
+    @media (min-width: 768px) {
+        .story-gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .story-gallery__item {
+        overflow: hidden;
+        border-radius: 16px;
+        opacity: 0;
+    }
+
+    .story-gallery__item--tall {
+        grid-row: span 2;
+    }
+
+    @media (max-width: 767px) {
+        .story-gallery__item--tall {
+            grid-row: span 1;
+        }
+        .story-gallery {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .story-gallery__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .story-gallery__item:hover img {
+        transform: scale(1.05);
+    }
+
+    .story-present__text {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .story-present__text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+    }
+
+    .story-present__text strong {
+        color: var(--color-primary);
+    }
+
+    .story-signature {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        font-style: italic;
+        color: var(--color-primary);
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    /* =============================================
+       DIFFERENTIATOR CARDS
+       ============================================= */
+    .story-diff {
+        padding: 6rem 2rem;
+        background-color: var(--color-secondary);
+    }
+
+    @media (min-width: 900px) {
+        .story-diff {
+            padding: 8rem 2rem;
+        }
+    }
+
+    .story-diff__container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .story-diff__container h2 {
+        text-align: center;
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        margin-bottom: 3rem;
+    }
+
+    .story-diff__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .story-diff__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .story-diff__card {
+        padding: 2.5rem;
+        background: white;
+        border-radius: 16px;
+        border: 1px solid rgba(99, 53, 54, 0.06);
+        transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+        opacity: 0;
+    }
+
+    .story-diff__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(99, 53, 54, 0.1);
+    }
+
+    .story-diff__card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .story-diff__card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--color-text-light);
+    }
+
+    .story-diff__card--accent {
+        background: var(--color-primary);
+    }
+
+    .story-diff__card--accent h3 {
+        color: white;
+    }
+
+    .story-diff__card--accent p {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* =============================================
+       CLOSING SECTION
+       ============================================= */
+    .story-closing {
+        position: relative;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .story-closing__bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+        .story-closing__bg {
+            background-attachment: scroll;
+        }
+    }
+
+    .story-closing__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .story-closing__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 4rem 2rem;
+        max-width: 800px;
+    }
+
+    .story-closing__content h2 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .story-closing__content p {
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        color: rgba(255, 255, 255, 0.8);
+        font-family: var(--font-body);
+    }
+
+    /* =============================================
+       MOBILE RESPONSIVE REFINEMENTS
+       ============================================= */
+    @media (max-width: 480px) {
+        .story-hero__title {
+            font-size: 3rem;
+        }
+
+        .story-chapter {
+            padding: 4rem 0;
+        }
+
+        .story-grid {
+            gap: 2rem;
+            padding: 0 1.25rem;
+        }
+
+        .story-quote {
+            padding: 4rem 1.25rem;
+        }
+
+        .story-parallax {
+            min-height: 70vh;
+        }
+
+        .story-fullwidth__text,
+        .story-present__text {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
     }
 </style>

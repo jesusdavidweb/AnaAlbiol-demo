@@ -53,6 +53,8 @@
     <div
         id="cookie-banner"
         class="cookie-banner"
+        role="dialog"
+        aria-label="Configuración de cookies"
         style="opacity: 0; transform: translateY(50px);"
     >
         <div class="cookie-content">
@@ -126,8 +128,8 @@
     }
 
     .cookie-text h3 {
-        font-family: "Lora", serif;
-        color: #633536;
+        font-family: var(--font-heading, "Lora", serif);
+        color: var(--color-primary, #633536);
         margin-bottom: 0.5rem;
         font-size: 1.5rem;
         font-style: italic;
@@ -135,15 +137,15 @@
     }
 
     .cookie-text p {
-        font-family: "Helvetica", "Arial", sans-serif;
+        font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
         font-size: 0.95rem;
-        color: #555555;
+        color: var(--color-text-light, #555555);
         margin: 0;
         line-height: 1.6;
     }
 
     .cookie-text a {
-        color: #633536;
+        color: var(--color-primary, #633536);
         text-decoration: underline;
         font-weight: 600;
     }
@@ -174,24 +176,24 @@
         letter-spacing: 0.1em;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1.5px solid #633536;
-        font-family: "Helvetica", "Arial", sans-serif;
+        border: 1.5px solid var(--color-primary, #633536);
+        font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
     }
 
     .cookie-btn-primary {
-        background: #633536;
+        background: var(--color-primary, #633536);
         color: white;
     }
 
     .cookie-btn-primary:hover {
         background: transparent;
-        color: #633536;
+        color: var(--color-primary, #633536);
         transform: translateY(-2px);
     }
 
     .cookie-btn-secondary {
         background: transparent;
-        color: #633536;
+        color: var(--color-primary, #633536);
     }
 
     .cookie-btn-secondary:hover {

@@ -73,7 +73,6 @@
                     ></line></svg
                 >
             </a>
-
         </div>
         <a href="/en-privado" class="btn btn-primary header-cta"
             >El mambo: En Privado</a
@@ -130,14 +129,5 @@
                 ></line></svg
             >
         </a>
-
     </div>
 </div>
-
-<style>
-    /* Scoped styles/Overridden global styles if needed, 
-       but relying on global.css for now as per plan to keep it simple. 
-       Note: Svelte styles are scoped by default, so global classes from global.css 
-       will apply if they match validation, but locally defined styles won't leak.
-    */
-</style>

@@ -332,6 +332,10 @@ ul {
     background-color: var(--color-white);
 }
 
+.header-dark-bg:not(.scrolled) .social-icons a {
+    color: var(--color-white);
+}
+
 .header-dark-bg:not(.scrolled) .btn-primary.header-cta {
     border-color: var(--color-white);
     color: var(--color-white);
@@ -736,6 +740,22 @@ ul {
 
 .copyright {
     font-size: 0.8rem;
+}
+
+.credits {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.credits a {
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.1);
+    transition: text-decoration-color 0.3s ease;
+}
+
+.credits a:hover {
+    color: white;
+    text-decoration-color: white;
 }
 
 /* =========================================

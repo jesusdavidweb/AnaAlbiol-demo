@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="¡Gracias! | Ana Albiol"
+    description="Tu mensaje ha sido enviado. Gracias por contactar con Ana Albiol."
+>
+    <section class="thanks-page">
+        <div class="thanks-content fade-up">
+            <!-- Animated check icon -->
+            <div class="thanks-icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+
+            <h1>¡Gracias por escribirme!</h1>
+
+            <p class="thanks-message">
+                Tu mensaje ha llegado perfectamente.
+                <br />
+                Lo leo todo, así que pronto tendrás noticias mías.
+            </p>
+
+            <div class="thanks-signature">
+                <span class="sig-line"></span>
+                <span class="sig-name">Ana</span>
+                <span class="sig-line"></span>
+            </div>
+
+            <p class="thanks-subtitle">
+                Mientras tanto, ¿te apetece seguir por aquí?
+            </p>
+
+            <div class="thanks-links">
+                <a href="/en-privado" class="btn">El Mambo: En Privado</a>
+                <a href="/libros" class="btn">Mis libros</a>
+                <a href="/" class="thanks-home-link">← Volver al inicio</a>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .thanks-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-secondary);
+        padding: 140px 2rem 4rem;
+    }
+
+    .thanks-content {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    /* Animated icon */
+    .thanks-icon {
+        color: var(--color-primary);
+        margin-bottom: 2rem;
+        animation: iconAppear 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    @keyframes iconAppear {
+        0% {
+            opacity: 0;
+            transform: scale(0.3) rotate(-10deg);
+        }
+        60% {
+            transform: scale(1.1) rotate(2deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
+
+    .thanks-content h1 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.15;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .thanks-message {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        margin-bottom: 2.5rem;
+    }
+
+    /* Signature */
+    .thanks-signature {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .sig-line {
+        width: 3rem;
+        height: 1px;
+        background: var(--color-primary);
+        opacity: 0.25;
+    }
+
+    .sig-name {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 2.2rem;
+        color: var(--color-primary);
+        opacity: 0.5;
+    }
+
+    .thanks-subtitle {
+        font-size: 1rem;
+        color: var(--color-text-light);
+        opacity: 0.7;
+        margin-bottom: 2rem;
+    }
+
+    /* Links */
+    .thanks-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .thanks-home-link {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        transition: color 0.3s ease;
+        opacity: 0.7;
+    }
+
+    .thanks-home-link:hover {
+        color: var(--color-primary);
+        opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .thanks-page {
+            padding: 110px 1.5rem 3rem;
+        }
+
+        .thanks-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .thanks-message {
+            font-size: 1.05rem;
+        }
+
+        .thanks-links {
+            flex-direction: column;
+        }
+
+        .thanks-links .btn {
+            width: 100%;
+        }
+    }
+</style>
