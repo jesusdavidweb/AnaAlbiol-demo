@@ -54,7 +54,17 @@
         </h1>
         <p bind:this={heroSubtitle} class="alt-hero__subtitle">
             Me dirijo a personas que funcionan, rinden y cumplen. <br />
-            <strong>Pero sienten que hay otra forma de vivir.</strong>
+            <strong>Pero sienten que hay otra forma de vivir.</strong> <br /><br
+            />
+            Y no van a conformarse. <br />
+            Para que
+            <span class="highlight-text"
+                >un martes cualquiera te emocione levantarte</span
+            >
+            y
+            <span class="highlight-text"
+                >cada noche sientas que podrías morir a gusto.</span
+            >
         </p>
         <div bind:this={heroButtons} class="alt-hero__buttons">
             <a href="/en-privado" class="alt-hero__btn alt-hero__btn--filled"
@@ -153,6 +163,15 @@
     .alt-hero__subtitle strong {
         color: #fff;
         font-weight: 600;
+    }
+
+    .highlight-text {
+        color: #f6f1eb;
+        font-style: italic;
+        background: rgba(99, 53, 54, 0.4);
+        padding: 0.1rem 0.4rem;
+        border-radius: 4px;
+        white-space: wrap;
     }
 
     .alt-hero__buttons {

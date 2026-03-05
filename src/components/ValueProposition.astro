@@ -7,11 +7,21 @@
                     Te muevo para que elijas lo que te importa y dejes de
                     posponer tu VIDA.
                 </p>
-                <p class="highlight">
+                <p>
+                    Trabajo con herramientas para pensar, hablar y decidir
+                    mejor. Para cambiar la forma en la que miras y, por tanto,
+                    la forma en la que vives.
+                </p>
+                <p class="highlight" style="margin-top: 1.5rem;">
                     Comparto mi experiencia y mis preguntas para que conectes
                     con tu historia y encuentres tus propias respuestas.
                 </p>
-                <h3 class="giant-text">El resto, es tuyo.</h3>
+                <div class="el-resto-container mt-4">
+                    <span class="el-resto-line"></span>
+                    <h3 class="giant-text-visual">
+                        EL RESTO,<br /><span class="es-tuyo">ES TUYO</span>
+                    </h3>
+                </div>
             </div>
             <div class="value-prop-image">
                 <div class="image-placeholder">
@@ -44,6 +54,40 @@
 </script>
 
 <style>
+    .el-resto-container {
+        margin-top: 3rem;
+        position: relative;
+        padding-left: 2rem;
+        border-left: 4px solid var(--color-primary);
+        text-align: left;
+    }
+
+    .giant-text-visual {
+        font-family: var(--font-heading);
+        font-size: 3.2rem;
+        line-height: 1;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin: 0;
+    }
+
+    .giant-text-visual .es-tuyo {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--color-text);
+        font-size: 2.8rem;
+    }
+
+    @media (min-width: 900px) {
+        .giant-text-visual {
+            font-size: 5rem;
+        }
+        .giant-text-visual .es-tuyo {
+            font-size: 4rem;
+        }
+    }
+
     .value-prop-grid {
         display: grid;
         grid-template-columns: 1fr;
