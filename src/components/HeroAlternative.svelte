@@ -1,10 +1,11 @@
 <script>
     import { onMount } from "svelte";
-    import { timeline } from "motion";
+    import { timeline, scroll, animate } from "motion";
 
-    let heroTitle, heroSubtitle, heroButtons;
+    let heroSection, heroTitle, heroSubtitle, heroButtons, heroImage;
 
     onMount(() => {
+        // Animation timeline for text entrance
         const sequence = [
             [
                 heroTitle,
@@ -24,11 +25,18 @@
         ];
 
         timeline(sequence);
+
+        // Parallax scroll effect
+        scroll(animate(heroImage, { y: ["-10%", "10%"] }), {
+            target: heroSection,
+            offset: ["start start", "end start"],
+        });
     });
 </script>
 
-<section class="alt-hero">
+<section bind:this={heroSection} class="alt-hero">
     <img
+        bind:this={heroImage}
         src="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
         alt="Ana Albiol"
         class="alt-hero__bg"
@@ -73,12 +81,13 @@
     /* Background image — keeps face at top */
     .alt-hero__bg {
         position: absolute;
-        inset: 0;
+        inset: -15% 0; /* Pre-enlarge for parallax */
         width: 100%;
-        height: 100%;
+        height: 130%; /* Taller for movement */
         object-fit: cover;
-        object-position: center center;
+        object-position: center top; /* Start with face visible */
         z-index: 1;
+        will-change: transform;
     }
 
     /* Gradient overlay — only lower portion */
@@ -94,8 +103,7 @@
             transparent 70%
         );
     }
-
-    /* Text block — pinned to bottom-center */
+    /* Rest of the styles ... kept identical */
     .alt-hero__text {
         position: absolute;
         bottom: 0;
@@ -107,7 +115,6 @@
         align-items: center;
         text-align: center;
         padding: 0 2rem 5rem;
-        /* no background, no card */
         background: none;
         border-radius: 0;
         box-shadow: none;
@@ -154,7 +161,6 @@
         opacity: 0;
     }
 
-    /* Buttons — custom to avoid global .btn clashing */
     .alt-hero__btn {
         display: inline-block;
         padding: 0.75rem 2.4rem;
@@ -193,7 +199,6 @@
         transform: translateY(-3px);
     }
 
-    /* ===== Mobile ===== */
     @media (max-width: 768px) {
         .alt-hero__bg {
             object-position: center top;
@@ -240,7 +245,6 @@
         }
     }
 
-    /* ===== Large screens ===== */
     @media (min-width: 1200px) {
         .alt-hero__title {
             font-size: 4rem;
