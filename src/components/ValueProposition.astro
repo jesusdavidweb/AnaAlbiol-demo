@@ -1,29 +1,109 @@
 <section class="value-prop section-padding">
-    <div class="container text-center fade-up" id="value-prop-container">
-        <h2>Lo que está en mi mano</h2>
-        <p>Te muevo para que elijas lo que te importa y dejes de posponer tu VIDA.</p>
-        <p class="highlight">Comparto mi experiencia y mis preguntas para que conectes con tu historia y encuentres tus propias respuestas.</p>
-        <h3 class="giant-text">El resto, es tuyo.</h3>
+    <div class="container fade-up">
+        <div class="value-prop-grid" id="value-prop-container">
+            <div class="value-prop-text text-center">
+                <h2>Lo que está en mi mano</h2>
+                <p>
+                    Te muevo para que elijas lo que te importa y dejes de
+                    posponer tu VIDA.
+                </p>
+                <p class="highlight">
+                    Comparto mi experiencia y mis preguntas para que conectes
+                    con tu historia y encuentres tus propias respuestas.
+                </p>
+                <h3 class="giant-text">El resto, es tuyo.</h3>
+            </div>
+            <div class="value-prop-image">
+                <div class="image-placeholder">
+                    <img
+                        src="/assets/images/PRINT_AnaAlbiol_EA-37.webp"
+                        alt="Ana Albiol"
+                        loading="lazy"
+                        class="placeholder-img"
+                        style="object-position: center 30%;"
+                    />
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <script>
     import { inView, animate, stagger } from "motion";
-    
-    const container = document.getElementById('value-prop-container');
+
+    const container = document.getElementById("value-prop-container");
     if (container) {
         inView(container, () => {
             animate(
-                container.children,
+                Array.from(container.children),
                 { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.8, delay: stagger(0.2) }
+                { duration: 0.8, delay: stagger(0.2) },
             );
         });
     }
 </script>
 
 <style>
+    .value-prop-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    @media (min-width: 900px) {
+        .value-prop-grid {
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+        .value-prop-text.text-center {
+            text-align: left;
+        }
+    }
+
     #value-prop-container > * {
         opacity: 0;
+    }
+
+    .image-placeholder {
+        background-color: rgba(
+            99,
+            53,
+            54,
+            0.03
+        ); /* Extremely light primary variant */
+        border: 1px dashed rgba(99, 53, 54, 0.3);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 450px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .image-placeholder span {
+        color: var(--color-primary);
+        font-family: var(--font-subtitle);
+        opacity: 0.5;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .placeholder-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0; /* Hidden when src is empty */
+        transition: opacity 0.3s ease;
+    }
+
+    .placeholder-img:not([src=""]) {
+        opacity: 1; /* Revealed when image is loaded */
     }
 </style>

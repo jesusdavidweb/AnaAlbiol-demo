@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.svelte";
+import HeroAlternative from "../components/HeroAlternative.svelte";
 import ValueProposition from "../components/ValueProposition.astro";
 import NavigationCards from "../components/NavigationCards.astro";
 import AboutIntro from "../components/AboutIntro.astro";
@@ -11,10 +11,61 @@ import Newsletter from "../components/Newsletter.astro";
     title="Ana Albiol | Vivir antes de morir"
     preloadImage="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
 >
-    <Hero client:load />
+    <!-- 
+      Usamos HeroAlternative tal y como se definió en index-2.astro, haciéndolo la página oficial.
+    -->
+    <HeroAlternative client:load />
+
     <ValueProposition />
+
+    <!-- Sección de historia/bio integrada (Imagen + Texto Lado a Lado) -->
+    <section class="split-bio section-padding bg-light">
+        <div class="container fade-up-banner">
+            <div class="split-bio-grid">
+                <div class="bio-image-wrapper">
+                    <img
+                        src="/assets/images/PRINT_AnaAlbiol_EA-26.webp"
+                        alt="Ana Albiol"
+                        class="split-bio-image"
+                        loading="lazy"
+                        style="object-position: center 20%;"
+                    />
+                </div>
+                <div class="bio-content-wrapper">
+                    <h2 class="mb-4">Escribo mi propia historia</h2>
+                    <div class="bio-content">
+                        <p>
+                            Dejé una vida "segura" para lanzarme a la
+                            incertidumbre. Aprendí a base de golpes, de éxitos y
+                            de rediseñarme mil veces.
+                        </p>
+                        <p>
+                            Hoy mi mayor éxito es irme a la cama tranquila,
+                            sabiendo que soy fiel a lo que siento y que vivo
+                            antes de morir.
+                        </p>
+                        <a href="/quien-soy" class="btn mt-4"
+                            >Conoce mi recorrido</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <NavigationCards />
-    <AboutIntro />
+
+    <!-- Banner Lifestyle panorámico (Transición) -->
+    <section class="panoramic-transition">
+        <img
+            src="/assets/images/PRINT_AnaAlbiolJUN25-20.webp"
+            alt="Ana Albiol Lifestyle"
+            class="panoramic-img"
+            loading="lazy"
+            style="object-position: center 25%;"
+        />
+    </section>
+
     <Newsletter />
 
     <!-- Structured Data: Person + WebSite -->
@@ -45,3 +96,103 @@ import Newsletter from "../components/Newsletter.astro";
         })}
     />
 </Layout>
+
+<style>
+    /* Section: Split Bio */
+    .split-bio {
+        background-color: var(--color-background-alt); /* Light background */
+        border-top: 1px solid rgba(99, 53, 54, 0.05);
+        border-bottom: 1px solid rgba(99, 53, 54, 0.05);
+        margin: 4rem 0;
+    }
+
+    .split-bio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    @media (min-width: 900px) {
+        .split-bio-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+    }
+
+    .bio-image-wrapper {
+        border-radius: var(--radius-lg, 12px);
+        overflow: hidden;
+        box-shadow: -15px 15px 0 rgba(99, 53, 54, 0.03); /* Subtle offset shadow */
+    }
+
+    .split-bio-image {
+        width: 100%;
+        height: auto;
+        min-height: 450px;
+        max-height: 600px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .bio-content-wrapper {
+        text-align: center;
+    }
+
+    @media (min-width: 900px) {
+        .bio-content-wrapper {
+            text-align: left;
+            padding-right: 2rem;
+        }
+    }
+
+    .bio-content p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+    }
+
+    /* Section: Panoramic Transition */
+    .panoramic-transition {
+        width: 100%;
+        height: 60vh;
+        min-height: 400px;
+        max-height: 700px;
+        margin: 6rem 0;
+        overflow: hidden;
+    }
+
+    .panoramic-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Utilitarios */
+    .mb-4 {
+        margin-bottom: 2rem;
+    }
+    .mt-4 {
+        margin-top: 2rem;
+        display: inline-block;
+    }
+</style>
+
+<script>
+    import { inView, animate } from "motion";
+
+    const bannerElements = document.querySelectorAll(".fade-up-banner");
+    bannerElements.forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.opacity = "0";
+        inView(el, () => {
+            animate(
+                el,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.8, easing: "ease-out" },
+            );
+        });
+    });
+</script>

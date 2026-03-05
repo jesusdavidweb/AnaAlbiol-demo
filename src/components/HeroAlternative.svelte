@@ -45,12 +45,12 @@
             <em>y el plan es vivir antes de morir.</em>
         </h1>
         <p bind:this={heroSubtitle} class="alt-hero__subtitle">
-            Me dirijo a personas que funcionan, rinden y cumplen.
+            Me dirijo a personas que funcionan, rinden y cumplen. <br />
             <strong>Pero sienten que hay otra forma de vivir.</strong>
         </p>
         <div bind:this={heroButtons} class="alt-hero__buttons">
             <a href="/en-privado" class="alt-hero__btn alt-hero__btn--filled"
-                >En Privado</a
+                >EL MAMBO: EN PRIVADO</a
             >
             <a href="/quien-soy" class="alt-hero__btn alt-hero__btn--outline"
                 >Conóceme</a
@@ -157,7 +157,7 @@
     /* Buttons — custom to avoid global .btn clashing */
     .alt-hero__btn {
         display: inline-block;
-        padding: 0.9rem 2.4rem;
+        padding: 0.75rem 2.4rem;
         border-radius: 50px;
         text-transform: uppercase;
         font-weight: 600;
@@ -166,6 +166,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
         text-decoration: none;
+        white-space: nowrap;
     }
 
     .alt-hero__btn--filled {
@@ -195,32 +196,47 @@
     /* ===== Mobile ===== */
     @media (max-width: 768px) {
         .alt-hero__bg {
-            object-position: center center;
+            object-position: center top;
+        }
+
+        .alt-hero__gradient {
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.55) 45%,
+                rgba(0, 0, 0, 0.1) 75%,
+                transparent 100%
+            );
         }
 
         .alt-hero__text {
-            padding: 0 1.5rem 4rem;
+            padding: 0 1.5rem 3rem;
+            width: 100%;
         }
 
         .alt-hero__title {
-            font-size: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .alt-hero__subtitle {
-            font-size: 0.95rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .alt-hero__buttons {
             flex-direction: column;
             width: 100%;
-            max-width: 280px;
-            gap: 0.8rem;
+            max-width: 320px;
+            gap: 1rem;
         }
 
         .alt-hero__btn {
             width: 100%;
             text-align: center;
-            padding: 0.85rem 1.5rem;
+            padding: 0.9rem 1.2rem;
+            white-space: normal;
+            line-height: 1.3;
         }
     }
 

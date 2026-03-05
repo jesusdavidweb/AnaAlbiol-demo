@@ -139,7 +139,7 @@
     .cookie-text p {
         font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
         font-size: 0.95rem;
-        color: var(--color-text-light, #555555);
+        color: var(--color-text-light, #333333);
         margin: 0;
         line-height: 1.6;
     }

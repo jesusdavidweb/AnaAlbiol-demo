@@ -1,29 +1,96 @@
 <section class="about section-padding">
     <div class="container fade-up">
-        <div class="about-content" id="about-content">
-            <h2>Cosecha del 87</h2>
-            <p>Nací con ocho meses y a los 19 años tuve mi primera crisis vital. Trabajaba en una perfumería y daba por sentado que sería mi único futuro.</p>
-            <a href="/quien-soy" class="btn mt-2">Leer mi historia completa</a>
+        <div class="about-grid" id="about-content">
+            <div class="about-image">
+                <img
+                    src="/assets/images/WEB_AnaAlbiol_EA-16.webp"
+                    alt="Ana Albiol"
+                    loading="lazy"
+                />
+            </div>
+            <div class="about-text">
+                <h2>Cosecha del 87</h2>
+                <p>
+                    Nací con ocho meses y a los 19 años tuve mi primera crisis
+                    vital.
+                </p>
+                <p>
+                    Trabajaba en una perfumería y daba por sentado que sería mi
+                    único futuro.
+                </p>
+                <p>Hoy acompaño a personas a dejar de posponer su VIDA.</p>
+                <p>
+                    A través de mis libros, formaciones y mi newsletter En
+                    Privado, comparto mis herramientas para soltar, saltar y
+                    confiar.
+                </p>
+                <a href="/quien-soy" class="btn mt-4"
+                    >Leer mi historia completa</a
+                >
+            </div>
         </div>
     </div>
 </section>
 
 <script>
     import { inView, animate, stagger } from "motion";
-    
-    const content = document.getElementById('about-content');
+
+    const content = document.getElementById("about-content");
     if (content) {
         inView(content, () => {
             animate(
-                content.children,
-                { opacity: [0, 1], x: [-20, 0] },
-                { duration: 0.8, delay: stagger(0.2) }
+                Array.from(content.children),
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.8, delay: stagger(0.2) },
             );
         });
     }
 </script>
+
 <style>
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    @media (min-width: 900px) {
+        .about-grid {
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+        }
+    }
+
+    .about-image img {
+        border-radius: var(--radius-md);
+        box-shadow: -15px 15px 0 rgba(99, 53, 54, 0.05); /* Subtle shadow styling */
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+        .about-text {
+            text-align: left;
+        }
+    }
+
     #about-content > * {
         opacity: 0;
+    }
+
+    .mt-4 {
+        margin-top: 2rem;
     }
 </style>

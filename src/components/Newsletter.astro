@@ -1,27 +1,128 @@
-<section id="newsletter" class="newsletter section-padding text-center">
-    <div class="container fade-up" id="newsletter-container">
-        <h2>En Privado</h2>
-        <h3 class="subtitle">Lo que no sale en Instagram. Lo importante. Lo íntimo.</h3>
-        <a href="/en-privado" class="btn" style="background: white; color: var(--color-primary); border: none;">Entrar En Privado</a>
+<section id="newsletter" class="newsletter section-padding">
+    <div class="container fade-up">
+        <div class="newsletter-grid" id="newsletter-container">
+            <div class="newsletter-image">
+                <div class="image-placeholder-dark">
+                    <img
+                        src="/assets/images/PRINT_Ana&Techu_EreaAzurmendi_-5.webp"
+                        alt="En Privado Newsletter"
+                        loading="lazy"
+                        class="placeholder-img"
+                        style="object-position: center 20%;"
+                    />
+                </div>
+            </div>
+            <div class="newsletter-content text-center">
+                <h2>En Privado</h2>
+                <h3 class="subtitle">
+                    Lo que no sale en Instagram.<br />Lo importante.<br />Lo
+                    íntimo.
+                </h3>
+                <p class="newsletter-desc">
+                    Únete para recibir reflexiones crudas, directas y sin
+                    filtros sobre la vida y la coherencia.
+                </p>
+                <a
+                    href="/en-privado"
+                    class="btn mt-4"
+                    style="background: white; color: var(--color-primary); border: none;"
+                    >Entrar En Privado</a
+                >
+            </div>
+        </div>
     </div>
 </section>
 
 <script>
     import { inView, animate, stagger } from "motion";
-    
-    const container = document.getElementById('newsletter-container');
+
+    const container = document.getElementById("newsletter-container");
     if (container) {
         inView(container, () => {
             animate(
-                container.children,
-                { opacity: [0, 1], scale: [0.9, 1] },
-                { duration: 0.6, delay: stagger(0.1) }
+                Array.from(container.children),
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.6, delay: stagger(0.1) },
             );
         });
     }
 </script>
+
 <style>
+    .newsletter-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    @media (min-width: 900px) {
+        .newsletter-grid {
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 5rem;
+        }
+    }
+
+    .newsletter-content {
+        text-align: center;
+    }
+
+    @media (min-width: 900px) {
+        .newsletter-content {
+            text-align: left;
+        }
+    }
+
+    .newsletter-desc {
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 1.15rem;
+        margin-top: 1.5rem;
+    }
+
+    .image-placeholder-dark {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 380px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .image-placeholder-dark span {
+        color: rgba(255, 255, 255, 0.6);
+        font-family: var(--font-subtitle);
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .placeholder-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .placeholder-img:not([src=""]) {
+        opacity: 1;
+    }
+
     #newsletter-container > * {
         opacity: 0;
+    }
+
+    .mt-4 {
+        margin-top: 2rem;
+        display: inline-block;
     }
 </style>

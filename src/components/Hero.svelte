@@ -57,12 +57,13 @@
                 Soy Ana Albiol <em>y el plan es vivir antes de morir.</em>
             </h1>
             <p bind:this={heroSubtitle} class="hero-subtitle">
-                Me dirijo a personas que funcionan, rinden y cumplen. <strong
-                    >Pero sienten que hay otra forma de vivir.</strong
-                >
+                Me dirijo a personas que funcionan, rinden y cumplen. <br
+                /><strong>Pero sienten que hay otra forma de vivir.</strong>
             </p>
             <div bind:this={heroButtons} class="hero-buttons">
-                <a href="/en-privado" class="btn btn-primary">En Privado</a>
+                <a href="/en-privado" class="btn btn-primary"
+                    >EL MAMBO: EN PRIVADO</a
+                >
                 <a href="/quien-soy" class="btn btn-primary">Conóceme</a>
             </div>
         </div>

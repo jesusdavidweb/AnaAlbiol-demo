@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import bookCover1 from "../assets/images/VIDA_de_un_culo_inquieto_Portada.webp";
 import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
+import bookCover3 from "../assets/images/nuevo_libro_2027.png";
 ---
 
 <Layout
@@ -51,12 +52,7 @@ import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
                         impuesto, si sabes que la VIDA es otra cosa y no quieres
                         quedarte con las ganas de vivirla, puede que te sirva.
                     </p>
-                    <a
-                        href="https://www.amazon.es/V-I-D-culo-inquieto-Ana-Albiol/dp/8409247542"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn mt-2">Comprar en Amazon</a
-                    >
+                    <a href="#" class="btn mt-2">Comprar en Amazon</a>
                 </div>
                 <div class="book-image">
                     <Image
@@ -85,6 +81,10 @@ import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
                     a carcajada limpia y otras veces no puedes dejar de llorar."
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn">Ver más reseñas</a>
+            </div>
         </div>
     </section>
 
@@ -112,12 +112,7 @@ import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
                         Si estás en crisis, proceso de cambio profundo o
                         replanteamiento vital, puede que te sirva.
                     </p>
-                    <a
-                        href="https://www.amazon.es/muerte-V-I-D-F-COLECCION/dp/8467065869"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn mt-2">Comprar en Amazon</a
-                    >
+                    <a href="#" class="btn mt-2">Comprar en Amazon</a>
                 </div>
             </div>
 
@@ -137,25 +132,46 @@ import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
                     vivir."
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn">Ver más reseñas</a>
+            </div>
         </div>
     </section>
 
     <!-- New Book Teaser -->
     <section class="coming-soon fade-up">
         <div class="container">
-            <h2>Nuevo Libro</h2>
-            <p class="subtitle">Enero 2027</p>
-            <p style="max-width: 600px; margin: 0 auto 2rem;">
-                Después de vivir el cambio en mi cuerpo serrano y trabajar con
-                más de 3000 personas para que logren el suyo, este libro propone
-                el método que he desarrollado.
-            </p>
-            <a
-                href="/en-privado"
-                class="btn"
-                style="border-color: white; color: white;"
-                >Sigue el proceso desde dentro</a
-            >
+            <div class="book-item">
+                <div class="book-info">
+                    <span
+                        class="small-text"
+                        style="color: rgba(255,255,255,0.8);"
+                        >Próximo Lanzamiento</span
+                    >
+                    <h2>Nuevo Libro</h2>
+                    <p class="subtitle">Enero 2027</p>
+                    <p style="color: white; margin-bottom: 2rem;">
+                        Después de vivir el cambio en mi cuerpo serrano y
+                        trabajar con más de 3000 personas para que logren el
+                        suyo, este libro propone el método que he desarrollado.
+                        Un viaje profundo para dejar de sobrevivir y empezar a
+                        VIVIR.
+                    </p>
+                    <a href="/en-privado" class="btn btn-inverted"
+                        >Sigue el proceso desde dentro</a
+                    >
+                </div>
+                <div class="book-image">
+                    <Image
+                        src={bookCover3}
+                        alt="Mockup del nuevo libro 2027"
+                        class="book-cover"
+                        width={300}
+                        height={450}
+                    />
+                </div>
+            </div>
         </div>
     </section>
 </Layout>
@@ -259,15 +275,25 @@ import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
     }
 
     .coming-soon {
-        padding: 6rem 0;
+        padding: 8rem 0;
         background-color: var(--color-primary);
         color: white;
-        text-align: center;
     }
 
     .coming-soon h2,
     .coming-soon .subtitle,
     .coming-soon p {
         color: white;
+    }
+
+    .btn-inverted {
+        border-color: white;
+        color: white;
+    }
+
+    .btn-inverted:hover {
+        background-color: white;
+        color: var(--color-primary);
+        transform: translateY(-2px);
     }
 </style>
