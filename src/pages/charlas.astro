@@ -1,154 +1,857 @@
 ---
+/**
+Author: Jesus David Gomez
+GitHub: @jesusdavidweb (http://github.com/jesusdavidweb)
+Author Website: jesusdavid.net (https://jesusdavid.net/)
+Instagram: @jesusdavidweb (https://www.instagram.com/jesusdavidweb/)
+LinkedIn: Jesus David (https://www.linkedin.com/in/jesusdavid/)
+Fecha: [05-03-2026]
+Description: Premium talks page redesign with editorial layout, dramatic hero, and enhanced animations
+*/
+
 import Layout from "../layouts/Layout.astro";
+
+// Topic data without images (using placeholders)
+const topics = [
+    {
+        id: "01",
+        title: "Valores, coherencia y decisiones",
+        description:
+            "Una exploración profunda sobre cómo alinear lo que somos con lo que hacemos. Ideal para equipos que buscan liderazgo consciente y autenticidad en la toma de decisiones.",
+    },
+    {
+        id: "02",
+        title: "Hábitos, renuncia y FOMO",
+        description:
+            "Cómo simplificar para avanzar. Una charla sobre el poder de decir 'no' y la construcción de hábitos que sostienen una VIDA con propósito.",
+    },
+    {
+        id: "03",
+        title: "Autenticidad y cambios de VIDA",
+        description:
+            "El relato de una transformación real. Herramientas para transitar el cambio sin perder la esencia, inspirando a otros a vivir antes de morir.",
+    },
+    {
+        id: "04",
+        title: "Emprendimiento con Alma",
+        description:
+            "Más allá de los números y el marketing. Una visión humana de qué significa crear y sostener un proyecto propio en un mundo saturado.",
+    },
+];
+
+// Company logos placeholders (elegant text-based)
+const companies = [
+    "Grupoenterprise",
+    "Innovación Corp",
+    "Líderes 360",
+    "Future Vision",
+    "Strategic Growth",
+    "Core Values Co",
+];
 ---
 
 <Layout
     title="Charlas | Ana Albiol"
     description="Charlas y conferencias de Ana Albiol para empresas y eventos. Valores, coherencia, hábitos y autenticidad."
-    headerTheme="dark"
+    headerTheme="light"
 >
-    <!-- Hero -->
-    <section class="talks-hero fade-up">
-        <div class="container">
-            <h1>Charlas</h1>
-            <p class="quote-large">
-                "Vargas Llosa quería que la muerte lo encontrara escribiendo.<br
-                />A mí me gustaría que la muerte me encuentre en un escenario."
-            </p>
-            <p class="subtitle" style="font-size: 1.2rem; opacity: 0.9;">
-                Soy feliz como una perdiz cuando comunico.
-            </p>
-        </div>
-    </section>
+    <!-- Hero Editorial de Alto Contraste -->
+    <section class="hero-editorial">
+        <div class="background-text">ESCENARIO</div>
+        
+        <div class="container hero-wrapper">
+            <div class="hero-text-content">
+                <div class="label-wrapper fade-element">
+                    <span class="hero-label">Conferenciante</span>
+                </div>
 
-    <!-- Topics -->
-    <section class="topics-section">
-        <div class="container text-center fade-up">
-            <h2>Temas Habituales</h2>
-            <p>Me suelen contratar en eventos y empresas para hablar de:</p>
+                <div class="quote-main fade-element">
+                    <blockquote class="hero-quote">
+                        <p class="quote-upper">
+                            Vargas Llosa quería que la muerte lo encontrara
+                            <em>escribiendo.</em>
+                        </p>
+                        <p class="quote-lower">
+                            <span class="highlight">A mí me gustaría que la muerte me encuentre en un escenario.</span>
+                        </p>
+                    </blockquote>
+                    <cite class="quote-author">— Ana Albiol</cite>
+                </div>
 
-            <div class="topics-grid" id="topics-grid">
-                <div class="topic-item">
-                    <img
-                        src="/images/charlas/valores.png"
-                        alt="Valores, coherencia y decisiones"
-                        class="topic-image"
-                    />
-                    <div class="topic-pill">
-                        Valores, coherencia y decisiones
-                    </div>
-                </div>
-                <div class="topic-item">
-                    <img
-                        src="/images/charlas/habitos.png"
-                        alt="Hábitos, renuncia y FOMO"
-                        class="topic-image"
-                    />
-                    <div class="topic-pill">Hábitos, renuncia y FOMO</div>
-                </div>
-                <div class="topic-item">
-                    <img
-                        src="/images/charlas/autenticidad.png"
-                        alt="Autenticidad y cambios de VIDA"
-                        class="topic-image"
-                    />
-                    <div class="topic-pill">Autenticidad y cambios de VIDA</div>
-                </div>
-                <div class="topic-item">
-                    <img
-                        src="/images/charlas/emprendimiento.png"
-                        alt="Emprendimiento"
-                        class="topic-image"
-                    />
-                    <div class="topic-pill">Emprendimiento</div>
+                <div class="hero-actions fade-element">
+                    <a href="#temas" class="btn btn-primary">Explorar Temas</a>
+                    <a href="/contacto" class="btn">Solicitar disponibilidad</a>
                 </div>
             </div>
 
-            <p class="mt-4">
-                Además de estos temas, también diseño charlas y formaciones a
-                medida.
-            </p>
-            <a href="/contacto" class="btn btn-primary mt-4"
-                >Contactar para Charlas</a
-            >
+            <div class="hero-visual fade-element">
+                <div class="image-container">
+                    <img 
+                        src="/assets/images/WEB_AnaAlbiol_EA-16.webp" 
+                        alt="Ana Albiol en el escenario" 
+                        class="hero-image"
+                    />
+                    <div class="image-accent-border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-wrapper fade-element">
+            <div class="scroll-mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span class="scroll-text">Deslizar para descubrir</span>
         </div>
     </section>
 
-    <!-- Logos Empresas -->
-    <section class="section-padding bg-light">
-        <div class="container text-center fade-up">
-            <h2>Empresas que han confiado en Ana</h2>
-            <div
-                class="logos-grid mt-4"
-                style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;"
-            >
-                <div
-                    class="logo-placeholder"
-                    style="width: 120px; height: 60px; background-color: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8rem;"
-                >
-                    Logo Empresa 1
-                </div>
-                <div
-                    class="logo-placeholder"
-                    style="width: 120px; height: 60px; background-color: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8rem;"
-                >
-                    Logo Empresa 2
-                </div>
-                <div
-                    class="logo-placeholder"
-                    style="width: 120px; height: 60px; background-color: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8rem;"
-                >
-                    Logo Empresa 3
-                </div>
-                <div
-                    class="logo-placeholder"
-                    style="width: 120px; height: 60px; background-color: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8rem;"
-                >
-                    Logo Empresa 4
-                </div>
+    <!-- Temas Habituales - Editorial Grid -->
+    <section id="temas" class="topics-editorial">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label fade-element">Propuestas</span>
+                <h2 class="section-title fade-element">Temas Habituales</h2>
+                <p class="section-subtitle fade-element">
+                    Propuestas de valor para empresas y eventos que buscan
+                    coherencia y transformación.
+                </p>
+            </header>
+
+            <div class="editorial-grid">
+                {
+                    topics.map((topic, index) => (
+                        <article
+                            class={`editorial-item ${index % 2 === 1 ? "reverse" : ""} fade-element`}
+                        >
+                            <div class="editorial-image">
+                                <div class="placeholder-box">
+                                    <span class="placeholder-label">
+                                        Imagen: {topic.title}
+                                    </span>
+                                </div>
+                                <span class="image-number">{topic.id}</span>
+                            </div>
+                            <div class="editorial-content">
+                                <h3>{topic.title}</h3>
+                                <p>{topic.description}</p>
+                                <a href="/contacto" class="topic-link">
+                                    <span>Saber más</span>
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+
+            <div class="custom-cta fade-element">
+                <p>¿Buscas algo específico?</p>
+                <p class="cta-secondary">
+                    Diseño charlas y formaciones a medida para tu evento.
+                </p>
+                <a href="/contacto" class="btn btn-primary">
+                    Contactar para Charlas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empresas que han confiado -->
+    <section class="logos-section-premium">
+        <div class="container">
+            <header class="logos-header fade-element">
+                <span class="logos-label">Reconocimiento</span>
+                <h2>Empresas que han confiado</h2>
+            </header>
+
+            <div class="logos-grid">
+                {
+                    companies.map((company, index) => (
+                        <div
+                            class="logo-item fade-element"
+                            style={`--delay: ${index * 0.1}s`}
+                        >
+                            <span class="logo-text">{company}</span>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     </section>
 </Layout>
 
 <script>
-    import { inView, animate, stagger } from "motion";
+    import { inView, animate, stagger, spring } from "motion";
 
-    // Topics Grid Animation
-    const grid = document.getElementById("topics-grid");
-    if (grid) {
-        inView(grid, () => {
+    // Hero animations on load
+    document.addEventListener("DOMContentLoaded", () => {
+        const heroElements = document.querySelectorAll(
+            ".hero-editorial .fade-element",
+        );
+
+        animate(
+            heroElements,
+            { opacity: [0, 1], y: [40, 0] },
+            {
+                delay: 0.3,
+                duration: 0.8,
+                easing: [0.17, 0.67, 0.83, 0.67],
+            },
+        );
+
+        // Visual image animation
+        const heroVisual = document.querySelector(".hero-visual");
+        if (heroVisual) {
             animate(
-                grid.querySelectorAll(".topic-pill"),
-                { opacity: [0, 1], scale: [0.8, 1] },
-                {
-                    duration: 0.5,
-                    delay: stagger(0.1),
-                    easing: [0.34, 1.56, 0.64, 1],
-                },
+                heroVisual,
+                { opacity: [0, 1], x: [100, 0] },
+                { delay: 0.5, duration: 1.2, easing: [0.17, 0.67, 0.83, 0.67] }
+            );
+        }
+
+        // Background text animation
+        const bgText = document.querySelector(".background-text");
+        if (bgText) {
+            animate(
+                bgText,
+                { opacity: [0, 0.03], scale: [0.8, 1] },
+                { delay: 0.2, duration: 2, easing: "ease-out" }
+            );
+        }
+    });
+
+    // Section headers animation
+    const sectionHeaders = document.querySelectorAll(
+        ".section-header .fade-element",
+    );
+    sectionHeaders.forEach((header) => {
+        inView(header, () => {
+            animate(
+                header,
+                { opacity: [0, 1], y: [40, 0] },
+                { duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] },
+            );
+        });
+    });
+
+    // Editorial items staggered animation
+    const editorialItems = document.querySelectorAll(".editorial-item");
+    editorialItems.forEach((item) => {
+        inView(item, () => {
+            const imageEl = item.querySelector(".editorial-image");
+            const contentEl = item.querySelector(".editorial-content");
+
+            if (imageEl) {
+                animate(
+                    imageEl,
+                    { opacity: [0, 1], x: [-50, 0] },
+                    {
+                        delay: 0,
+                        duration: 0.8,
+                        easing: [0.17, 0.67, 0.83, 0.67],
+                    },
+                );
+            }
+
+            if (contentEl) {
+                animate(
+                    contentEl,
+                    { opacity: [0, 1], x: [50, 0] },
+                    {
+                        delay: 0.2,
+                        duration: 0.8,
+                        easing: [0.17, 0.67, 0.83, 0.67],
+                    },
+                );
+            }
+        });
+    });
+
+    // CTA animation
+    const cta = document.querySelector(".custom-cta");
+    if (cta) {
+        inView(cta, () => {
+            animate(
+                cta,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] },
             );
         });
     }
+
+    // Logos section animation
+    const logosHeader = document.querySelector(".logos-header");
+    if (logosHeader) {
+        inView(logosHeader, () => {
+            animate(
+                logosHeader,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.6, easing: [0.17, 0.67, 0.83, 0.67] },
+            );
+        });
+    }
+
+    const logoItems = document.querySelectorAll(".logo-item");
+    inView(".logos-grid", () => {
+        animate(
+            logoItems,
+            { opacity: [0, 1], y: [20, 0], scale: [0.95, 1] },
+            {
+                delay: stagger(0.1),
+                duration: 0.5,
+                easing: [0.17, 0.67, 0.83, 0.67],
+            },
+        );
+    });
 </script>
 
 <style>
-    .topic-item {
+    /* ========================================
+       HERO EDITORIAL PREMIUM
+       ======================================== */
+    .hero-editorial {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: var(--color-secondary);
+        overflow: hidden;
+        padding: 140px 0 100px;
+    }
+
+    .background-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-heading);
+        font-size: 25vw;
+        font-weight: 900;
+        color: var(--color-primary);
+        opacity: 0; /* Animated to 0.03 */
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .hero-wrapper {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-text-content {
+        max-width: 750px;
+    }
+
+    .hero-label {
+        display: inline-block;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        color: var(--color-primary);
+        border-bottom: 1px solid rgba(99, 53, 54, 0.3);
+        padding-bottom: 0.5rem;
+    }
+
+    .hero-quote {
+        margin: 0 0 3rem;
+        position: relative;
+    }
+
+    .quote-upper {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        line-height: 1.4;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+
+    .quote-lower {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.1;
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
+    .highlight {
+        position: relative;
+        display: inline;
+    }
+
+    .quote-author {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--color-primary);
+        font-style: normal;
+        margin-bottom: 3.5rem;
+        opacity: 0.8;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        position: relative;
+        opacity: 0; /* Animated */
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/5;
+        border-radius: 4px;
+        overflow: visible;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        position: relative;
+        z-index: 2;
+        filter: sepia(20%) contrast(105%);
+        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-accent-border {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--color-primary);
+        opacity: 0.2;
+        z-index: 1;
+        border-radius: 4px;
+    }
+
+    .scroll-wrapper {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        z-index: 3;
     }
 
-    .topic-image {
+    .scroll-mouse {
+        width: 24px;
+        height: 40px;
+        border: 2px solid var(--color-primary);
+        border-radius: 12px;
+        position: relative;
+        opacity: 0.6;
+    }
+
+    .mouse-wheel {
+        width: 4px;
+        height: 8px;
+        background-color: var(--color-primary);
+        border-radius: 2px;
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: mouseScroll 2s infinite;
+    }
+
+    @keyframes mouseScroll {
+        0% { transform: translate(-50%, 0); opacity: 1; }
+        100% { transform: translate(-50%, 15px); opacity: 0; }
+    }
+
+    .scroll-text {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        opacity: 0.6;
+    }
+
+    /* ========================================
+       EDITORIAL TOPICS SECTION
+       ======================================== */
+    .topics-editorial {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-secondary);
+    }
+
+    .section-header {
+        margin-bottom: 8rem;
+        max-width: 700px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-label {
+        display: block;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+        color: var(--color-primary);
+        opacity: 0.6;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        margin-bottom: 1.5rem;
+        color: var(--color-primary);
+        font-style: italic;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: var(--color-text-light);
+        opacity: 0.85;
+    }
+
+    .editorial-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+    }
+
+    .editorial-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+    }
+
+    .editorial-item.reverse {
+        direction: rtl;
+    }
+
+    .editorial-item.reverse .editorial-content {
+        direction: ltr;
+    }
+
+    .editorial-image {
+        position: relative;
+    }
+
+    .placeholder-box {
         width: 100%;
-        max-width: 400px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: var(--radius-md);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        aspect-ratio: 4/5;
+        background: linear-gradient(145deg, #e8e5e2 0%, #d8d5d2 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    .topic-pill {
-        opacity: 0;
+    .placeholder-label {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .image-number {
+        position: absolute;
+        top: -1.5rem;
+        right: -1.5rem;
+        font-family: var(--font-heading);
+        font-size: 8rem;
+        font-style: italic;
+        color: var(--color-primary);
+        opacity: 0.08;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .editorial-content {
+        padding: 2rem 0;
+    }
+
+    .editorial-content h3 {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.25;
+        color: var(--color-primary);
+        font-style: italic;
+    }
+
+    .editorial-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+        margin-bottom: 2rem;
+    }
+
+    .topic-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        transition: gap 0.3s ease;
+    }
+
+    .topic-link:hover {
+        gap: 1.25rem;
+    }
+
+    .topic-link svg {
+        transition: transform 0.3s ease;
+    }
+
+    .topic-link:hover svg {
+        transform: translateX(5px);
+    }
+
+    .custom-cta {
+        margin-top: 10rem;
+        text-align: center;
+        padding: 6rem 4rem;
+        background: linear-gradient(
+            135deg,
+            rgba(99, 53, 54, 0.03) 0%,
+            rgba(99, 53, 54, 0.06) 100%
+        );
+        border-radius: 20px;
+        border: 1px solid rgba(99, 53, 54, 0.08);
+    }
+
+    .custom-cta p {
+        font-size: 1.75rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-secondary {
+        font-family: var(--font-body) !important;
+        font-style: normal !important;
+        font-size: 1.1rem !important;
+        opacity: 0.7;
+        margin-bottom: 2rem !important;
+    }
+
+    /* ========================================
+       LOGOS SECTION
+       ======================================== */
+    .logos-section-premium {
+        padding: var(--spacing-xl) 0;
+        background-color: #fcf9f6;
+    }
+
+    .logos-header {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .logos-label {
+        display: block;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+        color: var(--color-primary);
+        opacity: 0.5;
+        margin-bottom: 1rem;
+    }
+
+    .logos-header h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-style: italic;
+        color: var(--color-primary);
+    }
+
+    .logos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(99, 53, 54, 0.08);
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.4s ease;
+        opacity: 0.5;
+    }
+
+    .logo-item:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 1);
+        border-color: rgba(99, 53, 54, 0.2);
+        transform: translateY(-3px);
+    }
+
+    .logo-text {
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        text-align: center;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1200px) {
+        .hero-wrapper {
+            gap: 2rem;
+        }
+        
+        .quote-lower {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .hero-editorial {
+            padding: 120px 0 80px;
+        }
+
+        .hero-wrapper {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 4rem;
+        }
+
+        .hero-text-content {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-actions {
+            justify-content: center;
+        }
+
+        .hero-visual {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .background-text {
+            font-size: 30vw;
+        }
+
+        .editorial-item {
+            gap: 4rem;
+        }
+
+        .image-number {
+            font-size: 5rem;
+            top: -1rem;
+            right: -1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-editorial {
+            padding: 100px 0 60px;
+        }
+
+        .quote-upper {
+            font-size: 1.25rem;
+        }
+
+        .quote-lower {
+            font-size: 2.25rem;
+        }
+
+        .editorial-grid {
+            gap: 6rem;
+        }
+
+        .editorial-item {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .editorial-item.reverse {
+            direction: ltr;
+        }
+
+        .image-number {
+            font-size: 4rem;
+            top: -0.5rem;
+            right: 0.5rem;
+        }
+
+        .custom-cta {
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+        }
+
+        .logos-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .section-header {
+            margin-bottom: 5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-label {
+            letter-spacing: 4px;
+            font-size: 0.7rem;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .hero-actions .btn {
+            width: 100%;
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+        }
+
+        .logos-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
