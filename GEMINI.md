@@ -50,7 +50,7 @@ docker-compose up --build -d  # Levantar entorno productivo
 
 ## 🎨 Identidad de Marca y Tono
 Para mantener la coherencia con la visión de Ana Albiol, cualquier cambio en la UI/UX debe seguir estas pautas:
-- **Colores:** Granate (`#633536`) y Vainilla/Beige (`#F6F1EB`). Evitar colores estridentes.
+- **Colores:** Marsala (`#964F4C`) y Vainilla/Beige (`#F6F1EB`). Evitar colores estridentes.
 - **Tono:** Marca personal, calma, profundidad y verdad. No debe parecer una web de "marketing de cursos".
 - **Tipografía:** Protagonista, minimalista, con mucho "aire" (espaciado).
 - **Mensaje Principal:** "Vivir antes de morir".

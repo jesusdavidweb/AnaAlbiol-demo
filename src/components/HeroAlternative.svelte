@@ -168,7 +168,7 @@
     .highlight-text {
         color: #f6f1eb;
         font-style: italic;
-        background: rgba(99, 53, 54, 0.4);
+        background: rgba(150, 79, 76, 0.4);
         padding: 0.1rem 0.4rem;
         border-radius: 4px;
         white-space: wrap;

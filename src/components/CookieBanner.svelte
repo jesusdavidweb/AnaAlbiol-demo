@@ -97,7 +97,7 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
         padding: 2rem;
         border-radius: 30px;
-        box-shadow: 0 20px 50px rgba(99, 53, 54, 0.2);
+        box-shadow: 0 20px 50px rgba(150, 79, 76, 0.2);
         max-width: 900px;
         margin: 0 auto;
     }
@@ -129,7 +129,7 @@
 
     .cookie-text h3 {
         font-family: var(--font-heading, "Lora", serif);
-        color: var(--color-primary, #633536);
+        color: var(--color-primary, #964F4C);
         margin-bottom: 0.5rem;
         font-size: 1.5rem;
         font-style: italic;
@@ -145,7 +145,7 @@
     }
 
     .cookie-text a {
-        color: var(--color-primary, #633536);
+        color: var(--color-primary, #964F4C);
         text-decoration: underline;
         font-weight: 600;
     }
@@ -176,28 +176,28 @@
         letter-spacing: 0.1em;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1.5px solid var(--color-primary, #633536);
+        border: 1.5px solid var(--color-primary, #964F4C);
         font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
     }
 
     .cookie-btn-primary {
-        background: var(--color-primary, #633536);
+        background: var(--color-primary, #964F4C);
         color: white;
     }
 
     .cookie-btn-primary:hover {
         background: transparent;
-        color: var(--color-primary, #633536);
+        color: var(--color-primary, #964F4C);
         transform: translateY(-2px);
     }
 
     .cookie-btn-secondary {
         background: transparent;
-        color: var(--color-primary, #633536);
+        color: var(--color-primary, #964F4C);
     }
 
     .cookie-btn-secondary:hover {
-        background: rgba(99, 53, 54, 0.05);
+        background: rgba(150, 79, 76, 0.05);
         transform: translateY(-2px);
     }
 </style>

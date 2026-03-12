@@ -1,22 +1,22 @@
 :root {
     /* Colors */
-    --color-primary: #633536;
-    /* Granate */
+    --color-primary: #964F4C;
+    /* Marsala (Anteriormente Granate: #633536) */
     --color-secondary: #FAF9F7;
     /* Blanco roto neutro (Anteriormente Vainilla: #F6F1EB) */
     --color-text: #1a1a1a;
     --color-text-light: #333333;
     --color-white: #ffffff;
-    --color-accent: #633536;
-    /* Unified to Granate */
+    --color-accent: #964F4C;
+    /* Unified to Marsala */
 
     /* Fonts */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
     --font-subtitle: 'Lato', sans-serif;
 
-    --color-cta: #633536;
-    /* Granate - Unified CTA Color */
+    --color-cta: #964F4C;
+    /* Marsala - Unified CTA Color */
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -152,7 +152,7 @@ ul {
 
 .btn-primary {
     background-color: var(--color-cta);
-    /* Granate */
+    /* Marsala */
     color: var(--color-white);
     border-color: var(--color-cta);
 }
@@ -160,7 +160,7 @@ ul {
 .btn-primary:hover {
     background-color: transparent;
     color: var(--color-primary);
-    /* Granate text */
+    /* Marsala text */
     border-color: var(--color-primary);
 }
 
@@ -465,7 +465,7 @@ ul {
     padding: 6rem 5rem;
     border-radius: 40px;
     position: relative;
-    box-shadow: 0 10px 30px rgba(99, 53, 54, 0.05);
+    box-shadow: 0 10px 30px rgba(150, 79, 76, 0.05);
     /* Very subtle primary shadow */
     display: flex;
     flex-direction: column;
@@ -539,7 +539,7 @@ ul {
     }
 
     .hero-image-wrapper img {
-        box-shadow: 10px 10px 0 rgba(99, 53, 54, 0.1);
+        box-shadow: 10px 10px 0 rgba(150, 79, 76, 0.1);
         /* Smaller shadow */
     }
 }
@@ -641,7 +641,7 @@ ul {
     height: auto;
     object-fit: cover;
     border-radius: 40px;
-    box-shadow: 20px 20px 0 rgba(99, 53, 54, 0.1);
+    box-shadow: 20px 20px 0 rgba(150, 79, 76, 0.1);
 }
 
 .value-prop p {
@@ -663,7 +663,7 @@ ul {
     margin-top: 3rem;
     color: var(--color-primary);
     text-decoration: underline;
-    text-decoration-color: rgba(99, 53, 54, 0.2);
+    text-decoration-color: rgba(150, 79, 76, 0.2);
     text-underline-offset: 10px;
 }
 
@@ -698,7 +698,7 @@ ul {
     display: block;
     font-family: var(--font-heading);
     font-size: 4rem;
-    color: rgba(99, 53, 54, 0.1);
+    color: rgba(150, 79, 76, 0.1);
     line-height: 1;
     margin-bottom: 1rem;
 }
