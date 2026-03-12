@@ -74,7 +74,7 @@
                 >
             </a>
             <a
-                href="#"
+                href="https://www.youtube.com/@soyanaalbiol?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
@@ -155,7 +155,7 @@
             >
         </a>
         <a
-            href="#"
+            href="https://www.youtube.com/@soyanaalbiol?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
