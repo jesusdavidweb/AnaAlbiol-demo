@@ -1,20 +1,16 @@
+---
+import { Image } from "astro:assets";
+import valueImg from "../assets/images/PRINT_AnaAlbiol_EA-37.webp";
+---
 <section class="value-prop section-padding">
     <div class="container fade-up">
         <div class="value-prop-grid" id="value-prop-container">
             <div class="value-prop-text text-center">
-                <h2>Lo que está en mi mano</h2>
+<h2>Lo que está en mi mano</h2>
                 <p>
-                    Te muevo para que elijas lo que te importa y dejes de
-                    posponer tu VIDA.
-                </p>
-                <p>
-                    Trabajo con herramientas para pensar, hablar y decidir
-                    mejor. Para cambiar la forma en la que miras y, por tanto,
-                    la forma en la que vives.
-                </p>
-                <p class="highlight" style="margin-top: 1.5rem;">
-                    Comparto mi experiencia y mis preguntas para que conectes
-                    con tu historia y encuentres tus propias respuestas.
+                    No tengo la answers. Pero escribo sobre lo que me ha costado
+                    aprender: que no hace falta esperar a tener todo claro para
+                    vivir diferente.
                 </p>
                 <div class="el-resto-container mt-4">
                     <span class="el-resto-line"></span>
@@ -25,12 +21,16 @@
             </div>
             <div class="value-prop-image">
                 <div class="image-placeholder">
-                    <img
-                        src="/assets/images/PRINT_AnaAlbiol_EA-37.webp"
+                    <Image
+                        src={valueImg}
                         alt="Ana Albiol"
                         loading="lazy"
                         class="placeholder-img"
                         style="object-position: center 30%;"
+                        width={600}
+                        height={900}
+                        widths={[300, 600]}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </div>
             </div>
@@ -41,16 +41,21 @@
 <script>
     import { inView, animate, stagger } from "motion";
 
-    const container = document.getElementById("value-prop-container");
-    if (container) {
-        inView(container, () => {
-            animate(
-                Array.from(container.children),
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.8, delay: stagger(0.2) },
-            );
-        });
+    function initValuePropAnimations() {
+        const container = document.getElementById("value-prop-container");
+        if (container) {
+            inView(container, () => {
+                animate(
+                    Array.from(container.children),
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.8, delay: stagger(0.2) },
+                );
+            });
+        }
     }
+
+    initValuePropAnimations();
+    document.addEventListener("astro:after-swap", initValuePropAnimations);
 </script>
 
 <style>
@@ -67,13 +72,12 @@
         font-size: 3.2rem;
         line-height: 1;
         color: var(--color-primary);
-        text-transform: uppercase;
         letter-spacing: -1px;
         margin: 0;
     }
 
     .giant-text-visual .es-tuyo {
-        font-style: italic;
+        font-style: normal;
         font-weight: 300;
         color: var(--color-text);
         font-size: 2.8rem;

@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.2.1",
-    "@astrojs/svelte": "^5.5.0",
-    "astro": "^4.15.0",
+    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/svelte": "^8.0.3",
+    "astro": "^6.0.8",
     "motion": "^10.18.0",
-    "svelte": "^4.2.18"
+    "svelte": "^5.55.0"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
   }
 }

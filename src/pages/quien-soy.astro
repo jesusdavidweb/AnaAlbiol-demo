@@ -1,5 +1,16 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+import imgHeroBg from "../assets/images/PRINT_AnaAlbiol_EA-32.webp";
+import img01 from "../assets/images/PRINT_AnaAlbiol_EA-14.webp";
+import img02 from "../assets/images/PRINT_AnaAlbiol_EA-47.webp";
+import imgParallax from "../assets/images/PRINT_AnaAlbiol_EA-26.webp";
+import imgFullWidth from "../assets/images/PRINT_AnaAlbiol_EA-16.webp";
+import imgIsland from "../assets/images/PRINT_AnaAlbiolJUN25-21.webp";
+import imgGallery1 from "../assets/images/PRINT_AnaAlbiol_EA-33.webp";
+import imgGallery2 from "../assets/images/PRINT_AnaAlbiol_EA-31.webp";
+import imgGallery3 from "../assets/images/PRINT_AnaAlbiol_EA-37.webp";
 ---
 
 <Layout
@@ -7,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
     description="Conoce a Ana Albiol. La historia de una maquilladora que colgó las brochas para dedicarse a la comunicación y el desarrollo personal."
 >
     <!-- Hero: Full-screen portrait -->
-    <section class="story-hero" id="story-hero">
+    <section class="story-hero" id="story-hero" style={`background-image: url('${imgHeroBg.src}')`}>
         <div class="story-hero__overlay"></div>
         <div class="story-hero__content">
             <p class="story-hero__label">Mi Historia</p>
@@ -22,12 +33,14 @@ import Layout from "../layouts/Layout.astro";
     <section class="story-chapter" id="chapter-origin">
         <div class="story-grid">
             <div class="story-grid__image story-reveal">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiol_EA-14.webp"
+                <Image
+                    src={img01}
                     alt="Ana Albiol en un campo dorado al atardecer"
                     loading="lazy"
-                    width="800"
-                    height="1200"
+                    width={800}
+                    height={1200}
+                    widths={[400, 800]}
+                    sizes="(max-width: 900px) 100vw, 50vw"
                 />
             </div>
             <div class="story-grid__text story-reveal">
@@ -82,12 +95,14 @@ import Layout from "../layouts/Layout.astro";
                 </p>
             </div>
             <div class="story-grid__image story-reveal">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiol_EA-47.webp"
+                <Image
+                    src={img02}
                     alt="Ana Albiol sosteniendo un reloj de arena, símbolo del tiempo"
                     loading="lazy"
-                    width="800"
-                    height="1200"
+                    width={800}
+                    height={1200}
+                    widths={[400, 800]}
+                    sizes="(max-width: 900px) 100vw, 50vw"
                 />
             </div>
         </div>
@@ -97,7 +112,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="story-parallax" id="chapter-turning">
         <div
             class="story-parallax__bg"
-            style="background-image: url('/assets/images/PRINT_AnaAlbiol_EA-26.webp')"
+            style={`background-image: url('${imgParallax.src}')`}
         >
         </div>
         <div class="story-parallax__overlay"></div>
@@ -125,12 +140,14 @@ import Layout from "../layouts/Layout.astro";
     <!-- Chapter 4: Reinvención (Full-width jumping) -->
     <section class="story-fullwidth" id="chapter-leap">
         <div class="story-fullwidth__image">
-            <img
-                src="/assets/images/PRINT_AnaAlbiol_EA-16.webp"
+            <Image
+                src={imgFullWidth}
                 alt="Ana Albiol saltando libre al atardecer en un campo"
                 loading="lazy"
-                width="1400"
-                height="933"
+                width={1400}
+                height={933}
+                widths={[800, 1400]}
+                sizes="100vw"
             />
         </div>
         <div class="story-fullwidth__text story-reveal">
@@ -154,12 +171,14 @@ import Layout from "../layouts/Layout.astro";
     <section class="story-chapter" id="chapter-island">
         <div class="story-grid">
             <div class="story-grid__image story-reveal">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiolJUN25-21.webp"
+                <Image
+                    src={imgIsland}
                     alt="Ana Albiol trabajando en su laptop junto a una ventana con vista al mar"
                     loading="lazy"
-                    width="800"
-                    height="1200"
+                    width={800}
+                    height={1200}
+                    widths={[400, 800]}
+                    sizes="(max-width: 900px) 100vw, 50vw"
                 />
             </div>
             <div class="story-grid__text story-reveal">
@@ -187,30 +206,36 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="story-gallery story-reveal">
             <div class="story-gallery__item story-gallery__item--tall">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiol_EA-33.webp"
+                <Image
+                    src={imgGallery1}
                     alt="Ana Albiol con traje blanco profesional"
                     loading="lazy"
-                    width="600"
-                    height="900"
+                    width={600}
+                    height={900}
+                    widths={[300, 600]}
+                    sizes="(max-width: 768px) 50vw, 33vw"
                 />
             </div>
             <div class="story-gallery__item">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiol_EA-31.webp"
+                <Image
+                    src={imgGallery2}
                     alt="Ana Albiol sonriendo con cortina blanca"
                     loading="lazy"
-                    width="600"
-                    height="900"
+                    width={600}
+                    height={900}
+                    widths={[300, 600]}
+                    sizes="(max-width: 768px) 50vw, 33vw"
                 />
             </div>
             <div class="story-gallery__item">
-                <img
-                    src="/assets/images/PRINT_AnaAlbiol_EA-37.webp"
+                <Image
+                    src={imgGallery3}
                     alt="Ana Albiol sentada en una silla, reflexiva y cercana"
                     loading="lazy"
-                    width="600"
-                    height="400"
+                    width={600}
+                    height={400}
+                    widths={[300, 600]}
+                    sizes="(max-width: 768px) 50vw, 33vw"
                 />
             </div>
         </div>
@@ -283,7 +308,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="story-closing" id="closing">
         <div
             class="story-closing__bg"
-            style="background-image: url('/assets/images/PRINT_AnaAlbiol_EA-16.webp')"
+            style={`background-image: url('${imgFullWidth.src}')`}
         >
         </div>
         <div class="story-closing__overlay"></div>
@@ -300,107 +325,106 @@ import Layout from "../layouts/Layout.astro";
 <script>
     import { inView, animate, stagger } from "motion";
 
-    // Hero parallax on scroll
-    const heroSection = document.getElementById("story-hero");
-    if (heroSection) {
-        const heroContent = heroSection.querySelector(".story-hero__content");
-        window.addEventListener(
-            "scroll",
-            () => {
-                const scrollY = window.scrollY;
-                const heroHeight = heroSection.offsetHeight;
-                if (scrollY < heroHeight) {
-                    const progress = scrollY / heroHeight;
-                    if (heroContent) {
-                        (heroContent as HTMLElement).style.transform =
-                            `translateY(${scrollY * 0.3}px)`;
-                        (heroContent as HTMLElement).style.opacity =
-                            `${1 - progress * 1.2}`;
+    function initQuienSoyAnimations() {
+        const heroSection = document.getElementById("story-hero");
+        if (heroSection) {
+            const heroContent = heroSection.querySelector(".story-hero__content");
+            window.addEventListener(
+                "scroll",
+                () => {
+                    const scrollY = window.scrollY;
+                    const heroHeight = heroSection.offsetHeight;
+                    if (scrollY < heroHeight) {
+                        const progress = scrollY / heroHeight;
+                        if (heroContent) {
+                            (heroContent as HTMLElement).style.transform =
+                                `translateY(${scrollY * 0.3}px)`;
+                            (heroContent as HTMLElement).style.opacity =
+                                `${1 - progress * 1.2}`;
+                        }
                     }
-                }
-            },
-            { passive: true },
-        );
+                },
+                { passive: true },
+            );
+        }
+
+        const revealElements = document.querySelectorAll(".story-reveal");
+        revealElements.forEach((el) => {
+            (el as HTMLElement).style.opacity = "0";
+            (el as HTMLElement).style.transform = "translateY(40px)";
+
+            inView(
+                el,
+                () => {
+                    animate(
+                        el,
+                        { opacity: [0, 1], y: [40, 0] },
+                        { duration: 0.9, easing: [0.25, 0.1, 0.25, 1] },
+                    );
+                },
+                { margin: "0px 0px -100px 0px" },
+            );
+        });
+
+        const gallery = document.querySelector(".story-gallery");
+        if (gallery) {
+            inView(
+                gallery,
+                () => {
+                    animate(
+                        gallery.querySelectorAll(".story-gallery__item"),
+                        { opacity: [0, 1], y: [60, 0], scale: [0.95, 1] },
+                        {
+                            duration: 0.8,
+                            delay: stagger(0.15),
+                            easing: [0.25, 0.1, 0.25, 1],
+                        },
+                    );
+                },
+                { margin: "0px 0px -80px 0px" },
+            );
+        }
+
+        const diffGrid = document.querySelector(".story-diff__grid");
+        if (diffGrid) {
+            inView(
+                diffGrid,
+                () => {
+                    animate(
+                        diffGrid.querySelectorAll(".story-diff__card"),
+                        { opacity: [0, 1], y: [30, 0] },
+                        { duration: 0.7, delay: stagger(0.12), easing: "ease-out" },
+                    );
+                },
+                { margin: "0px 0px -60px 0px" },
+            );
+        }
+
+        const heroLabel = document.querySelector(".story-hero__label");
+        const heroTitle = document.querySelector(".story-hero__title");
+        const heroScroll = document.querySelector(".story-hero__scroll");
+
+        if (heroLabel && heroTitle && heroScroll) {
+            animate(
+                heroLabel,
+                { opacity: [0, 1], y: [20, 0] },
+                { duration: 0.8, delay: 0.3, easing: "ease-out" },
+            );
+            animate(
+                heroTitle,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 1, delay: 0.6, easing: "ease-out" },
+            );
+            animate(
+                heroScroll,
+                { opacity: [0, 1] },
+                { duration: 0.6, delay: 1.4, easing: "ease-out" },
+            );
+        }
     }
 
-    // Reveal animations for all sections
-    const revealElements = document.querySelectorAll(".story-reveal");
-    revealElements.forEach((el) => {
-        // Set initial state
-        (el as HTMLElement).style.opacity = "0";
-        (el as HTMLElement).style.transform = "translateY(40px)";
-
-        inView(
-            el,
-            () => {
-                animate(
-                    el,
-                    { opacity: [0, 1], y: [40, 0] },
-                    { duration: 0.9, easing: [0.25, 0.1, 0.25, 1] },
-                );
-            },
-            { margin: "0px 0px -100px 0px" },
-        );
-    });
-
-    // Stagger gallery items
-    const gallery = document.querySelector(".story-gallery");
-    if (gallery) {
-        inView(
-            gallery,
-            () => {
-                animate(
-                    gallery.querySelectorAll(".story-gallery__item"),
-                    { opacity: [0, 1], y: [60, 0], scale: [0.95, 1] },
-                    {
-                        duration: 0.8,
-                        delay: stagger(0.15),
-                        easing: [0.25, 0.1, 0.25, 1],
-                    },
-                );
-            },
-            { margin: "0px 0px -80px 0px" },
-        );
-    }
-
-    // Stagger differentiator cards
-    const diffGrid = document.querySelector(".story-diff__grid");
-    if (diffGrid) {
-        inView(
-            diffGrid,
-            () => {
-                animate(
-                    diffGrid.querySelectorAll(".story-diff__card"),
-                    { opacity: [0, 1], y: [30, 0] },
-                    { duration: 0.7, delay: stagger(0.12), easing: "ease-out" },
-                );
-            },
-            { margin: "0px 0px -60px 0px" },
-        );
-    }
-
-    // Hero entrance animation
-    const heroLabel = document.querySelector(".story-hero__label");
-    const heroTitle = document.querySelector(".story-hero__title");
-    const heroScroll = document.querySelector(".story-hero__scroll");
-
-    if (heroLabel && heroTitle && heroScroll) {
-        animate(
-            heroLabel,
-            { opacity: [0, 1], y: [20, 0] },
-            { duration: 0.8, delay: 0.3, easing: "ease-out" },
-        );
-        animate(
-            heroTitle,
-            { opacity: [0, 1], y: [30, 0] },
-            { duration: 1, delay: 0.6, easing: "ease-out" },
-        );
-        animate(
-            heroScroll,
-            { opacity: [0, 1] },
-            { duration: 0.6, delay: 1.4, easing: "ease-out" },
-        );
-    }
+    initQuienSoyAnimations();
+    document.addEventListener("astro:after-swap", initQuienSoyAnimations);
 </script>
 
 <style>
@@ -421,7 +445,7 @@ import Layout from "../layouts/Layout.astro";
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        background-image: url("/assets/images/PRINT_AnaAlbiol_EA-32.webp");
+        /* background-image set using inline style for vite processing */
         background-size: cover;
         background-position: center 25%;
         overflow: hidden;
@@ -463,7 +487,7 @@ import Layout from "../layouts/Layout.astro";
         font-size: clamp(3.5rem, 8vw, 7rem);
         color: var(--color-primary);
         font-weight: 500;
-        font-style: italic;
+        font-style: normal;
         line-height: 1;
         margin-bottom: 0;
         opacity: 0;
@@ -562,7 +586,7 @@ import Layout from "../layouts/Layout.astro";
         display: block;
         font-family: var(--font-heading);
         font-size: 5rem;
-        font-style: italic;
+        font-style: normal;
         color: rgba(150, 79, 76, 0.08);
         line-height: 1;
         margin-bottom: 0.5rem;
@@ -586,7 +610,7 @@ import Layout from "../layouts/Layout.astro";
 
     .story-emphasis {
         font-family: var(--font-heading);
-        font-style: italic;
+        font-style: normal;
         font-size: 1.4rem !important;
         color: var(--color-primary) !important;
         margin-top: 1rem;
@@ -617,7 +641,7 @@ import Layout from "../layouts/Layout.astro";
     .story-quote blockquote {
         font-family: var(--font-heading);
         font-size: clamp(1.8rem, 4vw, 3rem);
-        font-style: italic;
+        font-style: normal;
         color: white;
         line-height: 1.3;
         font-weight: 400;
@@ -833,7 +857,7 @@ import Layout from "../layouts/Layout.astro";
     .story-signature {
         font-family: var(--font-heading);
         font-size: 3rem;
-        font-style: italic;
+        font-style: normal;
         color: var(--color-primary);
         margin-top: 2rem;
         margin-bottom: 0;

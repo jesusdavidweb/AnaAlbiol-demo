@@ -2,9 +2,15 @@
 import "../styles/global.css";
 import Header from "../components/Header.svelte";
 import Footer from "../components/Footer.astro";
+import { Font } from "astro:assets";
+
+import { ClientRouter } from "astro:transitions";
+import { fade } from "astro:transitions";
 
 import CookieBanner from "../components/CookieBanner.svelte";
 import Preloader from "../components/Preloader.svelte";
+
+import ogImg from "../assets/images/WEB_AnaAlbiolJUN25-26.webp";
 
 interface Props {
     title: string;
@@ -31,13 +37,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <title>{title}</title>
         <link rel="canonical" href={canonicalURL.href} />
 
-        <!-- Preconnect to Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-            rel="stylesheet"
-        />
+        <!-- Astro Font Component for Google Fonts -->
+        <Font cssVariable="--font-body" preload />
+        <Font cssVariable="--font-subtitle" preload />
+        <Font cssVariable="--font-heading" preload />
 
         <!-- Preload LCP hero image if provided -->
         {
@@ -58,7 +61,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <meta property="og:description" content={description} />
         <meta
             property="og:image"
-            content="https://anaalbiol.com/assets/images/WEB_AnaAlbiolJUN25-26.webp"
+            content={new URL(ogImg.src, Astro.site)}
         />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:site_name" content="Ana Albiol" />
@@ -69,7 +72,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <meta name="twitter:description" content={description} />
         <meta
             name="twitter:image"
-            content="https://anaalbiol.com/assets/images/WEB_AnaAlbiolJUN25-26.webp"
+            content={new URL(ogImg.src, Astro.site)}
         />
 
         <!-- Security Headers -->
@@ -79,8 +82,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <link
             rel="icon"
             type="image/svg+xml"
-            href="/assets/images/LOGO_AnaAlbiol_Color.svg"
+            href="/images/favicon-ana.svg"
         />
+
+        <!-- View Transitions -->
+        <ClientRouter />
 
         <!-- Using local global.css imported in frontmatter -->
         <script is:inline>
@@ -95,28 +101,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </head>
     <body>
         <Preloader client:load />
-        <Header client:load theme={headerTheme} />
-        <main>
+        <Header client:load theme={headerTheme} currentPath={Astro.url.pathname} transition:persist="header" />
+        <main transition:animate={fade({ duration: "0.35s" })}>
             <slot />
         </main>
-        <Footer />
+        <Footer transition:persist />
 
         <CookieBanner client:idle />
 
         <script>
             import { inView, animate } from "motion";
 
-            // Global fade-up animation
-            const fadeUpElements = document.querySelectorAll(".fade-up");
-            fadeUpElements.forEach((el) => {
-                inView(el, () => {
-                    animate(
-                        el,
-                        { opacity: [0, 1], y: [40, 0] },
-                        { duration: 0.8, easing: "ease-out" },
-                    );
+            function initFadeUpAnimations() {
+                const fadeUpElements = document.querySelectorAll(".fade-up");
+                fadeUpElements.forEach((el) => {
+                    inView(el, () => {
+                        animate(
+                            el,
+                            { opacity: [0, 1], y: [40, 0] },
+                            { duration: 0.8, easing: "ease-out" },
+                        );
+                    });
                 });
-            });
+            }
+
+            initFadeUpAnimations();
+            document.addEventListener("astro:after-swap", initFadeUpAnimations);
         </script>
     </body>
 </html>

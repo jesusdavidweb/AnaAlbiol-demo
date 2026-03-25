@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import HeroAlternative from "../components/HeroAlternative.svelte";
 import ValueProposition from "../components/ValueProposition.astro";
@@ -6,12 +7,13 @@ import NavigationCards from "../components/NavigationCards.astro";
 import AboutIntro from "../components/AboutIntro.astro";
 import SiElRioSuena from "../components/SiElRioSuena.astro";
 import Newsletter from "../components/Newsletter.astro";
+
+import heroImg from "../assets/images/WEB_AnaAlbiolJUN25-26.webp";
+import bioImg from "../assets/images/PRINT_AnaAlbiol_EA-26.webp";
+import panoImg from "../assets/images/PRINT_AnaAlbiolJUN25-20.webp";
 ---
 
-<Layout
-    title="Ana Albiol | Vivir antes de morir"
-    preloadImage="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
->
+<Layout title="Ana Albiol | Vivir antes de morir" preloadImage={heroImg.src}>
     <!-- 
       Usamos HeroAlternative tal y como se definió en index-2.astro, haciéndolo la página oficial.
     -->
@@ -24,26 +26,27 @@ import Newsletter from "../components/Newsletter.astro";
         <div class="container fade-up-banner">
             <div class="split-bio-grid">
                 <div class="bio-image-wrapper">
-                    <img
-                        src="/assets/images/PRINT_AnaAlbiol_EA-26.webp"
+                    <Image
+                        src={bioImg}
                         alt="Ana Albiol"
                         class="split-bio-image"
                         loading="lazy"
                         style="object-position: center 20%;"
+                        widths={[400, 800, bioImg.width]}
+                        sizes="(max-width: 900px) 100vw, 50vw"
                     />
                 </div>
                 <div class="bio-content-wrapper">
                     <h2 class="mb-4">Escribo mi propia historia</h2>
                     <div class="bio-content">
                         <p>
-                            Dejé una vida "segura" para lanzarme a la
-                            incertidumbre. Aprendí a base de golpes, de éxitos y
-                            de rediseñarme mil veces.
+                            Dejé la perfumería sin saber qué vendría después.
+                            Aprendí a base de golpes y de confiar en el
+                            siguiente paso.
                         </p>
                         <p>
-                            Hoy mi mayor éxito es irme a la cama tranquila,
-                            sabiendo que soy fiel a lo que siento y que vivo
-                            antes de morir.
+                            Hoy mi mayor éxito es simple: me acuesto sabiendo que
+                            soy fiel a lo que siento.
                         </p>
                         <a href="/quien-soy" class="btn mt-4"
                             >Conoce mi recorrido</a
@@ -60,13 +63,18 @@ import Newsletter from "../components/Newsletter.astro";
 
     <!-- Banner Lifestyle panorámico (Transición) -->
     <section class="panoramic-transition">
-        <img
-            src="/assets/images/PRINT_AnaAlbiolJUN25-20.webp"
-            alt="Ana Albiol Lifestyle"
-            class="panoramic-img"
-            loading="lazy"
-            style="object-position: center 25%;"
-        />
+        <div class="panoramic-wrapper">
+            <div class="panoramic-viewport">
+                <Image
+                    src={panoImg}
+                    alt="Ana Albiol Lifestyle"
+                    class="panoramic-img"
+                    loading="lazy"
+                    widths={[800, 1200, 1600]}
+                    sizes="100vw"
+                />
+            </div>
+        </div>
     </section>
 
     <Newsletter />
@@ -81,7 +89,7 @@ import Newsletter from "../components/Newsletter.astro";
                     "@type": "Person",
                     name: "Ana Albiol",
                     url: "https://anaalbiol.com",
-                    image: "https://anaalbiol.com/assets/images/WEB_AnaAlbiolJUN25-26.webp",
+                    image: new URL(heroImg.src, Astro.site).href,
                     jobTitle: "Coach y Comunicadora",
                     description:
                         "Desarrollo personal, coherencia y vida. Herramientas para dejar de posponer tu vida.",
@@ -162,19 +170,29 @@ import Newsletter from "../components/Newsletter.astro";
     .panoramic-transition {
         position: relative;
         width: 100%;
-        height: 60vh;
-        min-height: 400px;
-        max-height: 700px;
-        margin: 6rem 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .panoramic-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+    }
+
+    .panoramic-viewport {
+        position: absolute;
+        inset: 0;
         overflow: hidden;
     }
 
     .panoramic-img {
         width: 100%;
-        height: 130%; /* Taller for parallax */
+        height: 100%;
         object-fit: cover;
         display: block;
-        margin-top: -15%; /* Center vertically within taller height */
+        transform: scale(1.15) translateX(-3%);
         will-change: transform;
     }
 
@@ -191,36 +209,65 @@ import Newsletter from "../components/Newsletter.astro";
 <script>
     import { inView, animate, scroll } from "motion";
 
-    // Fade-in animations for banners
-    const bannerElements = document.querySelectorAll(".fade-up-banner");
-    bannerElements.forEach((el) => {
-        const htmlEl = el as HTMLElement;
-        htmlEl.style.opacity = "0";
-        inView(el, () => {
-            animate(
-                el,
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.8, easing: "ease-out" },
-            );
+    function initAnimations() {
+        const bannerElements = document.querySelectorAll(".fade-up-banner");
+        bannerElements.forEach((el) => {
+            const htmlEl = el as HTMLElement;
+            htmlEl.style.opacity = "0";
+            inView(el, () => {
+                animate(
+                    el,
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.8, easing: "ease-out" },
+                );
+            });
         });
-    });
 
-    // Parallax effect for the panoramic image
-    const panoramicImg = document.querySelector(".panoramic-img");
-    const panoramicSection = document.querySelector(".panoramic-transition");
-    if (panoramicImg && panoramicSection) {
-        scroll(animate(panoramicImg, { y: ["-10%", "10%"] }), {
-            target: panoramicSection,
-            offset: ["start end", "end start"],
-        });
+        const panoramicWrapper = document.querySelector(".panoramic-wrapper");
+        if (panoramicWrapper) {
+            inView(panoramicWrapper, () => {
+                animate(
+                    panoramicWrapper,
+                    { opacity: [0, 1], scale: [0.97, 1] },
+                    { duration: 1.2, easing: [0.25, 0.46, 0.45, 0.94] },
+                );
+            });
+        }
+
+        const panoramicImg = document.querySelector(".panoramic-img");
+        const panoramicSection = document.querySelector(".panoramic-transition");
+        if (panoramicImg && panoramicSection) {
+            scroll(
+                animate(panoramicImg, {
+                    scale: [1.15, 1],
+                    x: ["-3%", "0%"],
+                }),
+                {
+                    target: panoramicSection,
+                    offset: ["start end", "center center"],
+                }
+            );
+            scroll(
+                animate(panoramicImg, {
+                    y: ["0%", "8%"],
+                }),
+                {
+                    target: panoramicSection,
+                    offset: ["center center", "end start"],
+                }
+            );
+        }
+
+        const bioImg = document.querySelector(".split-bio-image");
+        const bioSection = document.querySelector(".split-bio");
+        if (bioImg && bioSection) {
+            scroll(animate(bioImg, { y: ["-5%", "5%"] }), {
+                target: bioSection,
+                offset: ["start end", "end start"],
+            });
+        }
     }
-    // Parallax effect for the bio image
-    const bioImg = document.querySelector(".split-bio-image");
-    const bioSection = document.querySelector(".split-bio");
-    if (bioImg && bioSection) {
-        scroll(animate(bioImg, { y: ["-5%", "5%"] }), {
-            target: bioSection,
-            offset: ["start end", "end start"],
-        });
-    }
+
+    initAnimations();
+    document.addEventListener("astro:after-swap", initAnimations);
 </script>

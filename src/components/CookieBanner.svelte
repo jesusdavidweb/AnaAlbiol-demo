@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import { animate } from "motion";
 
-    let show = false;
+    let show = $state(false);
 
     onMount(() => {
         // Check if user has already given consent
@@ -72,12 +72,12 @@
                 <button
                     type="button"
                     class="cookie-btn cookie-btn-secondary"
-                    on:click={decline}>Solo necesarias</button
+                    onclick={decline}>Solo necesarias</button
                 >
                 <button
                     type="button"
                     class="cookie-btn cookie-btn-primary"
-                    on:click={accept}>Aceptar todas</button
+                    onclick={accept}>Aceptar todas</button
                 >
             </div>
         </div>
@@ -128,11 +128,11 @@
     }
 
     .cookie-text h3 {
-        font-family: var(--font-heading, "Lora", serif);
-        color: var(--color-primary, #964F4C);
+        font-family: var(--font-heading);
+        color: var(--color-primary, #964f4c);
         margin-bottom: 0.5rem;
         font-size: 1.5rem;
-        font-style: italic;
+        font-style: normal;
         font-weight: 500;
     }
 
@@ -145,7 +145,7 @@
     }
 
     .cookie-text a {
-        color: var(--color-primary, #964F4C);
+        color: var(--color-primary, #964f4c);
         text-decoration: underline;
         font-weight: 600;
     }
@@ -176,24 +176,24 @@
         letter-spacing: 0.1em;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1.5px solid var(--color-primary, #964F4C);
+        border: 1.5px solid var(--color-primary, #964f4c);
         font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
     }
 
     .cookie-btn-primary {
-        background: var(--color-primary, #964F4C);
+        background: var(--color-primary, #964f4c);
         color: white;
     }
 
     .cookie-btn-primary:hover {
         background: transparent;
-        color: var(--color-primary, #964F4C);
+        color: var(--color-primary, #964f4c);
         transform: translateY(-2px);
     }
 
     .cookie-btn-secondary {
         background: transparent;
-        color: var(--color-primary, #964F4C);
+        color: var(--color-primary, #964f4c);
     }
 
     .cookie-btn-secondary:hover {

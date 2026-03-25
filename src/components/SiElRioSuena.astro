@@ -7,19 +7,19 @@
         <h2 class="text-center mb-5 section-title">Si el río suena, es aquí</h2>
         <div class="ganchos-grid" id="ganchos-container">
             <div class="gancho-card">
-                <p>No estás mal, pero tampoco puedes tirar cohetes.</p>
+                <p>No estás mal. Pero algo te roba la ilusión.</p>
             </div>
             <div class="gancho-card">
                 <p>
-                    Sabes que quieres vivir de otra forma, aunque aún no sabes
-                    cómo narices empezar o no tienes ni un mísero plan.
+                    Sabes que quieres algo diferente. Aunque no sepas qué.
                 </p>
             </div>
             <div class="gancho-card highlight-card">
                 <p>
                     <strong
-                        >Después de mucho pensar y leerlo todo, ha llegado la
-                        hora de mover el trasero.</strong>
+                        >Ha llegado el momento de dejar de leer sobre vivir y
+                        empezar a vivir.</strong
+                    >
                 </p>
             </div>
         </div>
@@ -29,16 +29,21 @@
 <script>
     import { inView, animate, stagger } from "motion";
 
-    const container = document.getElementById("ganchos-container");
-    if (container) {
-        inView(container, () => {
-            animate(
-                Array.from(container.children),
-                { opacity: [0, 1], y: [40, 0] },
-                { duration: 0.8, delay: stagger(0.2) },
-            );
-        });
+    function initGanchoAnimations() {
+        const container = document.getElementById("ganchos-container");
+        if (container) {
+            inView(container, () => {
+                animate(
+                    Array.from(container.children),
+                    { opacity: [0, 1], y: [40, 0] },
+                    { duration: 0.8, delay: stagger(0.2) },
+                );
+            });
+        }
     }
+
+    initGanchoAnimations();
+    document.addEventListener("astro:after-swap", initGanchoAnimations);
 </script>
 
 <style>
@@ -51,7 +56,7 @@
 
     .section-title {
         color: var(--color-primary);
-        font-style: italic;
+        font-style: normal;
         margin-bottom: 3rem;
     }
 

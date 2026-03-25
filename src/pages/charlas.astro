@@ -5,145 +5,98 @@ GitHub: @jesusdavidweb (http://github.com/jesusdavidweb)
 Author Website: jesusdavid.net (https://jesusdavid.net/)
 Instagram: @jesusdavidweb (https://www.instagram.com/jesusdavidweb/)
 LinkedIn: Jesus David (https://www.linkedin.com/in/jesusdavid/)
-Fecha: [05-03-2026]
-Description: Premium talks page redesign with editorial layout, dramatic hero, and enhanced animations
+Fecha: [25-03-2026]
+Description: Minimalist redesign of Charlas page with clean grid and newsletter CTA
 */
-
 import Layout from "../layouts/Layout.astro";
 
-// Topic data without images (using placeholders)
 const topics = [
     {
         id: "01",
         title: "Valores, coherencia y decisiones",
         description:
-            "Una exploración profunda sobre cómo alinear lo que somos con lo que hacemos. Ideal para equipos que buscan liderazgo consciente y autenticidad en la toma de decisiones.",
+            "Una exploración profunda sobre cómo alinear lo que somos con lo que hacemos. Ideal para equipos que buscan liderazgo consciente.",
     },
     {
         id: "02",
         title: "Hábitos, renuncia y FOMO",
         description:
-            "Cómo simplificar para avanzar. Una charla sobre el poder de decir 'no' y la construcción de hábitos que sostienen una VIDA con propósito.",
+            "Cómo simplificar para avanzar. El poder de decir 'no' y la construcción de hábitos que sostienen una vida con propósito.",
     },
     {
         id: "03",
-        title: "Autenticidad y cambios de VIDA",
+        title: "Autenticidad y cambios de vida",
         description:
-            "El relato de una transformación real. Herramientas para transitar el cambio sin perder la esencia, inspirando a otros a vivir antes de morir.",
+            "El relato de una transformación real. Herramientas para transitar el cambio sin perder la esencia.",
     },
     {
         id: "04",
         title: "Emprendimiento con Alma",
         description:
-            "Más allá de los números y el marketing. Una visión humana de qué significa crear y sostener un proyecto propio en un mundo saturado.",
+            "Más allá de los números. Una visión humana de qué significa crear y sostener un proyecto propio.",
     },
-];
-
-// Company logos placeholders (elegant text-based)
-const companies = [
-    "Grupoenterprise",
-    "Innovación Corp",
-    "Líderes 360",
-    "Future Vision",
-    "Strategic Growth",
-    "Core Values Co",
+    {
+        id: "05",
+        title: "Liderazgo consciente",
+        description:
+            "Guía para líderes que quieren inspirar desde la autenticidad y construir equipos resilientes.",
+    },
+    {
+        id: "06",
+        title: "Resiliencia corporativa",
+        description:
+            "Estrategias para crear culturas organizacionales que prosperen ante la incertidumbre.",
+    },
 ];
 ---
 
 <Layout
     title="Charlas | Ana Albiol"
     description="Charlas y conferencias de Ana Albiol para empresas y eventos. Valores, coherencia, hábitos y autenticidad."
-    headerTheme="light"
+    headerTheme="dark"
 >
-    <!-- Hero Editorial de Alto Contraste -->
-    <section class="hero-editorial">
-        <div class="background-text">ESCENARIO</div>
-        
-        <div class="container hero-wrapper">
-            <div class="hero-text-content">
-                <div class="label-wrapper fade-element">
-                    <span class="hero-label">Conferenciante</span>
+    <!-- Hero Minimalista -->
+    <section class="hero-minimal">
+        <div class="hero-wrapper">
+            <div class="hero-bg-accent"></div>
+            <div class="hero-inner">
+                <div class="hero-badge">
+                    <span class="badge-text">Charlas</span>
                 </div>
-
-                <div class="quote-main fade-element">
-                    <blockquote class="hero-quote">
-                        <p class="quote-upper">
-                            Vargas Llosa quería que la muerte lo encontrara
-                            <em>escribiendo.</em>
-                        </p>
-                        <p class="quote-lower">
-                            <span class="highlight">A mí me gustaría que la muerte me encuentre en un escenario.</span>
-                        </p>
-                    </blockquote>
-                    <cite class="quote-author">— Ana Albiol</cite>
-                </div>
-
-                <div class="hero-actions fade-element">
-                    <a href="#temas" class="btn btn-primary">Explorar Temas</a>
-                    <a href="/contacto" class="btn">Solicitar disponibilidad</a>
-                </div>
-            </div>
-
-            <div class="hero-visual fade-element">
-                <div class="image-container">
-                    <img 
-                        src="/assets/images/WEB_AnaAlbiol_EA-16.webp" 
-                        alt="Ana Albiol en el escenario" 
-                        class="hero-image"
-                    />
-                    <div class="image-accent-border"></div>
-                </div>
+                <h1 class="hero-title">Charlas que inspiran</h1>
+                <p class="hero-subtitle">
+                    Propuestas de valor para empresas y eventos que buscan coherencia y transformación.
+                </p>
+                <a href="/contacto" class="hero-cta">Solicitar disponibilidad</a>
             </div>
         </div>
-
-        <div class="scroll-wrapper fade-element">
-            <div class="scroll-mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <span class="scroll-text">Deslizar para descubrir</span>
+        <div class="hero-decorative">
+            <div class="deco-circle deco-circle-1"></div>
+            <div class="deco-circle deco-circle-2"></div>
+            <div class="deco-circle deco-circle-3"></div>
         </div>
     </section>
 
-    <!-- Temas Habituales - Editorial Grid -->
-    <section id="temas" class="topics-editorial">
+    <!-- Grid de Tarjetas -->
+    <section class="charlas-grid-section">
         <div class="container">
-            <header class="section-header">
-                <span class="section-label fade-element">Propuestas</span>
-                <h2 class="section-title fade-element">Temas Habituales</h2>
-                <p class="section-subtitle fade-element">
-                    Propuestas de valor para empresas y eventos que buscan
-                    coherencia y transformación.
-                </p>
-            </header>
-
-            <div class="editorial-grid">
+            <div class="charlas-grid">
                 {
                     topics.map((topic, index) => (
-                        <article
-                            class={`editorial-item ${index % 2 === 1 ? "reverse" : ""} fade-element`}
-                        >
-                            <div class="editorial-image">
+                        <article class="charla-card" style={`--delay: ${index * 0.1}s`}>
+                            <div class="card-image">
                                 <div class="placeholder-box">
-                                    <span class="placeholder-label">
-                                        Imagen: {topic.title}
-                                    </span>
+                                    <span class="placeholder-label">{topic.title}</span>
                                 </div>
-                                <span class="image-number">{topic.id}</span>
+                                <span class="card-number">{topic.id}</span>
                             </div>
-                            <div class="editorial-content">
-                                <h3>{topic.title}</h3>
-                                <p>{topic.description}</p>
-                                <a href="/contacto" class="topic-link">
+                            <div class="card-content">
+                                <h3 class="card-title">{topic.title}</h3>
+                                <p class="card-description">{topic.description}</p>
+                                <a href="/contacto" class="card-link">
                                     <span>Saber más</span>
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                    >
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
                                     </svg>
                                 </a>
                             </div>
@@ -151,707 +104,609 @@ const companies = [
                     ))
                 }
             </div>
-
-            <div class="custom-cta fade-element">
-                <p>¿Buscas algo específico?</p>
-                <p class="cta-secondary">
-                    Diseño charlas y formaciones a medida para tu evento.
-                </p>
-                <a href="/contacto" class="btn btn-primary">
-                    Contactar para Charlas
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- Empresas que han confiado -->
-    <section class="logos-section-premium">
-        <div class="container">
-            <header class="logos-header fade-element">
-                <span class="logos-label">Reconocimiento</span>
-                <h2>Empresas que han confiado</h2>
-            </header>
+    <!-- CTA Newsletter Style -->
+    <section class="charlas-cta">
+        <div class="cta-wrapper">
+            <div class="cta-bg-accent"></div>
+            <div class="cta-inner">
+                <div class="cta-badge">
+                    <span class="badge-text">Charlas</span>
+                </div>
 
-            <div class="logos-grid">
-                {
-                    companies.map((company, index) => (
-                        <div
-                            class="logo-item fade-element"
-                            style={`--delay: ${index * 0.1}s`}
-                        >
-                            <span class="logo-text">{company}</span>
-                        </div>
-                    ))
-                }
+                <h2 class="cta-heading">
+                    ¿Buscas algo específico?
+                </h2>
+
+                <p class="cta-description">
+                    Diseño charlas y formaciones a medida para tu evento.
+                </p>
+
+                <a href="/contacto" class="cta-button">
+                    <span>Contactar para Charlas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
+        </div>
+        
+        <div class="cta-decorative">
+            <div class="deco-circle deco-circle-1"></div>
+            <div class="deco-circle deco-circle-2"></div>
+            <div class="deco-circle deco-circle-3"></div>
         </div>
     </section>
 </Layout>
 
 <script>
-    import { inView, animate, stagger, spring } from "motion";
+    import { inView, animate, stagger } from "motion";
 
-    // Hero animations on load
-    document.addEventListener("DOMContentLoaded", () => {
-        const heroElements = document.querySelectorAll(
-            ".hero-editorial .fade-element",
-        );
-
-        animate(
-            heroElements,
-            { opacity: [0, 1], y: [40, 0] },
-            {
-                delay: 0.3,
-                duration: 0.8,
-                easing: [0.17, 0.67, 0.83, 0.67],
-            },
-        );
-
-        // Visual image animation
-        const heroVisual = document.querySelector(".hero-visual");
-        if (heroVisual) {
+    function initCharlasAnimations() {
+        const heroBgAccent = document.querySelector(".hero-bg-accent");
+        if (heroBgAccent) {
             animate(
-                heroVisual,
-                { opacity: [0, 1], x: [100, 0] },
-                { delay: 0.5, duration: 1.2, easing: [0.17, 0.67, 0.83, 0.67] }
+                heroBgAccent,
+                { opacity: [0, 1], scale: [0.8, 1] },
+                { delay: 0.1, duration: 1, easing: "ease-out" }
             );
         }
 
-        // Background text animation
-        const bgText = document.querySelector(".background-text");
-        if (bgText) {
+        const heroDecoCircles = document.querySelectorAll(".hero-decorative .deco-circle");
+        if (heroDecoCircles.length) {
             animate(
-                bgText,
-                { opacity: [0, 0.03], scale: [0.8, 1] },
-                { delay: 0.2, duration: 2, easing: "ease-out" }
+                heroDecoCircles,
+                { opacity: [0, 1], scale: [0.8, 1] },
+                { delay: 0.3, duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] }
             );
         }
-    });
 
-    // Section headers animation
-    const sectionHeaders = document.querySelectorAll(
-        ".section-header .fade-element",
-    );
-    sectionHeaders.forEach((header) => {
-        inView(header, () => {
+        const heroInner = document.querySelector(".hero-inner");
+        if (heroInner) {
             animate(
-                header,
+                Array.from(heroInner.children),
+                { opacity: [0, 1], y: [30, 0] },
+                { delay: 0.4, duration: 0.6, easing: [0.17, 0.67, 0.83, 0.67] }
+            );
+        }
+
+        const cards = document.querySelectorAll(".charla-card");
+        inView(".charlas-grid", () => {
+            animate(
+                cards,
                 { opacity: [0, 1], y: [40, 0] },
-                { duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] },
+                {
+                    delay: stagger(0.1),
+                    duration: 0.6,
+                    easing: [0.17, 0.67, 0.83, 0.67],
+                }
             );
         });
-    });
 
-    // Editorial items staggered animation
-    const editorialItems = document.querySelectorAll(".editorial-item");
-    editorialItems.forEach((item) => {
-        inView(item, () => {
-            const imageEl = item.querySelector(".editorial-image");
-            const contentEl = item.querySelector(".editorial-content");
-
-            if (imageEl) {
+        const ctaBgAccent = document.querySelector(".cta-bg-accent");
+        if (ctaBgAccent) {
+            inView(ctaBgAccent, () => {
                 animate(
-                    imageEl,
-                    { opacity: [0, 1], x: [-50, 0] },
-                    {
-                        delay: 0,
-                        duration: 0.8,
-                        easing: [0.17, 0.67, 0.83, 0.67],
-                    },
+                    ctaBgAccent,
+                    { opacity: [0, 1], scale: [0.8, 1] },
+                    { delay: 0.1, duration: 1, easing: "ease-out" }
                 );
-            }
+            });
+        }
 
-            if (contentEl) {
+        const ctaDecoCircles = document.querySelectorAll(".cta-decorative .deco-circle");
+        if (ctaDecoCircles.length) {
+            inView(".cta-decorative", () => {
                 animate(
-                    contentEl,
-                    { opacity: [0, 1], x: [50, 0] },
-                    {
-                        delay: 0.2,
-                        duration: 0.8,
-                        easing: [0.17, 0.67, 0.83, 0.67],
-                    },
+                    ctaDecoCircles,
+                    { opacity: [0, 1], scale: [0.8, 1] },
+                    { delay: 0.3, duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] }
                 );
-            }
-        });
-    });
+            });
+        }
 
-    // CTA animation
-    const cta = document.querySelector(".custom-cta");
-    if (cta) {
-        inView(cta, () => {
-            animate(
-                cta,
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] },
-            );
-        });
+        const ctaWrapper = document.querySelector(".cta-wrapper");
+        if (ctaWrapper) {
+            inView(ctaWrapper, () => {
+                animate(
+                    ctaWrapper.querySelectorAll(".cta-badge, .cta-heading, .cta-description, .cta-button"),
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.6, delay: stagger(0.08) }
+                );
+            });
+        }
     }
 
-    // Logos section animation
-    const logosHeader = document.querySelector(".logos-header");
-    if (logosHeader) {
-        inView(logosHeader, () => {
-            animate(
-                logosHeader,
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.6, easing: [0.17, 0.67, 0.83, 0.67] },
-            );
-        });
-    }
-
-    const logoItems = document.querySelectorAll(".logo-item");
-    inView(".logos-grid", () => {
-        animate(
-            logoItems,
-            { opacity: [0, 1], y: [20, 0], scale: [0.95, 1] },
-            {
-                delay: stagger(0.1),
-                duration: 0.5,
-                easing: [0.17, 0.67, 0.83, 0.67],
-            },
-        );
-    });
+    initCharlasAnimations();
+    document.addEventListener("astro:after-swap", initCharlasAnimations);
 </script>
 
 <style>
     /* ========================================
-       HERO EDITORIAL PREMIUM
+       HERO MINIMALISTA
        ======================================== */
-    .hero-editorial {
-        min-height: 100vh;
+    .hero-minimal {
+        min-height: 60vh;
         display: flex;
         align-items: center;
+        justify-content: center;
+        background-color: #964f4c;
         position: relative;
-        background-color: var(--color-secondary);
         overflow: hidden;
-        padding: 140px 0 100px;
-    }
-
-    .background-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: var(--font-heading);
-        font-size: 25vw;
-        font-weight: 900;
-        color: var(--color-primary);
-        opacity: 0; /* Animated to 0.03 */
-        white-space: nowrap;
-        pointer-events: none;
-        z-index: 0;
+        padding: 140px 2rem 100px;
     }
 
     .hero-wrapper {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 4rem;
         position: relative;
-        z-index: 2;
-    }
-
-    .hero-text-content {
-        max-width: 750px;
-    }
-
-    .hero-label {
-        display: inline-block;
-        font-family: var(--font-body);
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 0.8rem;
-        margin-bottom: 2rem;
-        color: var(--color-primary);
-        border-bottom: 1px solid rgba(150, 79, 76, 0.3);
-        padding-bottom: 0.5rem;
-    }
-
-    .hero-quote {
-        margin: 0 0 3rem;
-        position: relative;
-    }
-
-    .quote-upper {
-        font-family: var(--font-heading);
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
-        line-height: 1.4;
-        color: var(--color-text-light);
-        margin-bottom: 1.5rem;
-        font-style: italic;
-    }
-
-    .quote-lower {
-        font-family: var(--font-heading);
-        font-size: clamp(2rem, 5vw, 4rem);
-        line-height: 1.1;
-        color: var(--color-primary);
-        font-weight: 500;
-    }
-
-    .highlight {
-        position: relative;
-        display: inline;
-    }
-
-    .quote-author {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
         display: block;
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--color-primary);
-        font-style: normal;
-        margin-bottom: 3.5rem;
-        opacity: 0.8;
+        z-index: 2;
     }
 
-    .hero-actions {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
+    .hero-bg-accent {
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateX(-50%);
+        z-index: 1;
     }
 
-    .hero-visual {
-        position: relative;
-        opacity: 0; /* Animated */
-    }
-
-    .image-container {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 4/5;
-        border-radius: 4px;
-        overflow: visible;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 4px;
+    .hero-inner {
         position: relative;
         z-index: 2;
-        filter: sepia(20%) contrast(105%);
-        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.1);
-    }
-
-    .image-accent-border {
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        width: 100%;
-        height: 100%;
-        border: 1px solid var(--color-primary);
-        opacity: 0.2;
-        z-index: 1;
-        border-radius: 4px;
-    }
-
-    .scroll-wrapper {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        z-index: 3;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
     }
 
-    .scroll-mouse {
-        width: 24px;
-        height: 40px;
-        border: 2px solid var(--color-primary);
-        border-radius: 12px;
-        position: relative;
-        opacity: 0.6;
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.05);
+        opacity: 0;
     }
 
-    .mouse-wheel {
-        width: 4px;
-        height: 8px;
-        background-color: var(--color-primary);
-        border-radius: 2px;
-        position: absolute;
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: mouseScroll 2s infinite;
+    .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: normal;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        opacity: 0;
     }
 
-    @keyframes mouseScroll {
-        0% { transform: translate(-50%, 0); opacity: 1; }
-        100% { transform: translate(-50%, 15px); opacity: 0; }
+    .hero-subtitle {
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 600px;
+        opacity: 0;
     }
 
-    .scroll-text {
-        font-size: 0.7rem;
+    .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: #fff;
+        color: #964f4c;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--color-primary);
-        opacity: 0.6;
+        letter-spacing: 1.5px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0;
     }
 
-    /* ========================================
-       EDITORIAL TOPICS SECTION
-       ======================================== */
-    .topics-editorial {
+    .hero-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-decorative {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .hero-decorative .deco-circle {
+        opacity: 0;
+    }
+
+    .deco-circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        animation: float 15s infinite ease-in-out;
+        z-index: 1;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        33% { transform: translate(50px, -70px) scale(1.1) rotate(5deg); }
+        66% { transform: translate(-30px, 30px) scale(0.9) rotate(-5deg); }
+    }
+
+    .deco-circle-1 {
+        width: 500px;
+        height: 500px;
+        bottom: -200px;
+        left: -100px;
+        animation-duration: 25s;
+    }
+
+    .deco-circle-2 {
+        width: 400px;
+        height: 400px;
+        top: 5%;
+        right: -5%;
+        animation-duration: 30s;
+        animation-delay: -5s;
+    }
+
+    .deco-circle-3 {
+        width: 280px;
+        height: 280px;
+        top: 45%;
+        right: 15%;
+        background: rgba(255, 255, 255, 0.08);
+        animation-duration: 22s;
+        animation-delay: -2s;
+    }
+    .charlas-grid-section {
         padding: var(--spacing-xl) 0;
         background-color: var(--color-secondary);
     }
 
-    .section-header {
-        margin-bottom: 8rem;
-        max-width: 700px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .section-label {
-        display: block;
-        font-family: var(--font-body);
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 0.75rem;
-        color: var(--color-primary);
-        opacity: 0.6;
-        margin-bottom: 1rem;
-    }
-
-    .section-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin-bottom: 1.5rem;
-        color: var(--color-primary);
-        font-style: italic;
-    }
-
-    .section-subtitle {
-        font-size: 1.25rem;
-        line-height: 1.7;
-        color: var(--color-text-light);
-        opacity: 0.85;
-    }
-
-    .editorial-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10rem;
-    }
-
-    .editorial-item {
+    .charlas-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6rem;
-        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
     }
 
-    .editorial-item.reverse {
-        direction: rtl;
+    .charla-card {
+        opacity: 0;
     }
 
-    .editorial-item.reverse .editorial-content {
-        direction: ltr;
-    }
-
-    .editorial-image {
+    .card-image {
         position: relative;
+        width: 100%;
+        aspect-ratio: 16/10;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        background: linear-gradient(145deg, #e8e5e2 0%, #d8d5d2 100%);
     }
 
     .placeholder-box {
         width: 100%;
-        aspect-ratio: 4/5;
-        background: linear-gradient(145deg, #e8e5e2 0%, #d8d5d2 100%);
-        border-radius: 8px;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        background: linear-gradient(145deg, #f0edea 0%, #e0ddda 100%);
     }
 
     .placeholder-label {
         font-family: var(--font-body);
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         color: #999;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-align: center;
+        padding: 0 1rem;
     }
 
-    .image-number {
+    .card-number {
         position: absolute;
-        top: -1.5rem;
-        right: -1.5rem;
+        bottom: 0.75rem;
+        right: 0.75rem;
         font-family: var(--font-heading);
-        font-size: 8rem;
-        font-style: italic;
-        color: var(--color-primary);
-        opacity: 0.08;
+        font-size: 3rem;
+        font-weight: normal;
+        color: rgba(150, 79, 76, 0.15);
         line-height: 1;
-        pointer-events: none;
     }
 
-    .editorial-content {
-        padding: 2rem 0;
+    .card-content {
+        padding: 0 0.25rem;
     }
 
-    .editorial-content h3 {
-        font-size: clamp(1.75rem, 3vw, 2.5rem);
-        margin-bottom: 1.5rem;
-        line-height: 1.25;
+    .card-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: normal;
         color: var(--color-primary);
-        font-style: italic;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
     }
 
-    .editorial-content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
+    .card-description {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.7;
         color: var(--color-text-light);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        opacity: 0.85;
     }
 
-    .topic-link {
+    .card-link {
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
         font-family: var(--font-body);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         color: var(--color-primary);
+        text-decoration: none;
         transition: gap 0.3s ease;
     }
 
-    .topic-link:hover {
-        gap: 1.25rem;
+    .card-link:hover {
+        gap: 0.85rem;
     }
 
-    .topic-link svg {
+    .card-link svg {
         transition: transform 0.3s ease;
     }
 
-    .topic-link:hover svg {
-        transform: translateX(5px);
-    }
-
-    .custom-cta {
-        margin-top: 10rem;
-        text-align: center;
-        padding: 6rem 4rem;
-        background: linear-gradient(
-            135deg,
-            rgba(150, 79, 76, 0.03) 0%,
-            rgba(150, 79, 76, 0.06) 100%
-        );
-        border-radius: 20px;
-        border: 1px solid rgba(150, 79, 76, 0.08);
-    }
-
-    .custom-cta p {
-        font-size: 1.75rem;
-        font-family: var(--font-heading);
-        font-style: italic;
-        color: var(--color-primary);
-        margin-bottom: 0.5rem;
-    }
-
-    .cta-secondary {
-        font-family: var(--font-body) !important;
-        font-style: normal !important;
-        font-size: 1.1rem !important;
-        opacity: 0.7;
-        margin-bottom: 2rem !important;
+    .card-link:hover svg {
+        transform: translateX(4px);
     }
 
     /* ========================================
-       LOGOS SECTION
+       CTA NEWSLETTER STYLE
        ======================================== */
-    .logos-section-premium {
+    .charlas-cta {
+        background-color: #964f4c;
+        position: relative;
+        overflow: hidden;
         padding: var(--spacing-xl) 0;
-        background-color: #fcf9f6;
     }
 
-    .logos-header {
-        text-align: center;
-        margin-bottom: 5rem;
-    }
-
-    .logos-label {
-        display: block;
-        font-family: var(--font-body);
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 0.75rem;
-        color: var(--color-primary);
-        opacity: 0.5;
-        margin-bottom: 1rem;
-    }
-
-    .logos-header h2 {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-        font-style: italic;
-        color: var(--color-primary);
-    }
-
-    .logos-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+    .cta-wrapper {
+        position: relative;
         max-width: 900px;
         margin: 0 auto;
+        padding: 0 2rem;
+        z-index: 2;
     }
 
-    .logo-item {
+    .cta-bg-accent {
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .cta-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-badge {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem 1.5rem;
-        border: 1px solid rgba(150, 79, 76, 0.08);
-        background: rgba(255, 255, 255, 0.5);
-        transition: all 0.4s ease;
-        opacity: 0.5;
+        padding: 0.6rem 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.05);
+        opacity: 0;
     }
 
-    .logo-item:hover {
-        opacity: 1;
-        background: rgba(255, 255, 255, 1);
-        border-color: rgba(150, 79, 76, 0.2);
-        transform: translateY(-3px);
-    }
-
-    .logo-text {
+    .badge-text {
         font-family: var(--font-body);
+        font-size: 0.75rem;
         font-weight: 600;
-        font-size: 0.85rem;
+        letter-spacing: 3px;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--color-primary);
-        text-align: center;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-heading {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: normal;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        opacity: 0;
+    }
+
+    .cta-description {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 500px;
+        margin-bottom: 2.5rem;
+        opacity: 0;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        background: #fff;
+        color: #964f4c;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        opacity: 0;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        color: #964f4c;
+    }
+
+    .cta-button:hover svg {
+        transform: translateX(4px);
+    }
+
+    .cta-button svg {
+        transition: transform 0.3s ease;
+    }
+
+    .cta-decorative {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .cta-decorative .deco-circle {
+        border-color: rgba(255, 255, 255, 0.12);
+        animation-duration: 20s;
+    }
+
+    .cta-decorative .deco-circle-1 {
+        width: 450px;
+        height: 450px;
+        bottom: -150px;
+        left: -10%;
+    }
+
+    .cta-decorative .deco-circle-2 {
+        width: 350px;
+        height: 350px;
+        top: -10%;
+        right: 10%;
+        animation-delay: -4s;
+    }
+
+    .cta-decorative .deco-circle-3 {
+        width: 250px;
+        height: 250px;
+        bottom: 10%;
+        right: -5%;
+        background: rgba(255, 255, 255, 0.05);
+        animation-delay: -2s;
     }
 
     /* ========================================
        RESPONSIVE
        ======================================== */
-    @media (max-width: 1200px) {
-        .hero-wrapper {
+    @media (max-width: 1024px) {
+        .charlas-grid {
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
-        
-        .quote-lower {
-            font-size: clamp(2rem, 4vw, 3rem);
-        }
-    }
 
-    @media (max-width: 1024px) {
-        .hero-editorial {
-            padding: 120px 0 80px;
+        .hero-minimal {
+            min-height: 50vh;
+            padding: 120px 2rem 80px;
         }
 
-        .hero-wrapper {
-            grid-template-columns: 1fr;
-            text-align: center;
-            gap: 4rem;
-        }
-
-        .hero-text-content {
-            max-width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero-actions {
-            justify-content: center;
-        }
-
-        .hero-visual {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .background-text {
-            font-size: 30vw;
-        }
-
-        .editorial-item {
-            gap: 4rem;
-        }
-
-        .image-number {
-            font-size: 5rem;
-            top: -1rem;
-            right: -1rem;
+        .hero-bg-accent {
+            width: 400px;
+            height: 400px;
+            right: -10%;
         }
     }
 
     @media (max-width: 768px) {
-        .hero-editorial {
-            padding: 100px 0 60px;
+        .charlas-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
         }
 
-        .quote-upper {
+        .hero-minimal {
+            min-height: 45vh;
+            padding: 100px 1.5rem 60px;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .card-title {
             font-size: 1.25rem;
         }
 
-        .quote-lower {
-            font-size: 2.25rem;
+        .cta-description {
+            font-size: 1rem;
         }
 
-        .editorial-grid {
-            gap: 6rem;
+        .cta-button {
+            width: 100%;
+            justify-content: center;
         }
 
-        .editorial-item {
-            grid-template-columns: 1fr;
-            gap: 2rem;
+        .deco-circle-1 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -80px;
         }
 
-        .editorial-item.reverse {
-            direction: ltr;
-        }
-
-        .image-number {
-            font-size: 4rem;
-            top: -0.5rem;
-            right: 0.5rem;
-        }
-
-        .custom-cta {
-            margin-top: 6rem;
-            padding: 4rem 2rem;
-        }
-
-        .logos-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .section-header {
-            margin-bottom: 5rem;
+        .hero-decorative .deco-circle-1 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -80px;
         }
     }
 
     @media (max-width: 480px) {
-        .hero-label {
-            letter-spacing: 4px;
-            font-size: 0.7rem;
-        }
-
-        .hero-actions {
-            flex-direction: column;
+        .hero-cta {
             width: 100%;
-        }
-
-        .hero-actions .btn {
-            width: 100%;
-        }
-
-        .section-label {
-            font-size: 0.65rem;
-        }
-
-        .logos-grid {
-            grid-template-columns: 1fr;
+            justify-content: center;
         }
     }
 </style>

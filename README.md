@@ -12,7 +12,7 @@ Este repositorio contiene la demostración tecnológica de la web oficial de **A
 ## ✨ Características Principales
 
 - 🚀 **Performance Extremo**: Construido sobre **Astro**, logrando tiempos de carga mínimos y un SEO optimizado desde la base.
-- 🎨 **UI Emocional**: Componentes interactivos desarrollados con **Svelte 4** y animaciones fluidas con **Motion**.
+- 🎨 **UI Emocional**: Componentes interactivos desarrollados con **Svelte 5** y animaciones fluidas con **Motion**.
 - 📱 **Diseño Responsive**: Adaptado meticulosamente para todos los dispositivos, con especial énfasis en la legibilidad móvil.
 - 🍪 **Cumplimiento Legal**: Banner de cookies GDPR integrado y páginas legales actualizadas.
 - 🐋 **Infraestructura Moderna**: Contenerización completa con Docker, lista para ser desplegada en VPS mediante Dokploy.
@@ -34,12 +34,14 @@ Este repositorio contiene la demostración tecnológica de la web oficial de **A
 ### Pasos para el Desarrollo Local
 
 1. **Clonar el repositorio**:
+
    ```bash
    git clone https://github.com/tu-usuario/ana-albiol-demo.git
    cd ana-albiol-demo
    ```
 
 2. **Instalar dependencias**:
+
    ```bash
    bun install
    ```
@@ -67,6 +69,7 @@ Si prefieres construir los archivos estáticos manualmente:
 ```bash
 bun run build
 ```
+
 Los archivos se generarán en la carpeta `dist/`.
 
 ---
@@ -74,6 +77,7 @@ Los archivos se generarán en la carpeta `dist/`.
 ## 📐 Estándares de Código
 
 Para mantener la calidad y consistencia, seguimos estas reglas:
+
 - **Código**: Toda la lógica (variables, funciones, clases) y comentarios están en **Inglés**.
 - **Documentación**: Toda la documentación (README, CHANGELOG, etc.) está en **Español**.
 - **Estilo**: Seguimos principios **DRY** (Don't Repeat Yourself) y **KISS** (Keep It Simple, Stupid).

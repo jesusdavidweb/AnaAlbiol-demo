@@ -1,21 +1,21 @@
 <script>
     import { onMount } from "svelte";
     import { timeline, scroll, animate } from "motion";
+    import heroImageSrc from "../assets/images/WEB_AnaAlbiolJUN25-26.webp";
 
-    let heroSection, heroTitle, heroSubtitle, heroButtons, heroImage;
+    let heroSection = $state();
+    let heroTitle = $state();
+    let heroButtons = $state();
+    let heroImage = $state();
 
-    onMount(() => {
-        // Animation timeline for text entrance
+    function runAnimations() {
+        if (!heroTitle || !heroButtons || !heroImage || !heroSection) return;
+
         const sequence = [
             [
                 heroTitle,
                 { opacity: [0, 1], y: [40, 0] },
                 { duration: 1, easing: "ease-out" },
-            ],
-            [
-                heroSubtitle,
-                { opacity: [0, 1], y: [25, 0] },
-                { duration: 0.8, at: "-0.5" },
             ],
             [
                 heroButtons,
@@ -26,18 +26,22 @@
 
         timeline(sequence);
 
-        // Parallax scroll effect
         scroll(animate(heroImage, { y: ["-10%", "10%"] }), {
             target: heroSection,
             offset: ["start start", "end start"],
         });
+    }
+
+    onMount(() => {
+        runAnimations();
+        document.addEventListener("astro:after-swap", runAnimations);
     });
 </script>
 
 <section bind:this={heroSection} class="alt-hero">
     <img
         bind:this={heroImage}
-        src="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
+        src={heroImageSrc.src}
         alt="Ana Albiol"
         class="alt-hero__bg"
         width="700"
@@ -50,22 +54,8 @@
     <div class="alt-hero__text">
         <h1 bind:this={heroTitle} class="alt-hero__title">
             Soy Ana Albiol
-            <em>y el plan es vivir antes de morir.</em>
+            <span class="tagline">Y el Plan es Vivir Antes de Morir</span>
         </h1>
-        <p bind:this={heroSubtitle} class="alt-hero__subtitle">
-            Me dirijo a personas que funcionan, rinden y cumplen. <br />
-            <strong>Pero sienten que hay otra forma de vivir.</strong> <br /><br
-            />
-            Y no van a conformarse. <br />
-            Para que
-            <span class="highlight-text"
-                >un martes cualquiera te emocione levantarte</span
-            >
-            y
-            <span class="highlight-text"
-                >cada noche sientas que podrías morir a gusto.</span
-            >
-        </p>
         <div bind:this={heroButtons} class="alt-hero__buttons">
             <a href="/en-privado" class="alt-hero__btn alt-hero__btn--filled"
                 >EL MAMBO: EN PRIVADO</a
@@ -131,9 +121,9 @@
     }
 
     .alt-hero__title {
-        font-family: var(--font-heading, "Lora", serif);
+        font-family: var(--font-heading);
         font-weight: 500;
-        font-style: italic;
+        font-style: normal;
         font-size: 3.2rem;
         line-height: 1.1;
         color: #fff;
@@ -142,36 +132,11 @@
         opacity: 0;
     }
 
-    .alt-hero__title em {
+    .alt-hero__title .tagline {
         display: block;
         font-weight: 400;
         font-size: 0.88em;
         margin-top: 0.4rem;
-    }
-
-    .alt-hero__subtitle {
-        font-family: var(--font-body, sans-serif);
-        font-size: 1.15rem;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 600px;
-        margin: 0 0 1.8rem;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
-        opacity: 0;
-    }
-
-    .alt-hero__subtitle strong {
-        color: #fff;
-        font-weight: 600;
-    }
-
-    .highlight-text {
-        color: #f6f1eb;
-        font-style: italic;
-        background: rgba(150, 79, 76, 0.4);
-        padding: 0.1rem 0.4rem;
-        border-radius: 4px;
-        white-space: wrap;
     }
 
     .alt-hero__buttons {

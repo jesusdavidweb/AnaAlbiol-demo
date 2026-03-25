@@ -1,10 +1,11 @@
 <script>
     import { onMount } from "svelte";
+    import logoColor from "../assets/images/LOGO_AnaAlbiol_Color.svg";
 
-    export let theme = "light";
+    let { theme = "light", currentPath = "" } = $props();
 
-    let isScrolled = false;
-    let isMenuOpen = false;
+    let isScrolled = $state(false);
+    let isMenuOpen = $state(false);
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
@@ -32,20 +33,52 @@
         <div class="logo">
             <a href="/"
                 ><img
-                    src="/assets/images/LOGO_AnaAlbiol_Color.svg"
+                    src={logoColor.src}
                     alt="Ana Albiol Logo"
-                    style="height: 40px;"
+                    width="149"
+                    height="40"
+                    fetchpriority="high"
+                    loading="eager"
                 /></a
             >
         </div>
         <nav class="nav-desktop">
             <ul>
-                <li><a href="/en-privado">En Privado</a></li>
-                <li><a href="/libros">Libros</a></li>
-                <li><a href="/formaciones">Formaciones</a></li>
-                <li><a href="/charlas">Charlas</a></li>
-                <li><a href="/quien-soy">Quién soy</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li>
+                    <a
+                        href="/libros"
+                        class:active={currentPath === "/libros" ||
+                            currentPath === "/libros/"}>Libros</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/formaciones"
+                        class:active={currentPath === "/formaciones" ||
+                            currentPath === "/formaciones/"}>Formaciones</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/charlas"
+                        class:active={currentPath === "/charlas" ||
+                            currentPath === "/charlas/"}>Charlas</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/quien-soy"
+                        class:active={currentPath === "/quien-soy" ||
+                            currentPath === "/quien-soy/"}>Quién soy</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/contacto"
+                        class:active={currentPath === "/contacto" ||
+                            currentPath === "/contacto/"}>Contacto</a
+                    >
+                </li>
             </ul>
         </nav>
         <div class="social-icons desktop-only">
@@ -106,7 +139,7 @@
             type="button"
             class="mobile-menu-toggle"
             aria-label="Abrir menú"
-            on:click={toggleMenu}
+            onclick={toggleMenu}
         >
             <span></span><span></span><span></span>
         </button>
@@ -114,19 +147,51 @@
 </header>
 
 <div class="mobile-menu" class:active={isMenuOpen}>
-    <button type="button" class="mobile-menu-close" on:click={toggleMenu}
+    <button type="button" class="mobile-menu-close" onclick={toggleMenu}
         >&times;</button
     >
     <nav>
         <ul>
-            <li><a href="/en-privado" on:click={toggleMenu}>En Privado</a></li>
-            <li><a href="/libros" on:click={toggleMenu}>Libros</a></li>
             <li>
-                <a href="/formaciones" on:click={toggleMenu}>Formaciones</a>
+                <a
+                    href="/libros"
+                    class:active={currentPath === "/libros" ||
+                        currentPath === "/libros/"}
+                    onclick={toggleMenu}>Libros</a
+                >
             </li>
-            <li><a href="/charlas" on:click={toggleMenu}>Charlas</a></li>
-            <li><a href="/quien-soy" on:click={toggleMenu}>Quién soy</a></li>
-            <li><a href="/contacto" on:click={toggleMenu}>Contacto</a></li>
+            <li>
+                <a
+                    href="/formaciones"
+                    class:active={currentPath === "/formaciones" ||
+                        currentPath === "/formaciones/"}
+                    onclick={toggleMenu}>Formaciones</a
+                >
+            </li>
+            <li>
+                <a
+                    href="/charlas"
+                    class:active={currentPath === "/charlas" ||
+                        currentPath === "/charlas/"}
+                    onclick={toggleMenu}>Charlas</a
+                >
+            </li>
+            <li>
+                <a
+                    href="/quien-soy"
+                    class:active={currentPath === "/quien-soy" ||
+                        currentPath === "/quien-soy/"}
+                    onclick={toggleMenu}>Quién soy</a
+                >
+            </li>
+            <li>
+                <a
+                    href="/contacto"
+                    class:active={currentPath === "/contacto" ||
+                        currentPath === "/contacto/"}
+                    onclick={toggleMenu}>Contacto</a
+                >
+            </li>
         </ul>
     </nav>
     <div class="social-icons mobile-socials">

@@ -1,43 +1,103 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ReviewsModal from "../components/ReviewsModal.svelte";
+
 import bookCover1 from "../assets/images/VIDA_de_un_culo_inquieto_Portada.webp";
 import bookCover2 from "../assets/images/A_muerte_con_la_VIDA_portada.webp";
 import bookCover3 from "../assets/images/nuevo_libro_2027.png";
+import heroImg from "../assets/images/PRINT_AnaAlbiol_EA-31.webp";
+
+const showNewBook = false;
+
+const reviewsBook1 = [
+    "Este libro es un mazazo de realidad escrito desde el humor y el respeto. No es un libro para evadirse, es un libro para mirar hacia dentro.",
+    "Me recordó algo muy importante: la vida nunca me pidió que fuera perfecta. Soltar, saltar y confiar no es solo para otros. Yo también puedo.",
+    "Es como si estuvieras hablando con una amiga. Ríes con ella a carcajada limpia y otras veces no puedes dejar de llorar.",
+    "Una revelación constante sobre nuestras propias limitaciones autoimpuestas.",
+    "La forma en que Ana describe el 'culo inquieto' es exactamente como me siento cada mañana.",
+    "No pude parar de leer hasta terminarlo, y ahora siento que algo ha cambiado en mí.",
+    "Honesto, brutal y necesario en tiempos de tanto postureo.",
+    "Me ha dado el empujón que necesitaba para tomar esa decisión que llevaba meses postergando.",
+    "Es un viaje emocional sin filtros. Totalmente recomendable.",
+    "Hacía mucho tiempo que un libro no me hacía sentir tan comprendida.",
+    "Como un café largo con una amiga sabia que no te juzga.",
+    "Lo he subrayado tanto que casi es todo amarillo. Oro puro."
+];
+
+const reviewsBook2 = [
+    "No es un libro, es un espejo. Te permite mirar desde tus brillos hasta tus miserias de una forma activa y constructiva.",
+    "Es un libro para tener cerca de la cama y leer poco a poco. Cada frase, cada palabra en negrita tiene un porqué.",
+    "Al final, todo se resume en una cosa: tú decides si te quedas donde estás o te acercas a la vida que quieres vivir.",
+    "Atravesar el cambio da miedo, pero este libro te da la mano durante todo el proceso.",
+    "Suelta, salta y confía: parece fácil pero aquí Ana te explica el porqué de cada paso.",
+    "Me pilló en un momento vital de crisis y fue mi mejor guía de supervivencia.",
+    "La profundidad de estas páginas contrasta con la sencillez de su lenguaje. Brillante.",
+    "Un manual de vida para los que no queremos una vida a medias.",
+    "Ana Albiol lo ha vuelto a hacer. Verdad pura en cada línea.",
+    "Es imposible leerlo y quedarse igual. Te remueve los cimientos.",
+    "Una lectura imprescindible para cualquiera que se sienta estancado.",
+    "Me ha enseñado a gestionar la incertidumbre con una paz que no conocía."
+];
 ---
 
 <Layout
     title="Mis Libros | Ana Albiol"
     description="Libros de Ana Albiol: 'Vida de un culo inquieto' y 'A muerte con la vida'. Lecturas para soltar, saltar y confiar."
+    headerTheme="light"
 >
-    <!-- Intro -->
-    <section class="books-hero fade-up">
-        <div class="container">
-            <h1>Mis Libros</h1>
-            <div class="intro-text">
-                <p>
-                    Escribí mis dos primeros libros porque son lo que me hubiera
-                    gustado leer cuando más sola y loca me sentía por no
-                    conformarme con una vida a medias.
-                </p>
-                <p>
-                    En ellos, cuento sin filtro mi proceso de búsqueda y cambio
-                    hasta poder sentir que podría morir a gusto.
-                </p>
-                <p>
-                    <strong
-                        >No te digo qué hacer. Te recuerdo que tu VIDA es tuya.</strong
-                    >
-                </p>
-                <p class="small-text mt-2">
-                    El tercero, está en el horno y sale en enero de 2027.
-                </p>
+    <!-- Hero Editorial -->
+    <section class="hero-editorial">
+        <div class="background-text">LIBROS</div>
+        
+        <div class="container hero-wrapper">
+            <div class="hero-text-content">
+                <div class="label-wrapper fade-element">
+                    <span class="hero-label">Mis Publicaciones</span>
+                </div>
+
+                <div class="quote-main fade-element">
+                    <blockquote class="hero-quote">
+                        <p class="quote-upper">
+                            Escribí lo que me hubiera gustado leer 
+                            <em>cuando más sola y loca me sentía.</em>
+                        </p>
+                        <p class="quote-lower">
+                            <span class="highlight">Sin filtro. Sin postureo. Con verdad.</span>
+                        </p>
+                    </blockquote>
+                </div>
+
+                <div class="hero-actions fade-element">
+                    <a href="#libros" class="btn btn-primary">Descubrir Libros</a>
+                    <a href="/en-privado" class="btn">Apúntate a En Privado</a>
+                </div>
             </div>
+
+            <div class="hero-visual fade-element">
+                <div class="image-container">
+                    <Image 
+                        src={heroImg} 
+                        alt="Ana Albiol" 
+                        class="hero-image"
+                        widths={[400, 800, heroImg.width]}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    <div class="image-accent-border"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-wrapper fade-element">
+            <div class="scroll-mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span class="scroll-text">Deslizar para descubrir</span>
         </div>
     </section>
 
     <!-- Book 1 -->
-    <section class="book-detail fade-up">
+    <section id="libros" class="book-detail fade-up">
         <div class="container">
             <div class="book-item">
                 <div class="book-info">
@@ -52,7 +112,7 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
                         impuesto, si sabes que la VIDA es otra cosa y no quieres
                         quedarte con las ganas de vivirla, puede que te sirva.
                     </p>
-                    <a href="#" class="btn mt-2">Comprar en Amazon</a>
+                    <a href="https://amzn.eu/d/0gQiuCmZ" target="_blank" rel="noopener noreferrer" class="btn mt-2">Comprar en Amazon</a>
                 </div>
                 <div class="book-image">
                     <Image
@@ -83,7 +143,7 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn">Ver más reseñas</a>
+                <ReviewsModal client:load bookTitle="V.I.D.A. de un culo inquieto" reviews={reviewsBook1} />
             </div>
         </div>
     </section>
@@ -112,7 +172,7 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
                         Si estás en crisis, proceso de cambio profundo o
                         replanteamiento vital, puede que te sirva.
                     </p>
-                    <a href="#" class="btn mt-2">Comprar en Amazon</a>
+                    <a href="https://amzn.eu/d/02e14CbG" target="_blank" rel="noopener noreferrer" class="btn mt-2">Comprar en Amazon</a>
                 </div>
             </div>
 
@@ -134,12 +194,13 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn">Ver más reseñas</a>
+                <ReviewsModal client:load bookTitle="A muerte con la V.I.D.A." reviews={reviewsBook2} />
             </div>
         </div>
     </section>
 
     <!-- New Book Teaser -->
+    {showNewBook && (
     <section class="coming-soon fade-up">
         <div class="container">
             <div class="book-item">
@@ -174,24 +235,229 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
             </div>
         </div>
     </section>
+    )}
 </Layout>
 
+<script>
+    import { inView, animate } from "motion";
+
+    function initLibrosAnimations() {
+        const heroElements = document.querySelectorAll(
+            ".hero-editorial .fade-element",
+        );
+
+        animate(
+            heroElements,
+            { opacity: [0, 1], y: [40, 0] },
+            {
+                delay: 0.3,
+                duration: 0.8,
+                easing: [0.17, 0.67, 0.83, 0.67],
+            },
+        );
+
+        const heroVisual = document.querySelector(".hero-visual");
+        if (heroVisual) {
+            animate(
+                heroVisual,
+                { opacity: [0, 1], x: [100, 0] },
+                { delay: 0.5, duration: 1.2, easing: [0.17, 0.67, 0.83, 0.67] }
+            );
+        }
+
+        const bgText = document.querySelector(".background-text");
+        if (bgText) {
+            animate(
+                bgText,
+                { opacity: [0, 0.03], scale: [0.8, 1] },
+                { delay: 0.2, duration: 2, easing: "ease-out" }
+            );
+        }
+    }
+
+    initLibrosAnimations();
+    document.addEventListener("astro:after-swap", initLibrosAnimations);
+</script>
+
 <style>
-    /* Specific styles for libros page */
-    .books-hero {
-        padding: 8rem 0 4rem;
+    /* ========================================
+       HERO EDITORIAL PREMIUM
+       ======================================== */
+    .hero-editorial {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
         background-color: var(--color-secondary);
-        text-align: center;
+        overflow: hidden;
+        padding: 140px 0 100px;
     }
 
-    .intro-text {
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 1.25rem;
+    .background-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-heading);
+        font-size: 25vw;
+        font-weight: 900;
+        color: var(--color-primary);
+        opacity: 0;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 0;
     }
 
+    .hero-wrapper {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-text-content {
+        max-width: 750px;
+    }
+
+    .hero-label {
+        display: inline-block;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        color: var(--color-primary);
+        border-bottom: 1px solid rgba(150, 79, 76, 0.3);
+        padding-bottom: 0.5rem;
+    }
+
+    .hero-quote {
+        margin: 0 0 3rem;
+        position: relative;
+    }
+
+    .quote-upper {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        line-height: 1.4;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+        font-style: normal;
+    }
+
+    .quote-upper em {
+        font-style: normal;
+        color: var(--color-primary);
+    }
+
+    .quote-lower {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.1;
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
+    .highlight {
+        position: relative;
+        display: inline;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        position: relative;
+        opacity: 0;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/5;
+        border-radius: 4px;
+        overflow: visible;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        position: relative;
+        z-index: 2;
+        filter: sepia(20%) contrast(105%);
+        box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-accent-border {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--color-primary);
+        opacity: 0.2;
+        z-index: 1;
+        border-radius: 4px;
+    }
+
+    .scroll-wrapper {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3;
+    }
+
+    .scroll-mouse {
+        width: 24px;
+        height: 40px;
+        border: 2px solid var(--color-primary);
+        border-radius: 12px;
+        position: relative;
+        opacity: 0.6;
+    }
+
+    .mouse-wheel {
+        width: 4px;
+        height: 8px;
+        background-color: var(--color-primary);
+        border-radius: 2px;
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: mouseScroll 2s infinite;
+    }
+
+    @keyframes mouseScroll {
+        0% { transform: translate(-50%, 0); opacity: 1; }
+        100% { transform: translate(-50%, 15px); opacity: 0; }
+    }
+
+    .scroll-text {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        opacity: 0.6;
+    }
+
+    /* ========================================
+       BOOK SECTIONS
+       ======================================== */
     .book-detail {
-        padding: 6rem 0;
+        padding: 8rem 0;
     }
 
     .book-detail:nth-child(even) {
@@ -217,18 +483,6 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
         justify-content: center;
     }
 
-    .placeholder-book {
-        width: 300px;
-        height: 450px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
-        box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-    }
-
     .book-cover {
         width: 300px;
         height: auto;
@@ -248,7 +502,7 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
 
     .book-tagline {
         font-size: 1.25rem;
-        font-style: italic;
+        font-style: normal;
         color: var(--color-primary);
         margin-bottom: 1.5rem;
     }
@@ -266,12 +520,13 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
     }
 
     .review-card {
-        background: #f9f9f9;
-        padding: 2rem;
-        border-radius: 8px;
-        font-style: italic;
+        background: #fcf9f6;
+        padding: 2.5rem;
+        border-radius: 12px;
+        font-style: normal;
         font-size: 0.95rem;
         color: var(--color-text-light);
+        border: 1px solid rgba(0,0,0,0.03);
     }
 
     .coming-soon {
@@ -295,5 +550,80 @@ import bookCover3 from "../assets/images/nuevo_libro_2027.png";
         background-color: white;
         color: var(--color-primary);
         transform: translateY(-2px);
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1200px) {
+        .hero-wrapper {
+            gap: 2rem;
+        }
+        
+        .quote-lower {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .hero-editorial {
+            padding: 120px 0 80px;
+        }
+
+        .hero-wrapper {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 4rem;
+        }
+
+        .hero-text-content {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-actions {
+            justify-content: center;
+        }
+
+        .hero-visual {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .background-text {
+            font-size: 30vw;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-editorial {
+            padding: 100px 0 60px;
+        }
+
+        .quote-upper {
+            font-size: 1.25rem;
+        }
+
+        .quote-lower {
+            font-size: 2.25rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-label {
+            letter-spacing: 4px;
+            font-size: 0.7rem;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .hero-actions .btn {
+            width: 100%;
+        }
     }
 </style>

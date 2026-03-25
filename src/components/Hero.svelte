@@ -1,8 +1,12 @@
 <script>
     import { onMount } from "svelte";
     import { timeline, stagger } from "motion";
+    import heroImageSrc from "../assets/images/WEB_AnaAlbiolJUN25-26.webp";
 
-    let heroTitle, heroSubtitle, heroButtons, heroImage;
+    let heroTitle = $state();
+    let heroSubtitle = $state();
+    let heroButtons = $state();
+    let heroImage = $state();
 
     onMount(() => {
         // Elements are initially hidden by CSS or need to be hidden here to avoid FOUC?
@@ -70,7 +74,7 @@
         <div class="hero-image-wrapper fade-up">
             <img
                 bind:this={heroImage}
-                src="/assets/images/WEB_AnaAlbiolJUN25-26.webp"
+                src={heroImageSrc.src}
                 alt="Ana Albiol"
                 width="700"
                 height="933"

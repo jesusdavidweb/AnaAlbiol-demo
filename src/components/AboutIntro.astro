@@ -1,28 +1,31 @@
+---
+import { Image } from "astro:assets";
+import aboutImg from "../assets/images/WEB_AnaAlbiol_EA-16.webp";
+---
 <section class="about section-padding">
     <div class="container fade-up">
         <div class="about-grid" id="about-content">
             <div class="about-image">
-                <img
-                    src="/assets/images/WEB_AnaAlbiol_EA-16.webp"
+                <Image
+                    src={aboutImg}
                     alt="Ana Albiol"
                     loading="lazy"
+                    width={500}
+                    height={750}
+                    widths={[300, 500]}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                 />
             </div>
             <div class="about-text">
                 <h2>Cosecha del 87</h2>
                 <p>
-                    Nací con ocho meses y a los 19 años tuve mi primera crisis
-                    vital.
+                    A los 19 tuve mi primera crisis vital. Trabajaba en una
+                    perfumería y intuía que había algo más.
                 </p>
                 <p>
-                    Trabajaba en una perfumería y daba por sentado que sería mi
-                    único futuro.
-                </p>
-                <p>Hoy acompaño a personas a dejar de posponer su VIDA.</p>
-                <p>
-                    A través de mis libros, formaciones y mi newsletter En
-                    Privado, comparto mis herramientas para soltar, saltar y
-                    confiar.
+                    Ahora escribo libros, formo y comparto lo que voy
+                    descubriendo. Todo desde la honestidad de alguien que
+                    sigue sin tener todas las respuestas.
                 </p>
                 <a href="/quien-soy" class="btn mt-4"
                     >Leer mi historia completa</a
@@ -35,16 +38,21 @@
 <script>
     import { inView, animate, stagger } from "motion";
 
-    const content = document.getElementById("about-content");
-    if (content) {
-        inView(content, () => {
-            animate(
-                Array.from(content.children),
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.8, delay: stagger(0.2) },
-            );
-        });
+    function initAboutIntroAnimations() {
+        const content = document.getElementById("about-content");
+        if (content) {
+            inView(content, () => {
+                animate(
+                    Array.from(content.children),
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.8, delay: stagger(0.2) },
+                );
+            });
+        }
     }
+
+    initAboutIntroAnimations();
+    document.addEventListener("astro:after-swap", initAboutIntroAnimations);
 </script>
 
 <style>

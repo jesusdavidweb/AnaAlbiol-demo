@@ -1,7 +1,7 @@
 <section class="section-padding bg-light">
     <div class="container fade-up">
         <div class="text-center mb-5 fade-up" style="margin-bottom: 3rem;">
-            <h2>Empieza por el Principio</h2>
+            <h2>Empieza por aquí</h2>
         </div>
         <div class="steps-grid" id="steps-grid">
             <div class="step-item text-center">
@@ -21,7 +21,7 @@
                     >2</span
                 >
                 <h3 style="font-size: 1.5rem; margin-top: 1rem;">
-                    Lees, escuchas y reflexionas a tu ritmo
+                    Lee, escucha y reflexiona a tu ritmo
                 </h3>
             </div>
             <div class="step-item text-center">
@@ -31,7 +31,7 @@
                     >3</span
                 >
                 <h3 style="font-size: 1.5rem; margin-top: 1rem;">
-                    Cuando quieras más, busca y tendrás más
+                    Cuando estés listo, el resto aparece
                 </h3>
             </div>
         </div>
@@ -49,20 +49,25 @@
 <script>
     import { inView, animate, stagger } from "motion";
 
-    const grid = document.getElementById("steps-grid");
-    if (grid) {
-        inView(grid, () => {
-            animate(
-                grid.querySelectorAll(".step-item"),
-                { opacity: [0, 1], y: [50, 0] },
-                {
-                    duration: 0.6,
-                    delay: stagger(0.2),
-                    easing: [0.34, 1.56, 0.64, 1],
-                },
-            );
-        });
+    function initNavigationCardsAnimations() {
+        const grid = document.getElementById("steps-grid");
+        if (grid) {
+            inView(grid, () => {
+                animate(
+                    grid.querySelectorAll(".step-item"),
+                    { opacity: [0, 1], y: [50, 0] },
+                    {
+                        duration: 0.6,
+                        delay: stagger(0.2),
+                        easing: [0.34, 1.56, 0.64, 1],
+                    },
+                );
+            });
+        }
     }
+
+    initNavigationCardsAnimations();
+    document.addEventListener("astro:after-swap", initNavigationCardsAnimations);
 </script>
 
 <style>

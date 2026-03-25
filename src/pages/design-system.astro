@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logoColor from "../assets/images/LOGO_AnaAlbiol_Color.svg";
+import logoBlanco from "../assets/images/LOGO_AnaAlbiol_Blanco.svg";
 ---
 
 <Layout
@@ -207,41 +210,40 @@ import Layout from "../layouts/Layout.astro";
             <div class="ds-type-specimen">
                 <div class="ds-type-card">
                     <span class="ds-type-label"
-                        >Heading — Lora (Serif, Itálica)</span
+                        >Heading — Playfair Display (Serif)</span
                     >
                     <p
                         class="ds-type-sample"
-                        style="font-family: 'Lora', serif; font-style: italic; font-weight: 500; font-size: 2.5rem; color: var(--color-primary); line-height: 1.2;"
+                        style="font-family: 'Playfair Display', serif; font-style: normal; font-weight: 500; font-size: 2.5rem; color: var(--color-primary); line-height: 1.2;"
                     >
                         Vivir antes de morir
                     </p>
                     <p class="ds-type-desc">
-                        Elegancia editorial, calidez humana. La itálica aporta
-                        movimiento y emoción sin gritar. Inspiración directa del
-                        briefing: "tipografía protagonista" y referencia a
-                        Instrument Serif / Europa Bold.
+                        Elegancia editorial, calidez humana. Tipografía protagonista
+                        con personalidad. Inspiración directa del briefing:
+                        referencia a tipografías de autoridad editorial.
                     </p>
                 </div>
                 <div class="ds-type-card">
                     <span class="ds-type-label"
-                        >Body — Helvetica / Arial (Sans-serif)</span
+                        >Body — Inter (Sans-serif)</span
                     >
                     <p
                         class="ds-type-sample"
-                        style="font-family: 'Helvetica', 'Arial', sans-serif; font-size: 1.25rem; color: var(--color-text-light); line-height: 1.6;"
+                        style="font-family: 'Inter', sans-serif; font-size: 1.25rem; color: var(--color-text-light); line-height: 1.6;"
                     >
                         Comparto experiencia, conocimiento y herramientas para
                         que recuperes la responsabilidad sobre tu vida.
                     </p>
                     <p class="ds-type-desc">
-                        Limpia, neutra, invisible. Deja que el contenido hable
+                        Limpia, legible, moderna. Deja que el contenido hable
                         sin interferencias estéticas. Legibilidad máxima en
                         bloques largos de texto.
                     </p>
                 </div>
                 <div class="ds-type-card">
                     <span class="ds-type-label"
-                        >Subtítulo — Inter Tight (Sans-serif, Bold)</span
+                        >Subtítulo — Poppins (Sans-serif, Bold)</span
                     >
                     <p
                         class="ds-type-sample subtitle"
@@ -251,8 +253,8 @@ import Layout from "../layouts/Layout.astro";
                     </p>
                     <p class="ds-type-desc">
                         Funcional, geométrica, moderna. Para labels, subtítulos
-                        y elementos de navegación. Crea contraste con la Lora
-                        sin romper la armonía.
+                        y elementos de navegación. Crea contraste con la Playfair
+                        Display sin romper la armonía.
                     </p>
                 </div>
             </div>
@@ -261,31 +263,31 @@ import Layout from "../layouts/Layout.astro";
             <div class="ds-type-scale">
                 <div class="ds-scale-item">
                     <span class="ds-scale-label">h1</span><span
-                        style="font-family: 'Lora', serif; font-style: italic; font-size: 3.5rem; color: var(--color-primary);"
+                        style="font-family: 'Playfair Display', serif; font-style: normal; font-size: 3.5rem; color: var(--color-primary);"
                         >3.5rem</span
                     >
                 </div>
                 <div class="ds-scale-item">
                     <span class="ds-scale-label">h2</span><span
-                        style="font-family: 'Lora', serif; font-style: italic; font-size: 2.5rem; color: var(--color-primary);"
+                        style="font-family: 'Playfair Display', serif; font-style: normal; font-size: 2.5rem; color: var(--color-primary);"
                         >2.5rem</span
                     >
                 </div>
                 <div class="ds-scale-item">
                     <span class="ds-scale-label">h3</span><span
-                        style="font-family: 'Lora', serif; font-style: italic; font-size: 1.75rem; color: var(--color-primary);"
+                        style="font-family: 'Playfair Display', serif; font-style: normal; font-size: 1.75rem; color: var(--color-primary);"
                         >1.75rem</span
                     >
                 </div>
                 <div class="ds-scale-item">
                     <span class="ds-scale-label">body</span><span
-                        style="font-family: 'Helvetica', sans-serif; font-size: 1rem; color: var(--color-text-light);"
+                        style="font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--color-text-light);"
                         >1rem (16px)</span
                     >
                 </div>
                 <div class="ds-scale-item">
                     <span class="ds-scale-label">small</span><span
-                        style="font-family: 'Helvetica', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;"
+                        style="font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;"
                         >0.9rem UPPERCASE</span
                     >
                 </div>
@@ -306,8 +308,8 @@ import Layout from "../layouts/Layout.astro";
 
             <div class="ds-logo-grid">
                 <div class="ds-logo-card ds-logo-light">
-                    <img
-                        src="/assets/images/LOGO_AnaAlbiol_Color.svg"
+                    <Image
+                        src={logoColor}
                         alt="Logo Ana Albiol — Versión Color"
                         style="height: 50px;"
                     />
@@ -317,8 +319,8 @@ import Layout from "../layouts/Layout.astro";
                     <code>LOGO_AnaAlbiol_Color.svg</code>
                 </div>
                 <div class="ds-logo-card ds-logo-dark">
-                    <img
-                        src="/assets/images/LOGO_AnaAlbiol_Blanco.svg"
+                    <Image
+                        src={logoBlanco}
                         alt="Logo Ana Albiol — Versión Blanco"
                         style="height: 50px;"
                     />
@@ -780,7 +782,7 @@ import Layout from "../layouts/Layout.astro";
                     </li>
                     <li>
                         <strong>Mobile:</strong> Logo + hamburguesa → menú fullscreen
-                        con tipografía Lora a 2rem
+                        con tipografía de encabezados a 2rem
                     </li>
                     <li>
                         <strong>Footer:</strong> Frase de cierre + Instagram + enlaces
@@ -895,7 +897,7 @@ import Layout from "../layouts/Layout.astro";
     }
     .ds-brand-quote {
         font-family: var(--font-heading);
-        font-style: italic;
+        font-style: normal;
         font-size: 1.3rem;
         color: var(--color-primary);
         text-align: center;

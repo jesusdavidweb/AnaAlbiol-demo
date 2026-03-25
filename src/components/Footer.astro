@@ -1,13 +1,22 @@
 ---
+import { Image } from "astro:assets";
+import logoBlanco from "../assets/images/LOGO_AnaAlbiol_Blanco.svg";
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-    <div class="container text-center">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <Image src={logoBlanco} alt="Ana Albiol" />
+        </div>
+        
         <p class="footer-quote">
-            Lo de vivir antes de morir no es una metáfora. <br />Es una
-            decisión.
+            "Lo de vivir antes de morir no es una metáfora.<br />Es una decisión."
         </p>
+        
+        <div class="footer-divider"></div>
+        
         <div class="social-icons">
             <a
                 href="https://www.instagram.com/bloganaalbiol/"
@@ -17,12 +26,12 @@ const currentYear = new Date().getFullYear();
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-instagram"
@@ -41,12 +50,12 @@ const currentYear = new Date().getFullYear();
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-youtube"
@@ -59,25 +68,32 @@ const currentYear = new Date().getFullYear();
                 </svg>
             </a>
         </div>
+        
         <nav aria-label="Enlaces legales y contacto" class="footer-links">
             <a href="/aviso-legal">Aviso Legal</a>
-            <a href="/politica-de-privacidad">Política de Privacidad</a>
+            <span class="footer-separator">·</span>
+            <a href="/politica-de-privacidad">Privacidad</a>
+            <span class="footer-separator">·</span>
             <a href="/cookies">Cookies</a>
+            <span class="footer-separator">·</span>
             <a href="/contacto">Contacto</a>
         </nav>
-        <p class="copyright">
-            &copy; {currentYear} Ana Albiol. Todos los derechos reservados.
-        </p>
-        <p class="credits">
-            Hecho con amor ❤️ por <a
-                href="http://amorchihouse.com/"
-                target="_blank"
-                rel="noopener noreferrer">Amorchi House</a
-            > y <a
-                href="https://jesusdavid.net/"
-                target="_blank"
-                rel="noopener noreferrer">@jesusdavidweb</a
-            >
-        </p>
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; {currentYear} Ana Albiol. Todos los derechos reservados.
+            </p>
+            <p class="credits">
+                Hecho con <span class="heart">♥</span> por <a
+                    href="http://amorchihouse.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">Amorchi House</a
+                > & <a
+                    href="https://jesusdavid.net/"
+                    target="_blank"
+                    rel="noopener noreferrer">@jesusdavidweb</a
+                >
+            </p>
+        </div>
     </div>
 </footer>

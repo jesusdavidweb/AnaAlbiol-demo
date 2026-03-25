@@ -1,135 +1,292 @@
+---
+---
 <section id="newsletter" class="newsletter section-padding">
-    <div class="container fade-up">
-        <div class="newsletter-grid" id="newsletter-container">
-            <div class="newsletter-image">
-                <div class="image-placeholder-dark">
-                    <img
-                        src="/assets/images/PRINT_Ana&Techu_EreaAzurmendi_-5.webp"
-                        alt="En Privado Newsletter"
-                        loading="lazy"
-                        class="placeholder-img"
-                        style="object-position: center 20%;"
-                    />
-                </div>
+    <div class="newsletter-wrapper fade-up">
+        <div class="newsletter-bg-accent"></div>
+        <div class="newsletter-inner">
+            <div class="newsletter-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
             </div>
-            <div class="newsletter-content text-center">
-                <h3
-                    class="subtitle"
-                    style="font-size: 1.5rem; margin-bottom: 2rem; font-style: italic; color: rgba(255,255,255,0.8);"
-                >
-                    Lo que no sale en redes.<br />Lo más íntimo.<br />Sin
-                    filtro.
-                </h3>
 
-                <h2
-                    style="font-size: 3.2rem; line-height: 1.1; margin-bottom: 1.5rem; color: #fff;"
-                >
-                    Lo más importante, <br />siempre, <br /><span
-                        style="font-style: italic;">En Privado.</span
-                    >
-                </h2>
-
-                <a
-                    href="/en-privado"
-                    class="btn mt-4"
-                    style="background: white; color: var(--color-primary); border: none; font-size: 1.1rem; padding: 1rem 2.5rem;"
-                    >Es aquí: En Privado</a
-                >
+            <div class="newsletter-badge">
+                <span class="badge-text">Newsletter</span>
             </div>
+
+            <h2 class="newsletter-heading">
+                Lo que de verdad importa, <em>siempre</em>
+            </h2>
+
+            <p class="newsletter-description">
+                Historias honestas sobre vivir con coherencia. 
+                Sin filtros. Para quienes quieren más depth en sus vidas.
+            </p>
+
+            <a
+                href="/en-privado"
+                class="newsletter-cta"
+            >
+                <span>Entra en En Privado</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </div>
     </div>
+    
+    <div class="newsletter-decorative">
+        <div class="deco-circle deco-circle-1"></div>
+        <div class="deco-circle deco-circle-2"></div>
+        <div class="deco-circle deco-circle-3"></div>
+    </div>
 </section>
+
+<style>
+    .newsletter {
+        background-color: var(--color-primary);
+        position: relative;
+        overflow: hidden;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .newsletter-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        z-index: 2;
+    }
+
+    .newsletter-bg-accent {
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .newsletter-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .badge-text {
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .newsletter-icon {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1rem;
+        animation: envelopeFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes envelopeFloat {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-8px) rotate(-3deg);
+        }
+    }
+
+    .newsletter-heading {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: normal;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+
+    .newsletter-heading em {
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .newsletter-description {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 500px;
+        margin-bottom: 2.5rem;
+    }
+
+    .newsletter-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        background: #fff;
+        color: var(--color-primary);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .newsletter-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        color: var(--color-primary);
+    }
+
+    .newsletter-cta:hover svg {
+        transform: translateX(4px);
+    }
+
+    .newsletter-cta svg {
+        transition: transform 0.3s ease;
+    }
+
+    .newsletter-decorative {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translate(0, 0) rotate(0deg) scale(1);
+        }
+        33% {
+            transform: translate(30px, -50px) rotate(5deg) scale(1.05);
+        }
+        66% {
+            transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+        }
+    }
+
+    .deco-circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        animation: float infinite ease-in-out;
+    }
+
+    .deco-circle-1 {
+        width: 400px;
+        height: 400px;
+        bottom: -150px;
+        left: -10%;
+        animation-duration: 25s;
+    }
+
+    .deco-circle-2 {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        right: -5%;
+        animation-duration: 30s;
+        animation-delay: -5s;
+    }
+
+    .deco-circle-3 {
+        width: 150px;
+        height: 150px;
+        top: 20%;
+        left: 15%;
+        background: rgba(255, 255, 255, 0.05);
+        animation-duration: 22s;
+        animation-delay: -2s;
+    }
+
+    @media (max-width: 768px) {
+        .newsletter-description {
+            font-size: 1rem;
+        }
+
+        .newsletter-cta {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .deco-circle-1 {
+            width: 250px;
+            height: 250px;
+            bottom: -100px;
+            left: -15%;
+        }
+    }
+</style>
 
 <script>
     import { inView, animate, stagger } from "motion";
 
-    const container = document.getElementById("newsletter-container");
-    if (container) {
-        inView(container, () => {
-            animate(
-                Array.from(container.children),
-                { opacity: [0, 1], y: [30, 0] },
-                { duration: 0.6, delay: stagger(0.1) },
+    function initNewsletterAnimations() {
+        const section = document.querySelector("#newsletter");
+        if (section) {
+            const bgAccent = section.querySelector(".newsletter-bg-accent");
+            if (bgAccent) {
+                animate(
+                    bgAccent,
+                    { opacity: [0, 1], scale: [0.8, 1] },
+                    { delay: 0.1, duration: 1, easing: "ease-out" }
+                );
+            }
+
+            const decoCircles = section.querySelectorAll(".deco-circle");
+            if (decoCircles.length) {
+                animate(
+                    decoCircles,
+                    { opacity: [0, 1], scale: [0.8, 1] },
+                    { delay: 0.3, duration: 0.8, easing: [0.17, 0.67, 0.83, 0.67] }
+                );
+            }
+
+            const elements = section.querySelectorAll(
+                ".newsletter-badge, .newsletter-icon, .newsletter-heading, .newsletter-description, .newsletter-cta",
             );
-        });
+
+            inView(section, () => {
+                animate(
+                    elements,
+                    { opacity: [0, 1], y: [30, 0] },
+                    { duration: 0.6, delay: stagger(0.08) },
+                );
+            });
+        }
     }
+
+    initNewsletterAnimations();
+    document.addEventListener("astro:after-swap", initNewsletterAnimations);
 </script>
-
-<style>
-    .newsletter-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    @media (min-width: 900px) {
-        .newsletter-grid {
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 5rem;
-        }
-    }
-
-    .newsletter-content {
-        text-align: center;
-    }
-
-    @media (min-width: 900px) {
-        .newsletter-content {
-            text-align: left;
-        }
-    }
-
-    .newsletter-desc {
-        color: rgba(255, 255, 255, 0.85) !important;
-        font-size: 1.15rem;
-        margin-top: 1.5rem;
-    }
-
-    .image-placeholder-dark {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px dashed rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-md);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 380px;
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .image-placeholder-dark span {
-        color: rgba(255, 255, 255, 0.6);
-        font-family: var(--font-subtitle);
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-    }
-
-    .placeholder-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .placeholder-img:not([src=""]) {
-        opacity: 1;
-    }
-
-    #newsletter-container > * {
-        opacity: 0;
-    }
-
-    .mt-4 {
-        margin-top: 2rem;
-        display: inline-block;
-    }
-</style>

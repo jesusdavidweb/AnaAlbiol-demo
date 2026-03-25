@@ -10,9 +10,9 @@
         visited = sessionStorage.getItem(STORAGE_KEY) === "true";
     }
 
-    let visible = !visited;
-    let preloader;
-    let svgPaths = [];
+    let visible = $state(!visited);
+    let preloader = $state();
+    let svgPaths = $state([]);
 
     onMount(() => {
         if (visited) return;
