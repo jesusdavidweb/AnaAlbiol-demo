@@ -79,7 +79,23 @@
         };
 
         document.body.style.overflow = "hidden";
-        startAnimation();
+            let fallbackTimeout;
+            // Fallback: if animation doesn't run/hydrate, hide preloader after 3s
+            fallbackTimeout = setTimeout(() => {
+                if (visible) {
+                    visible = false;
+                    try {
+                        sessionStorage.setItem(STORAGE_KEY, "true");
+                    } catch (e) {
+                        // ignore storage errors
+                    }
+                    document.body.style.overflow = "";
+                }
+            }, 3000);
+
+            startAnimation().finally(() => {
+                if (fallbackTimeout) clearTimeout(fallbackTimeout);
+            });
     });
 </script>
 

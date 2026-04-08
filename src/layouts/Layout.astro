@@ -8,7 +8,8 @@ import { ClientRouter } from "astro:transitions";
 import { fade } from "astro:transitions";
 
 import CookieBanner from "../components/CookieBanner.svelte";
-import Preloader from "../components/Preloader.svelte";
+// Import logo as URL to use in <img src>
+import logoUrl from "../assets/images/LOGO_AnaAlbiol_Color.svg?url";
 
 import ogImg from "../assets/images/WEB_AnaAlbiolJUN25-26.webp";
 
@@ -26,6 +27,9 @@ const {
     preloadImage,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// FORCE maintenance while temporary homepage is active
+const maintenance = true;
+
 ---
 
 <!doctype html>
@@ -100,33 +104,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </script>
     </head>
     <body>
-        <Preloader client:load />
-        <Header client:load theme={headerTheme} currentPath={Astro.url.pathname} transition:persist="header" />
-        <main transition:animate={fade({ duration: "0.35s" })}>
-            <slot />
-        </main>
-        <Footer transition:persist />
+        <!-- Header / footer and interactive scripts hidden while maintenance is active -->
+        { maintenance ? (
+            <main class="maintenance maintenance-home">
+                <div class="maintenance-content">
+                    <img src={logoUrl} alt="Ana Albiol" class="maintenance-logo" />
+                    <h1>En construcción</h1>
+                    <p>Estamos realizando mejoras. Volvemos pronto.</p>
+                </div>
+            </main>
+        ) : (
+            <main transition:animate={fade({ duration: "0.35s" })}>
+                <slot />
+            </main>
+        ) }
 
-        <CookieBanner client:idle />
-
-        <script>
-            import { inView, animate } from "motion";
-
-            function initFadeUpAnimations() {
-                const fadeUpElements = document.querySelectorAll(".fade-up");
-                fadeUpElements.forEach((el) => {
-                    inView(el, () => {
-                        animate(
-                            el,
-                            { opacity: [0, 1], y: [40, 0] },
-                            { duration: 0.8, easing: "ease-out" },
-                        );
-                    });
-                });
-            }
-
-            initFadeUpAnimations();
-            document.addEventListener("astro:after-swap", initFadeUpAnimations);
-        </script>
     </body>
 </html>
