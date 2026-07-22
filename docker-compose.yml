@@ -1,4 +1,0 @@
-services:
-  ana-albiol-web:
-    build: .
-    restart: always

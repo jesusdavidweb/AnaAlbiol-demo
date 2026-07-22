@@ -3,8 +3,8 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://demo.jedav.link",
-  base: "/anaalbiol",
+  site: "https://anaalbiol.jedav.link",
+  base: "",
   output: "static",
   integrations: [svelte()],
   fonts: [

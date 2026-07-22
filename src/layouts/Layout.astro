@@ -25,23 +25,7 @@ const {
     preloadImage,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const basePath = import.meta.env.BASE_URL;
-const basePathWithoutTrailingSlash =
-    basePath.length > 1 && basePath.endsWith("/")
-        ? basePath.slice(0, -1)
-        : basePath;
-const currentPath =
-    basePathWithoutTrailingSlash !== "/" &&
-    Astro.url.pathname.startsWith(basePathWithoutTrailingSlash)
-        ? Astro.url.pathname.slice(basePathWithoutTrailingSlash.length) || "/"
-        : Astro.url.pathname;
-const withBasePath = (path: string) => {
-    const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-    if (basePathWithoutTrailingSlash === "/") {
-        return normalizedPath;
-    }
-    return `${basePathWithoutTrailingSlash}${normalizedPath}`;
-};
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -103,7 +87,7 @@ const withBasePath = (path: string) => {
         <link
             rel="icon"
             type="image/svg+xml"
-            href={withBasePath("/images/favicon-ana.svg")}
+            href="/images/favicon-ana.svg"
         />
 
         <!-- View Transitions -->
@@ -118,44 +102,6 @@ const withBasePath = (path: string) => {
                     "true",
                 );
             }
-        </script>
-        <script is:inline define:vars={{ basePath }}>
-            const applyBasePathToInternalLinks = () => {
-                if (basePath === "/") {
-                    return;
-                }
-
-                const prefix =
-                    basePath.length > 1 && basePath.endsWith("/")
-                        ? basePath.slice(0, -1)
-                        : basePath;
-
-                document
-                    .querySelectorAll('a[href^="/"], form[action^="/"]')
-                    .forEach((element) => {
-                        const attribute =
-                            element.tagName === "FORM" ? "action" : "href";
-                        const value = element.getAttribute(attribute);
-
-                        if (
-                            !value ||
-                            value.startsWith("//") ||
-                            value.startsWith(`${prefix}/`)
-                        ) {
-                            return;
-                        }
-
-                        element.setAttribute(attribute, `${prefix}${value}`);
-                    });
-            };
-
-            document.addEventListener("DOMContentLoaded", () => {
-                applyBasePathToInternalLinks();
-            });
-
-            document.addEventListener("astro:after-swap", () => {
-                applyBasePathToInternalLinks();
-            });
         </script>
     </head>
     <body>

@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-.bun/
+.pnpm-store/
 
 # Build output
 
@@ -27,4 +27,4 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-bun.log
+pnpm-debug.log*
